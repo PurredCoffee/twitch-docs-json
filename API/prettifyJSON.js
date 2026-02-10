@@ -3,6 +3,35 @@ const docs = require('./docs_raw.json');
 const scopes = require('./scopes.json');
 
 const output = {};
+
+/**
+ * 
+ * @param {{ 
+ *  name: string,
+ *  type: string,
+ *  required: boolean,
+ *  description: string
+ * }[]} param 
+ */
+function paramToObj(param, depth = 0) {
+    const retObj = {};
+    let c;
+    while(c = param.shift()) {
+        if(c.name.length - c.name.trimStart().length != depth) {
+            param.unshift(c);
+            return retObj;
+        }
+        retObj[c.name.trim()] = {
+            type: c.type,
+            required: c.required,
+            description: c.description
+        }
+        if(c.type.toLowerCase().startsWith('object')) {
+            retObj[c.name.trim()].attr = paramToObj(param, param[0].name.length - param[0].name.trim().length);
+        }
+    }
+    return retObj;
+}
 for(let key in docs) {
     const cat = docs[key].category;
     output[cat] ??= {};
@@ -25,6 +54,9 @@ for(let key in docs) {
     if(output[cat][key].authInfo) {
         output[cat][key].auth += "\nINFO: " + output[cat][key].authInfo;
     }
+    output[cat][key].params = paramToObj(output[cat][key].params ?? []);
+    output[cat][key].reqBody = paramToObj(output[cat][key].reqBody ?? []);
+    output[cat][key].body = paramToObj(output[cat][key].body ?? []);
 }
 
 require('fs').writeFileSync('docs.json', JSON.stringify(output, null, 4));

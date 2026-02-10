@@ -136,9 +136,9 @@ while(main.children[i]?.name === 'section') {
     }
     long = long.trim();
     RawInfo[name].long = long;
-    RawInfo[name].params = {};
-    RawInfo[name].reqBody = {};
-    RawInfo[name].body = {};
+    RawInfo[name].params = [];
+    RawInfo[name].reqBody = [];
+    RawInfo[name].body = [];
     RawInfo[name].codes = {};
     while(doc.children[x]) {
         if(!RawInfo[name]) break;
@@ -185,7 +185,7 @@ while(main.children[i]?.name === 'section') {
                      */
                     //@ts-expect-error
                     const row = table.children[y];
-                    const Qname = asRaw(row.children[1]);
+                    const Qname = asRaw(row.children[1], false);
                     /**
                      * 
                      * @param {string} str 
@@ -197,11 +197,12 @@ while(main.children[i]?.name === 'section') {
                         }
                         return str;
                     }
-                    RawInfo[name].params[Qname] = {
-                        type: asText(row.children[3 + (typelast?2:0)]).toLowerCase(),
+                    RawInfo[name].params.push({
+                        name: Qname,
+                        type: asRaw(row.children[3 + (typelast?2:0)]).toLowerCase(),
                         required: (skipReq)?true:toBool(asRaw(row.children[5 - (typelast?2:0)]).toLowerCase()),
                         description: asText(row.children[7 - (skipReq?2:0)])
-                    }
+                    });
                     y+=2;
                 }
                 break;
@@ -235,7 +236,7 @@ while(main.children[i]?.name === 'section') {
                      */
                     //@ts-expect-error
                     const row = table.children[y];
-                    const Qname = asRaw(row.children[1]);
+                    const Qname = asRaw(row.children[1], false);
                     /**
                      * 
                      * @param {string} str 
@@ -247,11 +248,12 @@ while(main.children[i]?.name === 'section') {
                         }
                         return str;
                     }
-                    RawInfo[name].reqBody[Qname] = {
-                        type: asText(row.children[3 + (typelast?2:0)]).toLowerCase(),
+                    RawInfo[name].reqBody.push({
+                        name: Qname,
+                        type: asRaw(row.children[3 + (typelast?2:0)]).toLowerCase(),
                         required: (skipReq)?true:toBool(asRaw(row.children[5 - (typelast?2:0)]).toLowerCase()),
                         description: asText(row.children[7 - (skipReq?2:0)])
-                    }
+                    });
                     y+=2;
                 }
                 break;
@@ -274,11 +276,12 @@ while(main.children[i]?.name === 'section') {
                      */
                     //@ts-expect-error
                     const row = table.children[y];
-                    const Rname = asRaw(row.children[1]);
-                    RawInfo[name].reqBody[Rname] = {
-                        type: asText(row.children[3]).toLowerCase(),
+                    const Rname = asRaw(row.children[1], false);
+                    RawInfo[name].reqBody.push({
+                        name: Rname,
+                        type: asRaw(row.children[3]).toLowerCase(),
                         description: asText(row.children[5])
-                    }
+                    });
                     y+=2;
                 }
                 break;
