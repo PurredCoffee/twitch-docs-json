@@ -1,0 +1,991 @@
+{
+    "Start Commercial": {
+        "authText": "Requires a [user access token](https://dev.twitch.tv/docs/authentication#user-access-tokens) that includes the *channel:edit:commercial* scope.",
+        "scopes": [
+            "channel:edit:commercial"
+        ],
+        "queryRestraints": {}
+    },
+    "Get Ad Schedule": {
+        "authText": "Requires a [user access token](https://dev.twitch.tv/docs/authentication#user-access-tokens) that includes the *channel:read:ads* scope. The `user_id` in the user access token must match the `broadcaster_id`.",
+        "scopes": [
+            "channel:read:ads"
+        ],
+        "queryRestraints": {
+            "broadcaster_id": "user_id"
+        }
+    },
+    "Snooze Next Ad": {
+        "authText": "Requires a [user access token](https://dev.twitch.tv/docs/authentication#user-access-tokens) that includes the *channel:manage:ads* scope. The `user_id` in the user access token must match the `broadcaster_id`.",
+        "scopes": [
+            "channel:manage:ads"
+        ],
+        "queryRestraints": {
+            "broadcaster_id": "user_id"
+        }
+    },
+    "Get Extension Analytics": {
+        "authText": "Requires a [user access token](https://dev.twitch.tv/docs/authentication#user-access-tokens) that includes the *analytics:read:extensions* scope.",
+        "scopes": [
+            "analytics:read:extensions"
+        ],
+        "queryRestraints": {}
+    },
+    "Get Game Analytics": {
+        "authText": "Requires a [user access token](https://dev.twitch.tv/docs/authentication#user-access-tokens) that includes the *analytics:read:games* scope.",
+        "scopes": [
+            "analytics:read:games"
+        ],
+        "queryRestraints": {}
+    },
+    "Get Bits Leaderboard": {
+        "authText": "Requires a [user access token](https://dev.twitch.tv/docs/authentication#user-access-tokens) that includes the *bits:read* scope.",
+        "scopes": [
+            "bits:read"
+        ],
+        "queryRestraints": {}
+    },
+    "Get Cheermotes": {
+        "authText": "Requires an [app access token](https://dev.twitch.tv/docs/authentication#app-access-tokens) or [user access token](https://dev.twitch.tv/docs/authentication#user-access-tokens).",
+        "scopes": [],
+        "queryRestraints": {}
+    },
+    "Get Extension Transactions": {
+        "authText": "Requires an [app access token](https://dev.twitch.tv/docs/authentication#app-access-tokens).",
+        "scopes": [],
+        "queryRestraints": {}
+    },
+    "Get Channel Information": {
+        "authText": "Requires an [app access token](https://dev.twitch.tv/docs/authentication#app-access-tokens) or [user access token](https://dev.twitch.tv/docs/authentication#user-access-tokens).",
+        "scopes": [],
+        "queryRestraints": {}
+    },
+    "Modify Channel Information": {
+        "authText": "Requires a [user access token](https://dev.twitch.tv/docs/authentication#user-access-tokens) that includes the *channel:manage:broadcast* scope.",
+        "scopes": [
+            "channel:manage:broadcast"
+        ],
+        "queryRestraints": {}
+    },
+    "Get Channel Editors": {
+        "authText": "Requires a [user access token](https://dev.twitch.tv/docs/authentication#user-access-tokens) that includes the *channel:read:editors* scope.",
+        "scopes": [
+            "channel:read:editors"
+        ],
+        "queryRestraints": {}
+    },
+    "Get Followed Channels": {
+        "authText": "Requires a [user access token](https://dev.twitch.tv/docs/authentication#user-access-tokens) that includes the *user:read:follows* scope.",
+        "scopes": [
+            "user:read:follows"
+        ],
+        "queryRestraints": {}
+    },
+    "Get Channel Followers": {
+        "authText": "- Requires a [user access token](https://dev.twitch.tv/docs/authentication#user-access-tokens) that includes the *moderator:read:followers* scope.\n- The ID in the broadcaster_id query parameter must match the user ID in the access token or the user ID in the access token must be a moderator for the specified broadcaster.",
+        "scopes": [
+            "moderator:read:followers"
+        ],
+        "extra": "The ID in the broadcaster_id query parameter must match the user ID in the access token or the user ID in the access token must be a moderator for the specified broadcaster.",
+        "queryRestraints": {}
+    },
+    "Create Custom Rewards": {
+        "authText": "Requires a [user access token](https://dev.twitch.tv/docs/authentication#user-access-tokens) that includes the *channel:manage:redemptions* scope.",
+        "scopes": [
+            "channel:manage:redemptions"
+        ],
+        "queryRestraints": {}
+    },
+    "Delete Custom Reward": {
+        "authText": "Requires a [user access token](https://dev.twitch.tv/docs/authentication#user-access-tokens) that includes the *channel:manage:redemptions* scope.",
+        "scopes": [
+            "channel:manage:redemptions"
+        ],
+        "queryRestraints": {}
+    },
+    "Get Custom Reward": {
+        "authText": "Requires a [user access token](https://dev.twitch.tv/docs/authentication#user-access-tokens) that includes the *channel:read:redemptions* or *channel:manage:redemptions* scope.",
+        "scopes": [
+            "channel:read:redemptions",
+            "channel:manage:redemptions"
+        ],
+        "queryRestraints": {}
+    },
+    "Get Custom Reward Redemption": {
+        "authText": "Requires a [user access token](https://dev.twitch.tv/docs/authentication#user-access-tokens) that includes the *channel:read:redemptions* or *channel:manage:redemptions* scope.",
+        "scopes": [
+            "channel:read:redemptions",
+            "channel:manage:redemptions"
+        ],
+        "queryRestraints": {}
+    },
+    "Update Custom Reward": {
+        "authText": "Requires a [user access token](https://dev.twitch.tv/docs/api/authentication#user-access-tokens) that includes the *channel:manage:redemptions* scope.",
+        "scopes": [
+            "channel:manage:redemptions"
+        ],
+        "queryRestraints": {}
+    },
+    "Update Redemption Status": {
+        "authText": "Requires a [user access token](https://dev.twitch.tv/docs/authentication#user-access-tokens) that includes the *channel:manage:redemptions* scope.",
+        "scopes": [
+            "channel:manage:redemptions"
+        ],
+        "queryRestraints": {}
+    },
+    "Get Charity Campaign": {
+        "authText": "Requires a [user access token](https://dev.twitch.tv/docs/authentication#user-access-tokens) that includes the *channel:read:charity* scope.",
+        "scopes": [
+            "channel:read:charity"
+        ],
+        "queryRestraints": {}
+    },
+    "Get Charity Campaign Donations": {
+        "authText": "Requires a user access token that includes the *channel:read:charity* scope.",
+        "scopes": [
+            "channel:read:charity"
+        ],
+        "queryRestraints": {}
+    },
+    "Get Chatters": {
+        "authText": "Requires a [user access token](https://dev.twitch.tv/docs/authentication#user-access-tokens) that includes the *moderator:read:chatters* scope.",
+        "scopes": [
+            "moderator:read:chatters"
+        ],
+        "queryRestraints": {}
+    },
+    "Get Channel Emotes": {
+        "authText": "Requires an [app access token](https://dev.twitch.tv/docs/authentication#app-access-tokens) or [user access token](https://dev.twitch.tv/docs/authentication#user-access-tokens).",
+        "scopes": [],
+        "queryRestraints": {}
+    },
+    "Get Global Emotes": {
+        "authText": "Requires an [app access token](https://dev.twitch.tv/docs/authentication#app-access-tokens) or [user access token](https://dev.twitch.tv/docs/authentication#user-access-tokens).",
+        "scopes": [],
+        "queryRestraints": {}
+    },
+    "Get Emote Sets": {
+        "authText": "Requires an [app access token](https://dev.twitch.tv/docs/authentication#app-access-tokens) or [user access token](https://dev.twitch.tv/docs/authentication#user-access-tokens).",
+        "scopes": [],
+        "queryRestraints": {}
+    },
+    "Get Channel Chat Badges": {
+        "authText": "Requires an [app access token](https://dev.twitch.tv/docs/authentication#app-access-tokens) or [user access token](https://dev.twitch.tv/docs/authentication#user-access-tokens).",
+        "scopes": [],
+        "queryRestraints": {}
+    },
+    "Get Global Chat Badges": {
+        "authText": "Requires an [app access token](https://dev.twitch.tv/docs/authentication#app-access-tokens) or [user access token](https://dev.twitch.tv/docs/authentication#user-access-tokens).",
+        "scopes": [],
+        "queryRestraints": {}
+    },
+    "Get Chat Settings": {
+        "authText": "Requires an [app access token](https://dev.twitch.tv/docs/authentication#app-access-tokens) or [user access token](https://dev.twitch.tv/docs/authentication#user-access-tokens).",
+        "scopes": [],
+        "queryRestraints": {}
+    },
+    "Get Shared Chat Session": {
+        "authText": "Requires an [app access token](https://dev.twitch.tv/docs/cli/token-command/#app-access-token) or [user access token](https://dev.twitch.tv/docs/authentication/#user-access-tokens).",
+        "scopes": [],
+        "queryRestraints": {}
+    },
+    "Get User Emotes": {
+        "authText": "- Requires a user access token that includes the *user:read:emotes* scope.\n\n- Query parameter `user_id` must match the `user_id` in the user access token.",
+        "scopes": [
+            "user:read:emotes"
+        ],
+        "queryRestraints": {
+            "user_id": "user_id"
+        }
+    },
+    "Update Chat Settings": {
+        "authText": "Requires a [user access token](https://dev.twitch.tv/docs/authentication#user-access-tokens) that includes the *moderator:manage:chat_settings* scope.",
+        "scopes": [],
+        "queryRestraints": {}
+    },
+    "Send Chat Announcement": {
+        "authText": "Requires a [user access token](https://dev.twitch.tv/docs/authentication#user-access-tokens) that includes the *moderator:manage:announcements* scope.",
+        "scopes": [],
+        "queryRestraints": {}
+    },
+    "Send a Shoutout": {
+        "authText": "Requires a [user access token](https://dev.twitch.tv/docs/authentication#user-access-tokens) that includes the *moderator:manage:shoutouts* scope.",
+        "scopes": [],
+        "queryRestraints": {}
+    },
+    "Send Chat Message": {
+        "authText": "Requires an [app access token](https://dev.twitch.tv/docs/authentication#app-access-tokens) or [user access token](https://dev.twitch.tv/docs/authentication#user-access-tokens) that includes the `user:write:chat` scope. If app access token used, then additionally requires `user:bot` scope from chatting user, and either `channel:bot` scope from broadcaster or moderator status.",
+        "scopes": [
+            "user:write:chat"
+        ],
+        "chatScopes": [
+            "user:bot",
+            "channel:bot"
+        ],
+        "queryRestraints": {}
+    },
+    "Get User Chat Color": {
+        "authText": "Requires an [app access token](https://dev.twitch.tv/docs/authentication#app-access-tokens) or [user access token](https://dev.twitch.tv/docs/authentication#user-access-tokens).",
+        "scopes": [],
+        "queryRestraints": {}
+    },
+    "Update User Chat Color": {
+        "authText": "Requires a [user access token](https://dev.twitch.tv/docs/authentication#user-access-tokens) that includes the *user:manage:chat_color* scope.",
+        "scopes": [
+            "user:manage:chat_color"
+        ],
+        "queryRestraints": {}
+    },
+    "Create Clip": {
+        "authText": "Requires a [user access token](https://dev.twitch.tv/docs/authentication#user-access-tokens) that includes the *clips:edit* scope.",
+        "scopes": [
+            "clips:edit"
+        ],
+        "queryRestraints": {}
+    },
+    "Create Clip From VOD": {
+        "authText": "Requires an [app access token](https://dev.twitch.tv/docs/authentication#app-access-tokens) or [user access token](https://dev.twitch.tv/docs/authentication#user-access-tokens) that includes the *editor:manage:clips* or *channel:manage:clips* scope.",
+        "scopes": [
+            "editor:manage:clips",
+            "channel:manage:clips"
+        ],
+        "queryRestraints": {}
+    },
+    "Get Clips": {
+        "authText": "Requires an [app access token](https://dev.twitch.tv/docs/authentication#app-access-tokens) or [user access token](https://dev.twitch.tv/docs/authentication#user-access-tokens).",
+        "scopes": "TODO",
+        "queryRestraints": "TODO"
+    },
+    "Get Clips Download": {
+        "authText": "Requires an [app access token](https://dev.twitch.tv/docs/authentication#app-access-tokens) or [user access token](https://dev.twitch.tv/docs/authentication#user-access-tokens) that includes the `editor:manage:clips` or `channel:manage:clips` scope.",
+        "scopes": [
+            "editor:manage:clips",
+            "channel:manage:clips"
+        ],
+        "queryRestraints": {}
+    },
+    "Get Conduits": {
+        "authText": "Requires an [app access token](https://dev.twitch.tv/docs/authentication#app-access-tokens).",
+        "scopes": [],
+        "queryRestraints": {}
+    },
+    "Create Conduits": {
+        "authText": "Requires an [app access token](https://dev.twitch.tv/docs/authentication#app-access-tokens).",
+        "scopes": [],
+        "queryRestraints": {}
+    },
+    "Update Conduits": {
+        "authText": "Requires an [app access token](https://dev.twitch.tv/docs/authentication#app-access-tokens).",
+        "scopes": [],
+        "queryRestraints": {}
+    },
+    "Delete Conduit": {
+        "authText": "Requires an [app access token](https://dev.twitch.tv/docs/authentication#app-access-tokens).",
+        "scopes": [],
+        "queryRestraints": {}
+    },
+    "Get Conduit Shards": {
+        "authText": "Requires an [app access token](https://dev.twitch.tv/docs/authentication#app-access-tokens).",
+        "scopes": [],
+        "queryRestraints": {}
+    },
+    "Update Conduit Shards": {
+        "authText": "Requires an [app access token](https://dev.twitch.tv/docs/authentication#app-access-tokens).",
+        "scopes": [],
+        "queryRestraints": {}
+    },
+    "Get Content Classification Labels": {
+        "authText": "Requires an [app access token](https://dev.twitch.tv/docs/authentication#app-access-tokens) or [user access token](https://dev.twitch.tv/docs/authentication#user-access-tokens).",
+        "scopes": [],
+        "queryRestraints": {}
+    },
+    "Get Drops Entitlements": {
+        "authText": "Requires an [app access token](https://dev.twitch.tv/docs/authentication#app-access-tokens) or [user access token](https://dev.twitch.tv/docs/authentication#user-access-tokens). The Client ID associated with the access token must be owned by a user who is a member of the [organization](https://dev.twitch.tv/docs/docs/companies/) that holds ownership of the game.",
+        "scopes": [],
+        "extra": "The ID in the broadcaster_id query parameter must match the user ID in the access token or the user ID in the access token must be a moderator for the specified broadcaster.",
+        "queryRestraints": {}
+    },
+    "Update Drops Entitlements": {
+        "authText": "Requires an [app access token](https://dev.twitch.tv/docs/authentication#app-access-tokens) or [user access token](https://dev.twitch.tv/docs/authentication#user-access-tokens). The Client ID associated with the access token must be owned by a user who is a member of the [organization](https://dev.twitch.tv/docs/docs/companies/) that holds ownership of the game.",
+        "scopes": [],
+        "extra": "The ID in the broadcaster_id query parameter must match the user ID in the access token or the user ID in the access token must be a moderator for the specified broadcaster.",
+        "queryRestraints": {}
+    },
+    "Get Extension Live Channels": {
+        "authText": "Requires an [app access token](https://dev.twitch.tv/docs/authentication#app-access-tokens) or [user access token](https://dev.twitch.tv/docs/authentication#user-access-tokens).",
+        "scopes": [],
+        "queryRestraints": {}
+    },
+    "Get Released Extensions": {
+        "authText": "Requires an [app access token](https://dev.twitch.tv/docs/authentication#app-access-tokens) or [user access token](https://dev.twitch.tv/docs/authentication#user-access-tokens).",
+        "scopes": [],
+        "queryRestraints": {}
+    },
+    "Get Extension Bits Products": {
+        "authText": "Requires an [app access token](https://dev.twitch.tv/docs/authentication#app-access-tokens). The client ID in the app access token must be the extension’s client ID.",
+        "scopes": [],
+        "extra": "The client ID in the app access token must be the extension’s client ID.",
+        "queryRestraints": {}
+    },
+    "Update Extension Bits Product": {
+        "authText": "Requires an [app access token](https://dev.twitch.tv/docs/authentication#app-access-tokens). The client ID in the app access token must match the extension’s client ID.",
+        "scopes": [],
+        "extra": "The client ID in the app access token must be the extension’s client ID.",
+        "queryRestraints": {}
+    },
+    "Create EventSub Subscription": {
+        "authText": "If you use [webhooks to receive events](https://dev.twitch.tv/docs/eventsub/handling-webhook-events), the request must specify an app access token. The request will fail if you use a user access token. If the subscription type requires user authorization, the user must have granted your app (client ID) permissions to receive those events before you subscribe to them. For example, to subscribe to [channel.subscribe](https://dev.twitch.tv/docs/eventsub/eventsub-subscription-types/#channelsubscribe) events, your app must get a user access token that includes the `channel:read:subscriptions` scope, which adds the required permission to your app access token’s client ID.",
+        "scopes": [],
+        "extra": "If you use [webhooks to receive events](https://dev.twitch.tv/docs/eventsub/handling-webhook-events), the request must specify an app access token. The request will fail if you use a user access token. If the subscription type requires user authorization, the user must have granted your app (client ID) permissions to receive those events before you subscribe to them. For example, to subscribe to [channel.subscribe](https://dev.twitch.tv/docs/eventsub/eventsub-subscription-types/#channelsubscribe) events, your app must get a user access token that includes the `channel:read:subscriptions` scope, which adds the required permission to your app access token’s client ID.",
+        "queryRestraints": {}
+    },
+    "Delete EventSub Subscription": {
+        "authText": "If you use [webhooks to receive events](https://dev.twitch.tv/docs/eventsub/handling-webhook-events), the request must specify an app access token. The request will fail if you use a user access token.",
+        "scopes": [],
+        "extra": "If you use [webhooks to receive events](https://dev.twitch.tv/docs/eventsub/handling-webhook-events), the request must specify an app access token. The request will fail if you use a user access token.",
+        "queryRestraints": {}
+    },
+    "Get EventSub Subscriptions": {
+        "authText": "If you use [Webhooks](https://dev.twitch.tv/docs/eventsub/handling-webhook-events) or [Conduits](https://dev.twitch.tv/docs/eventsub/handling-conduit-events/) to receive events, the request must specify an app access token. The request will fail if you use a user access token.",
+        "scopes": [],
+        "extra": "If you use [Webhooks](https://dev.twitch.tv/docs/eventsub/handling-webhook-events) or [Conduits](https://dev.twitch.tv/docs/eventsub/handling-conduit-events/) to receive events, the request must specify an app access token. The request will fail if you use a user access token.",
+        "queryRestraints": {}
+    },
+    "Get Top Games": {
+        "authText": "Requires an [app access token](https://dev.twitch.tv/docs/authentication#app-access-tokens) or [user access token](https://dev.twitch.tv/docs/authentication#user-access-tokens).",
+        "scopes": [],
+        "queryRestraints": {}
+    },
+    "Get Games": {
+        "authText": "Requires an [app access token](https://dev.twitch.tv/docs/authentication#app-access-tokens) or [user access token](https://dev.twitch.tv/docs/authentication#user-access-tokens).",
+        "scopes": [],
+        "queryRestraints": {}
+    },
+    "Get Creator Goals": {
+        "authText": "Requires a [user access token](https://dev.twitch.tv/docs/authentication#user-access-tokens) that includes the *channel:read:goals* scope.",
+        "scopes": [
+            "channel:read:goals"
+        ],
+        "queryRestraints": {}
+    },
+    "Get Channel Guest Star Settings": {
+        "authText": "- Query parameter `moderator_id` must match the `user_id` in the [User-Access token](https://dev.twitch.tv/docs/authentication#user-access-tokens)\n- Requires OAuth Scope: `channel:read:guest_star`, `channel:manage:guest_star`, `moderator:read:guest_star` or `moderator:manage:guest_star`",
+        "scopes": [
+            "channel:read:guest_star",
+            "channel:manage:guest_star",
+            "moderator:read:guest_star",
+            "moderator:manage:guest_star"
+        ],
+        "queryRestraints": {
+            "moderator_id": "user_id"
+        }
+    },
+    "Update Channel Guest Star Settings": {
+        "authText": "- Query parameter `broadcaster_id` must match the `user_id` in the [User-Access token](https://dev.twitch.tv/docs/authentication#user-access-tokens)\n- Requires OAuth Scope: `channel:manage:guest_star`",
+        "scopes": [
+            "channel:manage:guest_star"
+        ],
+        "queryRestraints": {
+            "broadcaster_id": "user_id"
+        }
+    },
+    "Get Guest Star Session": {
+        "authText": "- Requires OAuth Scope: `channel:read:guest_star`, `channel:manage:guest_star`, `moderator:read:guest_star` or `moderator:manage:guest_star`\n- Guests must be either invited or assigned a slot within the session",
+        "scopes": [
+            "channel:read:guest_star",
+            "channel:manage:guest_star",
+            "moderator:read:guest_star",
+            "moderator:manage:guest_star"
+        ],
+        "extra": "Guests must be either invited or assigned a slot within the session",
+        "queryRestraints": {}
+    },
+    "Create Guest Star Session": {
+        "authText": "- Query parameter `broadcaster_id` must match the `user_id` in the [User-Access token](https://dev.twitch.tv/docs/authentication#user-access-tokens)\n- Requires OAuth Scope: `channel:manage:guest_star`",
+        "scopes": [
+            "channel:manage:guest_star"
+        ],
+        "queryRestraints": {
+            "broadcaster_id": "user_id"
+        }
+    },
+    "End Guest Star Session": {
+        "authText": "- Query parameter `broadcaster_id` must match the `user_id` in the [User-Access token](https://dev.twitch.tv/docs/authentication#user-access-tokens)\n- Requires OAuth Scope: `channel:manage:guest_star`",
+        "scopes": [
+            "channel:manage:guest_star"
+        ],
+        "queryRestraints": {
+            "broadcaster_id": "user_id"
+        }
+    },
+    "Get Guest Star Invites": {
+        "authText": "- Query parameter `broadcaster_id` must match the `user_id` in the [User-Access token](https://dev.twitch.tv/docs/authentication#user-access-tokens)\n- Requires OAuth Scope: `channel:read:guest_star`, `channel:manage:guest_star`, `moderator:read:guest_star` or `moderator:manage:guest_star`",
+        "scopes": [
+            "channel:read:guest_star",
+            "channel:manage:guest_star",
+            "moderator:read:guest_star",
+            "moderator:manage:guest_star"
+        ],
+        "queryRestraints": {
+            "broadcaster_id": "user_id"
+        }
+    },
+    "Send Guest Star Invite": {
+        "authText": "- Query parameter `moderator_id` must match the `user_id` in the [User-Access token](https://dev.twitch.tv/docs/authentication#user-access-tokens)\n- Requires OAuth Scope: `channel:manage:guest_star` or `moderator:manage:guest_star`",
+        "scopes": [
+            "channel:manage:guest_star",
+            "moderator:manage:guest_star"
+        ],
+        "queryRestraints": {
+            "moderator_id": "user_id"
+        }
+    },
+    "Delete Guest Star Invite": {
+        "authText": "- Query parameter `moderator_id` must match the `user_id` in the [User-Access token](https://dev.twitch.tv/docs/authentication#user-access-tokens)\n- Requires OAuth Scope: `channel:manage:guest_star` or `moderator:manage:guest_star`",
+        "scopes": [
+            "channel:manage:guest_star",
+            "moderator:manage:guest_star"
+        ],
+        "queryRestraints": {
+            "moderator_id": "user_id"
+        }
+    },
+    "Assign Guest Star Slot": {
+        "authText": "- Query parameter `moderator_id` must match the `user_id` in the [User-Access token](https://dev.twitch.tv/docs/authentication#user-access-tokens)\n- Requires OAuth Scope: `channel:manage:guest_star` or `moderator:manage:guest_star`",
+        "scopes": [
+            "channel:manage:guest_star",
+            "moderator:manage:guest_star"
+        ],
+        "queryRestraints": {
+            "moderator_id": "user_id"
+        }
+    },
+    "Update Guest Star Slot": {
+        "authText": "- Query parameter `moderator_id` must match the `user_id` in the [User-Access token](https://dev.twitch.tv/docs/authentication#user-access-tokens)\n- Requires OAuth Scope: `channel:manage:guest_star` or `moderator:manage:guest_star`",
+        "scopes": [
+            "channel:manage:guest_star",
+            "moderator:manage:guest_star"
+        ],
+        "queryRestraints": {
+            "moderator_id": "user_id"
+        }
+    },
+    "Delete Guest Star Slot": {
+        "authText": "- Query parameter `moderator_id` must match the `user_id` in the [User-Access token](https://dev.twitch.tv/docs/authentication#user-access-tokens)\n- Requires OAuth Scope: `channel:manage:guest_star` or `moderator:manage:guest_star`",
+        "scopes": [
+            "channel:manage:guest_star",
+            "moderator:manage:guest_star"
+        ],
+        "queryRestraints": {
+            "moderator_id": "user_id"
+        }
+    },
+    "Update Guest Star Slot Settings": {
+        "authText": "- Query parameter `moderator_id` must match the `user_id` in the [User-Access token](https://dev.twitch.tv/docs/authentication#user-access-tokens)\n- Requires OAuth Scope: `channel:manage:guest_star` or `moderator:manage:guest_star`",
+        "scopes": [
+            "channel:manage:guest_star",
+            "moderator:manage:guest_star"
+        ],
+        "queryRestraints": {
+            "moderator_id": "user_id"
+        }
+    },
+    "Get Hype Train Status": {
+        "authText": "- Requires an [user access token](https://dev.twitch.tv/docs/authentication/#user-access-tokens).\n- Requires OAuth Scope: `channel:read:hype_train`.\n- Requires that `broadcaster_id` and `user_id` match in the User-Access token.",
+        "scopes": [
+            "channel:read:hype_train"
+        ],
+        "queryRestraints": {
+            "broadcaster_id": "user_id"
+        }
+    },
+    "Check AutoMod Status": {
+        "authText": "Requires a [user access token](https://dev.twitch.tv/docs/authentication#user-access-tokens) that includes the *moderation:read* scope.",
+        "scopes": [
+            "moderation:read"
+        ],
+        "queryRestraints": {}
+    },
+    "Manage Held AutoMod Messages": {
+        "authText": "Requires a [user access token](https://dev.twitch.tv/docs/authentication#user-access-tokens) that includes the *moderator:manage:automod* scope.",
+        "scopes": [
+            "moderator:manage:automod"
+        ],
+        "queryRestraints": {}
+    },
+    "Get AutoMod Settings": {
+        "authText": "Requires a [user access token](https://dev.twitch.tv/docs/authentication#user-access-tokens) that includes the *moderator:read:automod_settings* scope.",
+        "scopes": [
+            "moderator:read:automod_settings"
+        ],
+        "queryRestraints": {}
+    },
+    "Update AutoMod Settings": {
+        "authText": "Requires a [user access token](https://dev.twitch.tv/docs/authentication#user-access-tokens) that includes the *moderator:manage:automod_settings* scope.",
+        "scopes": [
+            "moderator:manage:automod_settings"
+        ],
+        "queryRestraints": {}
+    },
+    "Get Banned Users": {
+        "authText": "Requires a [user access token](https://dev.twitch.tv/docs/authentication#user-access-tokens) that includes the *moderation:read* or *moderator:manage:banned_users* scope.",
+        "scopes": [
+            "moderation:read",
+            "moderator:manage:banned_users"
+        ],
+        "queryRestraints": {}
+    },
+    "Ban User": {
+        "authText": "Requires a [user access token](https://dev.twitch.tv/docs/authentication#user-access-tokens) that includes the *moderator:manage:banned_users* scope.",
+        "scopes": [
+            "moderator:manage:banned_users"
+        ],
+        "queryRestraints": {}
+    },
+    "Unban User": {
+        "authText": "Requires a [user access token](https://dev.twitch.tv/docs/authentication#user-access-tokens) that includes the *moderator:manage:banned_users* scope.",
+        "scopes": [
+            "moderator:manage:banned_users"
+        ],
+        "queryRestraints": {}
+    },
+    "Get Unban Requests": {
+        "authText": "- Requires a user access token that includes the *moderator:read:unban_requests* or *moderator:manage:unban_requests* scope.\n- Query parameter `moderator_id` must match the `user_id` in the [user access token](https://dev.twitch.tv/docs/authentication/#user-access-tokens).",
+        "scopes": [
+            "moderator:read:unban_requests",
+            "moderator:manage:unban_requests"
+        ],
+        "queryRestraints": {
+            "moderator_id": "user_id"
+        }
+    },
+    "Resolve Unban Requests": {
+        "authText": "- Requires a user access token that includes the *moderator:manage:unban_requests* scope.\n\n- Query parameter `moderator_id` must match the `user_id` in the[user access token](https://dev.twitch.tv/docs/authentication/#user-access-tokens).",
+        "scopes": [
+            "moderator:manage:unban_requests"
+        ],
+        "queryRestraints": {
+            "moderator_id": "user_id"
+        }
+    },
+    "Get Blocked Terms": {
+        "authText": "Requires a [user access token](https://dev.twitch.tv/docs/authentication#user-access-tokens) that includes the *moderator:read:blocked_terms* or *moderator:manage:blocked_terms* scope.",
+        "scopes": [
+            "moderator:read:blocked_terms",
+            "moderator:manage:blocked_terms"
+        ],
+        "queryRestraints": {}
+    },
+    "Add Blocked Term": {
+        "authText": "Requires a [user access token](https://dev.twitch.tv/docs/authentication#user-access-tokens) that includes the *moderator:manage:blocked_terms* scope.",
+        "scopes": [
+            "moderator:manage:blocked_terms"
+        ],
+        "queryRestraints": {}
+    },
+    "Remove Blocked Term": {
+        "authText": "Requires a [user access token](https://dev.twitch.tv/docs/authentication#user-access-tokens) that includes the *moderator:manage:blocked_terms* scope.",
+        "scopes": [
+            "moderator:manage:blocked_terms"
+        ],
+        "queryRestraints": {}
+    },
+    "Delete Chat Messages": {
+        "authText": "Requires a [user access token](https://dev.twitch.tv/docs/authentication#user-access-tokens) that includes the *moderator:manage:chat_messages* scope.",
+        "scopes": [
+            "moderator:manage:chat_messages"
+        ],
+        "queryRestraints": {}
+    },
+    "Get Moderated Channels": {
+        "authText": "- Query parameter `user_id` must match the user ID in the [User-Access token](https://dev.twitch.tv/docs/authentication#user-access-tokens)\n- Requires OAuth Scope: `user:read:moderated_channels`",
+        "scopes": [
+            "user:read:moderated_channels"
+        ],
+        "queryRestraints": {
+            "user_id": "user_id"
+        }
+    },
+    "Get Moderators": {
+        "authText": "Requires a [user access token](https://dev.twitch.tv/docs/authentication#user-access-tokens) that includes the *moderation:read* scope. If your app also adds and removes moderators, you can use the *channel:manage:moderators* scope instead.",
+        "scopes": [
+            "moderation:read",
+            "channel:manage:moderators"
+        ],
+        "queryRestraints": {}
+    },
+    "Add Channel Moderator": {
+        "authText": "Requires a [user access token](https://dev.twitch.tv/docs/authentication#user-access-tokens) that includes the *channel:manage:moderators* scope.",
+        "scopes": [
+            "channel:manage:moderators"
+        ],
+        "queryRestraints": {}
+    },
+    "Remove Channel Moderator": {
+        "authText": "Requires a [user access token](https://dev.twitch.tv/docs/authentication#user-access-tokens) that includes the *channel:manage:moderators* scope.",
+        "scopes": [
+            "channel:manage:moderators"
+        ],
+        "queryRestraints": {}
+    },
+    "Get VIPs": {
+        "authText": "Requires a [user access token](https://dev.twitch.tv/docs/authentication#user-access-tokens) that includes the *channel:read:vips* scope. If your app also adds and removes VIP status, you can use the *channel:manage:vips* scope instead.",
+        "scopes": [
+            "channel:read:vips",
+            "channel:manage:vips"
+        ],
+        "queryRestraints": {}
+    },
+    "Add Channel VIP": {
+        "authText": "Requires a [user access token](https://dev.twitch.tv/docs/authentication#user-access-tokens) that includes the *channel:manage:vips* scope.",
+        "scopes": [
+            "channel:manage:vips"
+        ],
+        "queryRestraints": {}
+    },
+    "Remove Channel VIP": {
+        "authText": "Requires a [user access token](https://dev.twitch.tv/docs/authentication#user-access-tokens) that includes the *channel:manage:vips* scope.",
+        "scopes": [
+            "channel:manage:vips"
+        ],
+        "queryRestraints": {}
+    },
+    "Update Shield Mode Status": {
+        "authText": "Requires a [user access token](https://dev.twitch.tv/docs/authentication#user-access-tokens) that includes the *moderator:manage:shield_mode* scope.",
+        "scopes": [
+            "moderator:manage:shield_mode"
+        ],
+        "queryRestraints": {}
+    },
+    "Get Shield Mode Status": {
+        "authText": "Requires a [user access token](https://dev.twitch.tv/docs/authentication#user-access-tokens) that includes the *moderator:read:shield_mode* or *moderator:manage:shield_mode* scope.",
+        "scopes": [
+            "moderator:read:shield_mode",
+            "moderator:manage:shield_mode"
+        ],
+        "queryRestraints": {}
+    },
+    "Warn Chat User": {
+        "authText": "Requires a user access token that includes the *moderator:manage:warnings* scope. Query parameter `moderator_id` must match the `user_id` in the [user access token](https://dev.twitch.tv/docs/authentication/#user-access-tokens).",
+        "scopes": [
+            "moderator:manage:warnings"
+        ],
+        "queryRestraints": {
+            "moderator_id": "user_id"
+        }
+    },
+    "Add Suspicious Status to Chat User": {
+        "authText": "Requires an [app access token](https://dev.twitch.tv/docs/authentication#app-access-tokens) or [user access token](https://dev.twitch.tv/docs/authentication#user-access-tokens) that includes the *moderator:manage:suspicious_users* scope.",
+        "scopes": [
+            "moderator:manage:suspicious_users"
+        ],
+        "queryRestraints": {}
+    },
+    "Remove Suspicious Status From Chat User": {
+        "authText": "Requires an [app access token](https://dev.twitch.tv/docs/authentication#app-access-tokens) or [user access token](https://dev.twitch.tv/docs/authentication#user-access-tokens) that includes the *moderator:manage:suspicious_users* scope.",
+        "scopes": [
+            "moderator:manage:suspicious_users"
+        ],
+        "queryRestraints": {}
+    },
+    "Get Polls": {
+        "authText": "Requires a [user access token](https://dev.twitch.tv/docs/authentication#user-access-tokens) that includes the *channel:read:polls* or *channel:manage:polls* scope.",
+        "scopes": [
+            "channel:read:polls",
+            "channel:manage:polls"
+        ],
+        "queryRestraints": {}
+    },
+    "Create Poll": {
+        "authText": "Requires a [user access token](https://dev.twitch.tv/docs/authentication#user-access-tokens) that includes the *channel:manage:polls* scope.",
+        "scopes": [
+            "channel:manage:polls"
+        ],
+        "queryRestraints": {}
+    },
+    "End Poll": {
+        "authText": "Requires a [user access token](https://dev.twitch.tv/docs/authentication#user-access-tokens) that includes the *channel:manage:polls* scope.",
+        "scopes": [
+            "channel:manage:polls"
+        ],
+        "queryRestraints": {}
+    },
+    "Get Predictions": {
+        "authText": "Requires a [user access token](https://dev.twitch.tv/docs/authentication#user-access-tokens) that includes the *channel:read:predictions* or *channel:manage:predictions* scope.",
+        "scopes": [
+            "channel:read:predictions",
+            "channel:manage:predictions"
+        ],
+        "queryRestraints": {}
+    },
+    "Create Prediction": {
+        "authText": "Requires a [user access token](https://dev.twitch.tv/docs/authentication#user-access-tokens) that includes the *channel:manage:predictions* scope.",
+        "scopes": [
+            "channel:manage:predictions"
+        ],
+        "queryRestraints": {}
+    },
+    "End Prediction": {
+        "authText": "Requires a [user access token](https://dev.twitch.tv/docs/authentication#user-access-tokens) that includes the *channel:manage:predictions* scope.",
+        "scopes": [
+            "channel:manage:predictions"
+        ],
+        "queryRestraints": {}
+    },
+    "Start a raid": {
+        "authText": "Requires a [user access token](https://dev.twitch.tv/docs/authentication#user-access-tokens) that includes the *channel:manage:raids* scope.",
+        "scopes": [
+            "channel:manage:raids"
+        ],
+        "queryRestraints": {}
+    },
+    "Cancel a raid": {
+        "authText": "Requires a [user access token](https://dev.twitch.tv/docs/authentication#user-access-tokens) that includes the *channel:manage:raids* scope.",
+        "scopes": [
+            "channel:manage:raids"
+        ],
+        "queryRestraints": {}
+    },
+    "Get Channel Stream Schedule": {
+        "authText": "Requires an [app access token](https://dev.twitch.tv/docs/authentication#app-access-tokens) or [user access token](https://dev.twitch.tv/docs/authentication#user-access-tokens).",
+        "scopes": [],
+        "queryRestraints": {}
+    },
+    "Get Channel iCalendar": {
+        "authText": "The Client-Id and Authorization headers are not required.",
+        "scopes": [],
+        "queryRestraints": {}
+    },
+    "Update Channel Stream Schedule": {
+        "authText": "Requires a [user access token](https://dev.twitch.tv/docs/authentication#user-access-tokens) that includes the *channel:manage:schedule* scope.",
+        "scopes": [
+            "channel:manage:schedule"
+        ],
+        "queryRestraints": {}
+    },
+    "Create Channel Stream Schedule Segment": {
+        "authText": "Requires a [user access token](https://dev.twitch.tv/docs/authentication#user-access-tokens) that includes the *channel:manage:schedule* scope.",
+        "scopes": [
+            "channel:manage:schedule"
+        ],
+        "queryRestraints": {}
+    },
+    "Update Channel Stream Schedule Segment": {
+        "authText": "Requires a [user access token](https://dev.twitch.tv/docs/authentication#user-access-tokens) that includes the *channel:manage:schedule* scope.",
+        "scopes": [
+            "channel:manage:schedule"
+        ],
+        "queryRestraints": {}
+    },
+    "Delete Channel Stream Schedule Segment": {
+        "authText": "Requires a [user access token](https://dev.twitch.tv/docs/authentication#user-access-tokens) that includes the *channel:manage:schedule* scope.",
+        "scopes": [
+            "channel:manage:schedule"
+        ],
+        "queryRestraints": {}
+    },
+    "Search Categories": {
+        "authText": "Requires an [app access token](https://dev.twitch.tv/docs/authentication#app-access-tokens) or [user access token](https://dev.twitch.tv/docs/authentication#user-access-tokens).",
+        "scopes": [],
+        "queryRestraints": {}
+    },
+    "Search Channels": {
+        "authText": "Requires an [app access token](https://dev.twitch.tv/docs/authentication#app-access-tokens) or [user access token](https://dev.twitch.tv/docs/authentication#user-access-tokens).",
+        "scopes": [],
+        "queryRestraints": {}
+    },
+    "Get Stream Key": {
+        "authText": "Requires a [user access token](https://dev.twitch.tv/docs/authentication#user-access-tokens) that includes the *channel:read:stream_key* scope.",
+        "scopes": [
+            "channel:read:stream_key"
+        ],
+        "queryRestraints": {}
+    },
+    "Get Streams": {
+        "authText": "Requires an [app access token](https://dev.twitch.tv/docs/authentication#app-access-tokens) or [user access token](https://dev.twitch.tv/docs/authentication#user-access-tokens).",
+        "scopes": [],
+        "queryRestraints": {}
+    },
+    "Get Followed Streams": {
+        "authText": "Requires a [user access token](https://dev.twitch.tv/docs/authentication#user-access-tokens) that includes the *user:read:follows* scope.",
+        "scopes": [
+            "user:read:follows"
+        ],
+        "queryRestraints": {}
+    },
+    "Create Stream Marker": {
+        "authText": "Requires a [user access token](https://dev.twitch.tv/docs/authentication#user-access-tokens) that includes the *channel:manage:broadcast* scope.",
+        "scopes": [
+            "channel:manage:broadcast"
+        ],
+        "queryRestraints": {}
+    },
+    "Get Stream Markers": {
+        "authText": "Requires a [user access token](https://dev.twitch.tv/docs/authentication#user-access-tokens) that includes the *user:read:broadcast* or *channel:manage:broadcast* scope.",
+        "scopes": [
+            "user:read:broadcast",
+            "channel:manage:broadcast"
+        ],
+        "queryRestraints": {}
+    },
+    "Get Broadcaster Subscriptions": {
+        "authText": "Requires a [user access token](https://dev.twitch.tv/docs/authentication#user-access-tokens) that includes the *channel:read:subscriptions* scope.",
+        "scopes": [
+            "channel:read:subscriptions"
+        ],
+        "queryRestraints": {}
+    },
+    "Check User Subscription": {
+        "authText": "Requires a [user access token](https://dev.twitch.tv/docs/authentication#user-access-tokens) that includes the *user:read:subscriptions* scope.",
+        "scopes": [
+            "user:read:subscription"
+        ],
+        "queryRestraints": {}
+    },
+    "Get All Stream Tags": {
+        "authText": "Requires an [app access token](https://dev.twitch.tv/docs/authentication#app-access-tokens) or [user access token](https://dev.twitch.tv/docs/authentication#user-access-tokens).",
+        "scopes": [],
+        "queryRestraints": {}
+    },
+    "Get Stream Tags": {
+        "authText": "Requires an [app access token](https://dev.twitch.tv/docs/authentication#app-access-tokens) or [user access token](https://dev.twitch.tv/docs/authentication#user-access-tokens).",
+        "scopes": [],
+        "queryRestraints": {}
+    },
+    "Get Channel Teams": {
+        "authText": "Requires an [app access token](https://dev.twitch.tv/docs/authentication#app-access-tokens) or [user access token](https://dev.twitch.tv/docs/authentication#user-access-tokens).",
+        "scopes": [],
+        "queryRestraints": {}
+    },
+    "Get Teams": {
+        "authText": "Requires an [app access token](https://dev.twitch.tv/docs/authentication#app-access-tokens) or [user access token](https://dev.twitch.tv/docs/authentication#user-access-tokens).",
+        "scopes": [],
+        "queryRestraints": {}
+    },
+    "Get Users": {
+        "authText": "Requires an [app access token](https://dev.twitch.tv/docs/authentication#app-access-tokens) or [user access token](https://dev.twitch.tv/docs/authentication#user-access-tokens).",
+        "scopes": [],
+        "queryRestraints": {}
+    },
+    "Update User": {
+        "authText": "Requires a [user access token](https://dev.twitch.tv/docs/authentication#user-access-tokens) that includes the *user:edit* scope.",
+        "scopes": [
+            "user:edit"
+        ],
+        "queryRestraints": {}
+    },
+    "Get Authorization By User": {
+        "authText": "Requires an [app access token](https://dev.twitch.tv/docs/authentication#app-access-tokens).",
+        "scopes": [],
+        "queryRestraints": {}
+    },
+    "Get User Block List": {
+        "authText": "Requires a [user access token](https://dev.twitch.tv/docs/authentication#user-access-tokens) that includes the *user:read:blocked_users* scope.",
+        "scopes": [
+            "user:read:blocked_users"
+        ],
+        "queryRestraints": {}
+    },
+    "Block User": {
+        "authText": "Requires a [user access token](https://dev.twitch.tv/docs/authentication#user-access-tokens) that includes the *user:manage:blocked_users* scope.",
+        "scopes": [
+            "user:manage:blocked_users"
+        ],
+        "queryRestraints": {}
+    },
+    "Unblock User": {
+        "authText": "Requires a [user access token](https://dev.twitch.tv/docs/authentication#user-access-tokens) that includes the *user:manage:blocked_users* scope.",
+        "scopes": [
+            "user:manage:blocked_users"
+        ],
+        "queryRestraints": {}
+    },
+    "Get User Extensions": {
+        "authText": "Requires a [user access token](https://dev.twitch.tv/docs/authentication#user-access-tokens) that includes the *user:read:broadcast* or *user:edit:broadcast* scope. To include inactive extensions, you must include the *user:edit:broadcast* scope.",
+        "scopes": [
+            "user:read:broadcast",
+            "user:edit:broadcast"
+        ],
+        "extra": "To include inactive extensions, you must include the *user:edit:broadcast* scope",
+        "queryRestraints": {}
+    },
+    "Get User Active Extensions": {
+        "authText": "Requires an [app access token](https://dev.twitch.tv/docs/authentication#app-access-tokens) or [user access token](https://dev.twitch.tv/docs/authentication#user-access-tokens).",
+        "scopes": [],
+        "queryRestraints": {}
+    },
+    "Update User Extensions": {
+        "authText": "Requires a [user access token](https://dev.twitch.tv/docs/authentication#user-access-tokens) that includes the *user:edit:broadcast* scope.",
+        "scopes": [
+            "user:edit:broadcast"
+        ],
+        "queryRestraints": {}
+    },
+    "Get Videos": {
+        "authText": "Requires an [app access token](https://dev.twitch.tv/docs/authentication#app-access-tokens) or [user access token](https://dev.twitch.tv/docs/authentication#user-access-tokens).",
+        "scopes": [],
+        "queryRestraints": {}
+    },
+    "Delete Videos": {
+        "authText": "Requires a [user access token](https://dev.twitch.tv/docs/authentication#user-access-tokens) that includes the *channel:manage:videos* scope.",
+        "scopes": [
+            "channel:manage:videos"
+        ],
+        "queryRestraints": {}
+    },
+    "Send Whisper": {
+        "authText": "Requires a [user access token](https://dev.twitch.tv/docs/authentication#user-access-tokens) that includes the *user:manage:whispers* scope.",
+        "scopes": [
+            "user:manage:whispers"
+        ],
+        "queryRestraints": {}
+    },
+    "Get Extension Configuration Segment": {
+        "authText": "Requires a signed JSON Web Token (JWT) created by an Extension Backend Service (EBS). For signing requirements, see [Signing the JWT](https://dev.twitch.tv/docs/extensions/building/#signing-the-jwt). The signed JWT must include the `role`, `user_id`, and `exp` fields (see [JWT Schema](https://dev.twitch.tv/docs/extensions/reference/#jwt-schema)). The `role` field must be set to external.",
+        "scopes": [],
+        "extra": "The signed JWT must include the `role`, `user_id`, and `exp` fields (see [JWT Schema](https://dev.twitch.tv/docs/extensions/reference/#jwt-schema)). The `role` field must be set to external.",
+        "restraints": {}
+    },
+    "Set Extension Configuration Segment": {
+        "authText": "Requires a signed JSON Web Token (JWT) created by an Extension Backend Service (EBS). For signing requirements, see [Signing the JWT](https://dev.twitch.tv/docs/extensions/building/#signing-the-jwt). The signed JWT must include the `role`, `user_id`, and `exp` fields (see [JWT Schema](https://dev.twitch.tv/docs/extensions/reference/#jwt-schema)). The `role` field must be set to external.",
+        "scopes": [],
+        "extra": "The signed JWT must include the `role`, `user_id`, and `exp` fields (see [JWT Schema](https://dev.twitch.tv/docs/extensions/reference/#jwt-schema)). The `role` field must be set to external.",
+        "restraints": {}
+    },
+    "Set Extension Required Configuration": {
+        "authText": "Requires a signed JSON Web Token (JWT) created by an EBS. For signing requirements, see [Signing the JWT](https://dev.twitch.tv/docs/extensions/building/#signing-the-jwt). The signed JWT must include the `role`, `user_id`, and `exp` fields (see [JWT Schema](https://dev.twitch.tv/docs/extensions/reference/#jwt-schema)). Set the `role` field to external and the `user_id` field to the ID of the user that owns the extension.",
+        "scopes": [],
+        "extra": "The signed JWT must include the `role`, `user_id`, and `exp` fields (see [JWT Schema](https://dev.twitch.tv/docs/extensions/reference/#jwt-schema)). The `role` field must be set to external.",
+        "restraints": {}
+    },
+    "Send Extension PubSub Message": {
+        "authText": "Requires a signed JSON Web Token (JWT) created by an Extension Backend Service (EBS). For signing requirements, see [Signing the JWT](https://dev.twitch.tv/docs/extensions/building/#signing-the-jwt). The signed JWT must include the `role`, `user_id`, and `exp` fields (see [JWT Schema](https://dev.twitch.tv/docs/extensions/reference/#jwt-schema)) along with the `channel_id` and `pubsub_perms` fields. The `role` field must be set to external.",
+        "scopes": [],
+        "extra": "The signed JWT must include the `role`, `user_id`, and `exp` fields (see [JWT Schema](https://dev.twitch.tv/docs/extensions/reference/#jwt-schema)) along with the `channel_id` and `pubsub_perms` fields. The `role` field must be set to external.",
+        "restraints": {}
+    },
+    "Get Extension Secrets": {
+        "authText": "Requires a signed JSON Web Token (JWT) created by an Extension Backend Service (EBS). For signing requirements, see [Signing the JWT](https://dev.twitch.tv/docs/extensions/building/#signing-the-jwt). The signed JWT must include the `role`, `user_id`, and `exp` fields (see [JWT Schema](https://dev.twitch.tv/docs/extensions/reference/#jwt-schema)). The `role` field must be set to external.",
+        "scopes": [],
+        "extra": "The signed JWT must include the `role`, `user_id`, and `exp` fields (see [JWT Schema](https://dev.twitch.tv/docs/extensions/reference/#jwt-schema)). The `role` field must be set to external.",
+        "restraints": {}
+    },
+    "Create Extension Secret": {
+        "authText": "Requires a signed JSON Web Token (JWT) created by an Extension Backend Service (EBS). For signing requirements, see [Signing the JWT](https://dev.twitch.tv/docs/extensions/building/#signing-the-jwt). The signed JWT must include the `role`, `user_id`, and `exp` fields (see [JWT Schema](https://dev.twitch.tv/docs/extensions/reference/#jwt-schema)). The `role` field must be set to external.",
+        "scopes": [],
+        "extra": "The signed JWT must include the `role`, `user_id`, and `exp` fields (see [JWT Schema](https://dev.twitch.tv/docs/extensions/reference/#jwt-schema)). The `role` field must be set to external.",
+        "restraints": {}
+    },
+    "Send Extension Chat Message": {
+        "authText": "Requires a signed JSON Web Token (JWT) created by an Extension Backend Service (EBS). For signing requirements, see [Signing the JWT](https://dev.twitch.tv/docs/extensions/building/#signing-the-jwt). The signed JWT must include the `role` and `user_id` fields (see [JWT Schema](https://dev.twitch.tv/docs/extensions/reference/#jwt-schema)). The `role` field must be set to external.",
+        "scopes": [],
+        "extra": "The signed JWT must include the `role` and `user_id` fields (see [JWT Schema](https://dev.twitch.tv/docs/extensions/reference/#jwt-schema)). The `role` field must be set to external.",
+        "restraints": {}
+    },
+    "Get Extensions": {
+        "authText": "Requires a signed JSON Web Token (JWT) created by an Extension Backend Service (EBS). For signing requirements, see [Signing the JWT](https://dev.twitch.tv/docs/extensions/building/#signing-the-jwt). The signed JWT must include the `role` field (see [JWT Schema](https://dev.twitch.tv/docs/extensions/reference/#jwt-schema)), and the `role` field must be set to external.",
+        "scopes": [],
+        "extra": "The signed JWT must include the `role` and `user_id` fields (see [JWT Schema](https://dev.twitch.tv/docs/extensions/reference/#jwt-schema)). The `role` field must be set to external.",
+        "restraints": {}
+    }
+}
