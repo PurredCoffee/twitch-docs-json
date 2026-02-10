@@ -1,4 +1,6 @@
 //@ts-check
+process.chdir(__dirname);
+
 /**
  * @import {htmlObj} from './parseHTML'
  */

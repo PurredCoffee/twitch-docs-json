@@ -253,8 +253,8 @@
     },
     "Get Clips": {
         "authText": "Requires an [app access token](https://dev.twitch.tv/docs/authentication#app-access-tokens) or [user access token](https://dev.twitch.tv/docs/authentication#user-access-tokens).",
-        "scopes": "TODO",
-        "queryRestraints": "TODO"
+        "scopes": [],
+        "queryRestraints": {}
     },
     "Get Clips Download": {
         "authText": "Requires an [app access token](https://dev.twitch.tv/docs/authentication#app-access-tokens) or [user access token](https://dev.twitch.tv/docs/authentication#user-access-tokens) that includes the `editor:manage:clips` or `channel:manage:clips` scope.",

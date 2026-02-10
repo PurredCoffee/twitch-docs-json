@@ -1,4 +1,5 @@
 const fs = require('fs');
+process.chdir(__dirname);
 
 if(!fs.existsSync('docs.html')) {
     require('./downloadHTML').then(() => {

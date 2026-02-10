@@ -1,4 +1,5 @@
 //@ts-check
+process.chdir(__dirname);
 
 const fs = require('fs');
 const { inspect } = require('util');

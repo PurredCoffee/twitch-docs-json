@@ -36,7 +36,7 @@
                 "404": "- The ID in `broadcaster_id` was not found.",
                 "429": "- The broadcaster may not run another commercial until the cooldown period expires. The `retry_after` field in the previous start commercial response specifies the amount of time the broadcaster must wait between running commercials."
             },
-            "auth": "Requires a [user access token](https://dev.twitch.tv/docs/authentication#user-access-tokens) that includes the *channel:edit:commercial* scope.",
+            "auth": "Requires a [user access token](https://dev.twitch.tv/docs/authentication#user-access-tokens)) with any of the following scopes: `channel:edit:commercial`",
             "token": [
                 "user"
             ],
@@ -94,7 +94,7 @@
                 "400": "The broadcaster ID is not valid.",
                 "500": ""
             },
-            "auth": "Requires a [user access token](https://dev.twitch.tv/docs/authentication#user-access-tokens) that includes the *channel:read:ads* scope. The `user_id` in the user access token must match the `broadcaster_id`.",
+            "auth": "Requires a [user access token](https://dev.twitch.tv/docs/authentication#user-access-tokens)) with any of the following scopes: `channel:read:ads`",
             "token": [
                 "user"
             ],
@@ -143,7 +143,7 @@
                 "429": "Channel has no snoozes left.",
                 "500": ""
             },
-            "auth": "Requires a [user access token](https://dev.twitch.tv/docs/authentication#user-access-tokens) that includes the *channel:manage:ads* scope. The `user_id` in the user access token must match the `broadcaster_id`.",
+            "auth": "Requires a [user access token](https://dev.twitch.tv/docs/authentication#user-access-tokens)) with any of the following scopes: `channel:manage:ads`",
             "token": [
                 "user"
             ],
@@ -239,7 +239,7 @@
                 "401": "- The Authorization header is required and must contain a user access token.\n- The user access token must include the analytics:read:extensions scope.\n- The OAuth token is not valid.\n- The Client-Id header is required.\n- The client ID specified in the Client-Id header does not match the client ID specified in the OAuth token.",
                 "404": "- The extension specified in the extension_id query parameter was not found."
             },
-            "auth": "Requires a [user access token](https://dev.twitch.tv/docs/authentication#user-access-tokens) that includes the *analytics:read:extensions* scope.",
+            "auth": "Requires a [user access token](https://dev.twitch.tv/docs/authentication#user-access-tokens)) with any of the following scopes: `analytics:read:extensions`",
             "token": [
                 "user"
             ],
@@ -331,7 +331,7 @@
                 "401": "- The Authorization header is required and must contain a user access token.\n- The user access token must include the analytics:read:games scope.\n- The OAuth token is not valid.\n- The Client-Id header is required.\n- The client ID specified in the Client-Id header does not match the client ID specified in the OAuth token.",
                 "404": "- The game specified in the game_id query parameter was not found."
             },
-            "auth": "Requires a [user access token](https://dev.twitch.tv/docs/authentication#user-access-tokens) that includes the *analytics:read:games* scope.",
+            "auth": "Requires a [user access token](https://dev.twitch.tv/docs/authentication#user-access-tokens)) with any of the following scopes: `analytics:read:games`",
             "token": [
                 "user"
             ],
@@ -419,7 +419,7 @@
                 "401": "- The Authorization header is required and must specify a user access token.\n- The user access token must include the the bits:read scope.\n- The access token is not valid.\n- The ID in the Client-Id header must match the client ID in the access token.",
                 "403": ""
             },
-            "auth": "Requires a [user access token](https://dev.twitch.tv/docs/authentication#user-access-tokens) that includes the *bits:read* scope.",
+            "auth": "Requires a [user access token](https://dev.twitch.tv/docs/authentication#user-access-tokens)) with any of the following scopes: `bits:read`",
             "token": [
                 "user"
             ],
@@ -502,7 +502,7 @@
             },
             "method": "GET",
             "url": "https://api.twitch.tv/helix/bits/cheermotes",
-            "auth": "Requires an [app access token](https://dev.twitch.tv/docs/authentication#app-access-tokens) or [user access token](https://dev.twitch.tv/docs/authentication#user-access-tokens).",
+            "auth": "Requires an [app access token](https://dev.twitch.tv/docs/authentication#app-access-tokens) or a [user access token](https://dev.twitch.tv/docs/authentication#user-access-tokens))",
             "token": [
                 "app",
                 "user"
@@ -633,7 +633,7 @@
                 "401": "- The Authorization header is required and must specify an app access token.\n- The access token is not valid.\n- The ID in the extension_id query parameter must match the client ID in the access token.\n- The ID in the Client-Id header must match the client ID in the access token.",
                 "404": "- One or more of the transaction IDs specified using the id query parameter were not found."
             },
-            "auth": "Requires an [app access token](https://dev.twitch.tv/docs/authentication#app-access-tokens).",
+            "auth": "Requires an [app access token](https://dev.twitch.tv/docs/authentication#app-access-tokens)",
             "token": [
                 "app"
             ],
@@ -713,7 +713,7 @@
                 "429": "- The application exceeded the number of calls it may make per minute. For details, see [Rate Limits](https://dev.twitch.tv/docs/api/guide#twitch-rate-limits).",
                 "500": ""
             },
-            "auth": "Requires an [app access token](https://dev.twitch.tv/docs/authentication#app-access-tokens) or [user access token](https://dev.twitch.tv/docs/authentication#user-access-tokens).",
+            "auth": "Requires an [app access token](https://dev.twitch.tv/docs/authentication#app-access-tokens) or a [user access token](https://dev.twitch.tv/docs/authentication#user-access-tokens))",
             "token": [
                 "app",
                 "user"
@@ -790,7 +790,7 @@
                 "409": "User set the Branded Content flag too frequently",
                 "500": ""
             },
-            "auth": "Requires a [user access token](https://dev.twitch.tv/docs/authentication#user-access-tokens) that includes the *channel:manage:broadcast* scope.",
+            "auth": "Requires a [user access token](https://dev.twitch.tv/docs/authentication#user-access-tokens)) with any of the following scopes: `channel:manage:broadcast`",
             "token": [
                 "user"
             ],
@@ -837,7 +837,7 @@
                 "400": "- The broadcaster_id query parameter is required.",
                 "401": "- The ID in the broadcaster_id query parameter must match the user ID found in the OAuth token.\n- The Authorization header is required and must specify a user access token.\n- The OAuth token must include the channel:read:editors scope.\n- The OAuth token is not valid.\n- The ID in the Client-Id header must match the Client ID in the OAuth token."
             },
-            "auth": "Requires a [user access token](https://dev.twitch.tv/docs/authentication#user-access-tokens) that includes the *channel:read:editors* scope.",
+            "auth": "Requires a [user access token](https://dev.twitch.tv/docs/authentication#user-access-tokens)) with any of the following scopes: `channel:read:editors`",
             "token": [
                 "user"
             ],
@@ -914,7 +914,7 @@
                 "400": "Possible reasons:- The user_id query parameter is required.\n- The broadcaster_id query parameter is not valid.\n- The user_id query parameter is required.",
                 "401": "Possible reasons:- The ID in the user_id query parameter must match the user ID in the access token.\n- The Authorization header is required and must contain a user access token.\n- The user access token is missing the user:read:follows scope.\n- The OAuth token is not valid.\n- The client ID specified in the Client-Id header does not match the client ID specified in the OAuth token."
             },
-            "auth": "Requires a [user access token](https://dev.twitch.tv/docs/authentication#user-access-tokens) that includes the *user:read:follows* scope.",
+            "auth": "Requires a [user access token](https://dev.twitch.tv/docs/authentication#user-access-tokens)) with any of the following scopes: `user:read:follows`",
             "token": [
                 "user"
             ],
@@ -933,7 +933,7 @@
             "reqBody": {},
             "body": {},
             "codes": {},
-            "auth": "- Requires a [user access token](https://dev.twitch.tv/docs/authentication#user-access-tokens) that includes the *moderator:read:followers* scope.\n- The ID in the broadcaster_id query parameter must match the user ID in the access token or the user ID in the access token must be a moderator for the specified broadcaster.",
+            "auth": "Requires a [user access token](https://dev.twitch.tv/docs/authentication#user-access-tokens)) with any of the following scopes: `moderator:read:followers`\nINFO: The ID in the broadcaster_id query parameter must match the user ID in the access token or the user ID in the access token must be a moderator for the specified broadcaster.",
             "token": [
                 "user"
             ],
@@ -1089,7 +1089,7 @@
                 "403": "- The broadcaster is not a partner or affiliate.",
                 "500": ""
             },
-            "auth": "Requires a [user access token](https://dev.twitch.tv/docs/authentication#user-access-tokens) that includes the *channel:manage:redemptions* scope.",
+            "auth": "Requires a [user access token](https://dev.twitch.tv/docs/authentication#user-access-tokens)) with any of the following scopes: `channel:manage:redemptions`",
             "token": [
                 "user"
             ],
@@ -1126,7 +1126,7 @@
                 "404": "- The custom reward specified in the id query parameter was not found.",
                 "500": ""
             },
-            "auth": "Requires a [user access token](https://dev.twitch.tv/docs/authentication#user-access-tokens) that includes the *channel:manage:redemptions* scope.",
+            "auth": "Requires a [user access token](https://dev.twitch.tv/docs/authentication#user-access-tokens)) with any of the following scopes: `channel:manage:redemptions`",
             "token": [
                 "user"
             ],
@@ -1277,7 +1277,7 @@
                 "404": "- All of the custom rewards specified using the id query parameter were not found.",
                 "500": ""
             },
-            "auth": "Requires a [user access token](https://dev.twitch.tv/docs/authentication#user-access-tokens) that includes the *channel:read:redemptions* or *channel:manage:redemptions* scope.",
+            "auth": "Requires a [user access token](https://dev.twitch.tv/docs/authentication#user-access-tokens)) with any of the following scopes: `channel:read:redemptions`, `channel:manage:redemptions`",
             "token": [
                 "user"
             ],
@@ -1401,7 +1401,7 @@
                 "404": "- All of the redemptions specified using the id query parameter were not found.",
                 "500": ""
             },
-            "auth": "Requires a [user access token](https://dev.twitch.tv/docs/authentication#user-access-tokens) that includes the *channel:read:redemptions* or *channel:manage:redemptions* scope.",
+            "auth": "Requires a [user access token](https://dev.twitch.tv/docs/authentication#user-access-tokens)) with any of the following scopes: `channel:read:redemptions`, `channel:manage:redemptions`",
             "token": [
                 "user"
             ],
@@ -1563,7 +1563,7 @@
                 "404": "- The custom reward specified in the id query parameter was not found.",
                 "500": ""
             },
-            "auth": "Requires a [user access token](https://dev.twitch.tv/docs/api/authentication#user-access-tokens) that includes the *channel:manage:redemptions* scope.",
+            "auth": "Requires a [user access token](https://dev.twitch.tv/docs/authentication#user-access-tokens)) with any of the following scopes: `channel:manage:redemptions`",
             "token": [
                 "user"
             ],
@@ -1667,7 +1667,7 @@
                 "404": "- The custom reward specified in the reward_id query parameter was not found.\n- The redemptions specified using the id query parameter were not found or their statuses weren't marked as UNFULFILLED.",
                 "500": ""
             },
-            "auth": "Requires a [user access token](https://dev.twitch.tv/docs/authentication#user-access-tokens) that includes the *channel:manage:redemptions* scope.",
+            "auth": "Requires a [user access token](https://dev.twitch.tv/docs/authentication#user-access-tokens)) with any of the following scopes: `channel:manage:redemptions`",
             "token": [
                 "user"
             ],
@@ -1756,7 +1756,7 @@
                 "401": "- The ID in the broadcaster_id query parameter must match the user ID in the access token.\n- The Authorization header is required and must contain a user access token.\n- The user access token must include the channel:read:charity scope.\n- The access token is not valid.\n- The client ID specified in the Client-Id header must match the client ID specified in the access token.",
                 "403": "- The broadcaster is not a partner or affiliate."
             },
-            "auth": "Requires a [user access token](https://dev.twitch.tv/docs/authentication#user-access-tokens) that includes the *channel:read:charity* scope.",
+            "auth": "Requires a [user access token](https://dev.twitch.tv/docs/authentication#user-access-tokens)) with any of the following scopes: `channel:read:charity`",
             "token": [
                 "user"
             ],
@@ -1845,7 +1845,7 @@
                 "401": "- The ID in the broadcaster_id query parameter must match the user ID in the access token.\n- The Authorization header is required and must contain a user access token.\n- The user access token must include the channel:read:charity scope.\n- The access token is not valid.\n- The client ID specified in the Client-Id header must match the client ID specified in the access token.",
                 "403": "- The broadcaster is not a partner or affiliate."
             },
-            "auth": "Requires a user access token that includes the *channel:read:charity* scope.",
+            "auth": "Requires a [user access token](https://dev.twitch.tv/docs/authentication#user-access-tokens)) with any of the following scopes: `channel:read:charity`",
             "token": [
                 "user"
             ],
@@ -1921,7 +1921,7 @@
                 "401": "- The ID in the moderator_id query parameter must match the user ID in the access token.\n- The Authorization header is required and must contain a user access token.\n- The user access token must include the moderator:read:chatters scope.\n- The access token is not valid.\n- The client ID specified in the Client-Id header does not match the client ID specified in the access token.",
                 "403": "- The user in the moderator_id query parameter is not one of the broadcaster's moderators."
             },
-            "auth": "Requires a [user access token](https://dev.twitch.tv/docs/authentication#user-access-tokens) that includes the *moderator:read:chatters* scope.",
+            "auth": "Requires a [user access token](https://dev.twitch.tv/docs/authentication#user-access-tokens)) with any of the following scopes: `moderator:read:chatters`",
             "token": [
                 "user"
             ],
@@ -2007,7 +2007,7 @@
                 "400": "- The broadcaster_id query parameter is required.",
                 "401": "- The Authorization header is required and must specify a valid app access token or user access token.\n- The OAuth token is not valid.\n- The ID in the Client-Id header must match the Client ID in the OAuth token."
             },
-            "auth": "Requires an [app access token](https://dev.twitch.tv/docs/authentication#app-access-tokens) or [user access token](https://dev.twitch.tv/docs/authentication#user-access-tokens).",
+            "auth": "Requires an [app access token](https://dev.twitch.tv/docs/authentication#app-access-tokens) or a [user access token](https://dev.twitch.tv/docs/authentication#user-access-tokens))",
             "token": [
                 "app",
                 "user"
@@ -2025,7 +2025,7 @@
             "reqBody": {},
             "body": {},
             "codes": {},
-            "auth": "Requires an [app access token](https://dev.twitch.tv/docs/authentication#app-access-tokens) or [user access token](https://dev.twitch.tv/docs/authentication#user-access-tokens).",
+            "auth": "Requires an [app access token](https://dev.twitch.tv/docs/authentication#app-access-tokens) or a [user access token](https://dev.twitch.tv/docs/authentication#user-access-tokens))",
             "token": [
                 "app",
                 "user"
@@ -2111,7 +2111,7 @@
                 "400": "- The emote_set_id query parameter is required.\n- The number of emote_set_id query parameters exceeds the maximum allowed.",
                 "401": "- The Authorization header is required and must specify a valid app access token or user access token.\n- The OAuth token is not valid.\n- The ID in the Client-Id header must match the Client ID in the OAuth token."
             },
-            "auth": "Requires an [app access token](https://dev.twitch.tv/docs/authentication#app-access-tokens) or [user access token](https://dev.twitch.tv/docs/authentication#user-access-tokens).",
+            "auth": "Requires an [app access token](https://dev.twitch.tv/docs/authentication#app-access-tokens) or a [user access token](https://dev.twitch.tv/docs/authentication#user-access-tokens))",
             "token": [
                 "app",
                 "user"
@@ -2129,7 +2129,7 @@
             "reqBody": {},
             "body": {},
             "codes": {},
-            "auth": "Requires an [app access token](https://dev.twitch.tv/docs/authentication#app-access-tokens) or [user access token](https://dev.twitch.tv/docs/authentication#user-access-tokens).",
+            "auth": "Requires an [app access token](https://dev.twitch.tv/docs/authentication#app-access-tokens) or a [user access token](https://dev.twitch.tv/docs/authentication#user-access-tokens))",
             "token": [
                 "app",
                 "user"
@@ -2147,7 +2147,7 @@
             "reqBody": {},
             "body": {},
             "codes": {},
-            "auth": "Requires an [app access token](https://dev.twitch.tv/docs/authentication#app-access-tokens) or [user access token](https://dev.twitch.tv/docs/authentication#user-access-tokens).",
+            "auth": "Requires an [app access token](https://dev.twitch.tv/docs/authentication#app-access-tokens) or a [user access token](https://dev.twitch.tv/docs/authentication#user-access-tokens))",
             "token": [
                 "app",
                 "user"
@@ -2230,7 +2230,7 @@
                 "400": "- The broadcaster_id query parameter is required.",
                 "401": "- The Authorization header is required and must specify a valid app access token or user access token.\n- The OAuth token is not valid.\n- The ID in the Client-Id header must match the Client ID in the OAuth token."
             },
-            "auth": "Requires an [app access token](https://dev.twitch.tv/docs/authentication#app-access-tokens) or [user access token](https://dev.twitch.tv/docs/authentication#user-access-tokens).",
+            "auth": "Requires an [app access token](https://dev.twitch.tv/docs/authentication#app-access-tokens) or a [user access token](https://dev.twitch.tv/docs/authentication#user-access-tokens))",
             "token": [
                 "app",
                 "user"
@@ -2288,7 +2288,7 @@
                 "401": "- The OAuth token is not valid.\n- The Authorization header is required and must contain a user access token.",
                 "500": "Internal Server Error."
             },
-            "auth": "Requires an [app access token](https://dev.twitch.tv/docs/cli/token-command/#app-access-token) or [user access token](https://dev.twitch.tv/docs/authentication/#user-access-tokens).",
+            "auth": "Requires an [app access token](https://dev.twitch.tv/docs/authentication#app-access-tokens) or a [user access token](https://dev.twitch.tv/docs/authentication#user-access-tokens))",
             "token": [
                 "app",
                 "user"
@@ -2375,7 +2375,7 @@
                 "400": "- The user_id query parameter is required.\n- The ID in the user_id query parameter is not valid.",
                 "401": "- The ID in user_id must match the user ID in the user access token.\n- The Authorization header is required and must contain a user access token.\n- The user access token must include the user:read:emotes scope.\n- The access token is not valid.\n- The client ID specified in the Client-Id header does not match the client ID specified in the access token."
             },
-            "auth": "- Requires a user access token that includes the *user:read:emotes* scope.\n\n- Query parameter `user_id` must match the `user_id` in the user access token.",
+            "auth": "Requires a [user access token](https://dev.twitch.tv/docs/authentication#user-access-tokens)) with any of the following scopes: `user:read:emotes`",
             "token": [
                 "user"
             ],
@@ -2461,7 +2461,7 @@
                 "401": "- The ID in the moderator_id query parameter must match the user ID in the user access token.\n- The Authorization header is required and must contain a user access token.\n- The user access token must include the moderator:manage:chat_settings scope.\n- The access token is not valid.\n- The ID in the Client-Id header must match the client ID in the access token.",
                 "403": "- The user in the moderator_id query parameter must have moderator privileges in the broadcaster's channel."
             },
-            "auth": "Requires a [user access token](https://dev.twitch.tv/docs/authentication#user-access-tokens) that includes the *moderator:manage:chat_settings* scope.",
+            "auth": "Requires a [user access token](https://dev.twitch.tv/docs/authentication#user-access-tokens))",
             "token": [
                 "user"
             ],
@@ -2501,7 +2501,7 @@
             },
             "body": {},
             "codes": {},
-            "auth": "Requires a [user access token](https://dev.twitch.tv/docs/authentication#user-access-tokens) that includes the *moderator:manage:announcements* scope.",
+            "auth": "Requires a [user access token](https://dev.twitch.tv/docs/authentication#user-access-tokens))",
             "token": [
                 "user"
             ],
@@ -2535,7 +2535,7 @@
             "reqBody": {},
             "body": {},
             "codes": {},
-            "auth": "Requires a [user access token](https://dev.twitch.tv/docs/authentication#user-access-tokens) that includes the *moderator:manage:shoutouts* scope.",
+            "auth": "Requires a [user access token](https://dev.twitch.tv/docs/authentication#user-access-tokens))",
             "token": [
                 "user"
             ],
@@ -2604,7 +2604,7 @@
                 "403": "The sender is not permitted to send chat messages to the broadcaster’s chat room.",
                 "422": "The message is too large."
             },
-            "auth": "Requires an [app access token](https://dev.twitch.tv/docs/authentication#app-access-tokens) or [user access token](https://dev.twitch.tv/docs/authentication#user-access-tokens) that includes the `user:write:chat` scope. If app access token used, then additionally requires `user:bot` scope from chatting user, and either `channel:bot` scope from broadcaster or moderator status.",
+            "auth": "Requires an [app access token](https://dev.twitch.tv/docs/authentication#app-access-tokens) or a [user access token](https://dev.twitch.tv/docs/authentication#user-access-tokens)) with any of the following scopes: `user:write:chat` and any of the following scopes in the requested chat: `user:bot`, `channel:bot`",
             "token": [
                 "app",
                 "user"
@@ -2659,7 +2659,7 @@
                 "400": "- The ID in the user_id query parameter is not valid.",
                 "401": "- The Authorization header is required and must contain an app access token or user access token.\n- The OAuth token is not valid.\n- The client ID specified in the Client-Id header does not match the client ID specified in the OAuth token."
             },
-            "auth": "Requires an [app access token](https://dev.twitch.tv/docs/authentication#app-access-tokens) or [user access token](https://dev.twitch.tv/docs/authentication#user-access-tokens).",
+            "auth": "Requires an [app access token](https://dev.twitch.tv/docs/authentication#app-access-tokens) or a [user access token](https://dev.twitch.tv/docs/authentication#user-access-tokens))",
             "token": [
                 "app",
                 "user"
@@ -2688,7 +2688,7 @@
             "reqBody": {},
             "body": {},
             "codes": {},
-            "auth": "Requires a [user access token](https://dev.twitch.tv/docs/authentication#user-access-tokens) that includes the *user:manage:chat_color* scope.",
+            "auth": "Requires a [user access token](https://dev.twitch.tv/docs/authentication#user-access-tokens)) with any of the following scopes: `user:manage:chat_color`",
             "token": [
                 "user"
             ],
@@ -2745,7 +2745,7 @@
                 "403": "- The broadcaster has restricted the ability to capture clips to followers and/or subscribers only.\n- The specified broadcaster has not enabled clips on their channel.\n- The user is banned or timed out from the broadcaster’s channel.",
                 "404": "- The broadcaster in the broadcaster_id query parameter must be broadcasting live."
             },
-            "auth": "Requires a [user access token](https://dev.twitch.tv/docs/authentication#user-access-tokens) that includes the *clips:edit* scope.",
+            "auth": "Requires a [user access token](https://dev.twitch.tv/docs/authentication#user-access-tokens)) with any of the following scopes: `clips:edit`",
             "token": [
                 "user"
             ],
@@ -2814,7 +2814,7 @@
                 "403": "- The broadcaster has restricted the ability to capture clips to followers and/or subscribers only.\n- The specified broadcaster has not enabled clips on their channel.\n- The user defined by the editor_id is not authorized to create Clips.\n- The user is banned or timed out from the broadcaster's channel.",
                 "404": "- The broadcaster in the broadcaster_id query parameter must be broadcasting live.\n- The VOD is not found..\n- The broadcaster_id or the editor_id does not exist."
             },
-            "auth": "Requires an [app access token](https://dev.twitch.tv/docs/authentication#app-access-tokens) or [user access token](https://dev.twitch.tv/docs/authentication#user-access-tokens) that includes the *editor:manage:clips* or *channel:manage:clips* scope.",
+            "auth": "Requires an [app access token](https://dev.twitch.tv/docs/authentication#app-access-tokens) or a [user access token](https://dev.twitch.tv/docs/authentication#user-access-tokens)) with any of the following scopes: `editor:manage:clips`, `channel:manage:clips`",
             "token": [
                 "app",
                 "user"
@@ -2967,7 +2967,7 @@
                 "401": "- The Authorization header is required and must contain an app access token or user access token.\n- The OAuth token is not valid.\n- The client ID specified in the Client-Id header does not match the client ID specified in the OAuth token.",
                 "404": "- The ID in game_id was not found."
             },
-            "auth": "Requires an [app access token](https://dev.twitch.tv/docs/authentication#app-access-tokens) or [user access token](https://dev.twitch.tv/docs/authentication#user-access-tokens).",
+            "auth": "Requires an [app access token](https://dev.twitch.tv/docs/authentication#app-access-tokens) or a [user access token](https://dev.twitch.tv/docs/authentication#user-access-tokens))",
             "token": [
                 "app",
                 "user"
@@ -2975,8 +2975,8 @@
             "method": "GET",
             "url": "https://api.twitch.tv/helix/clips",
             "paramsInfo": "The id, game_id, and broadcaster_id query parameters are mutually exclusive.",
-            "scopes": "TODO",
-            "queryRestraints": "TODO"
+            "scopes": [],
+            "queryRestraints": {}
         },
         "Get Clips Download": {
             "category": "Clips",
@@ -3025,7 +3025,7 @@
                 "403": "The user is not an editor for the specified broadcaster.",
                 "500": "Internal Server Error."
             },
-            "auth": "Requires an [app access token](https://dev.twitch.tv/docs/authentication#app-access-tokens) or [user access token](https://dev.twitch.tv/docs/authentication#user-access-tokens) that includes the `editor:manage:clips` or `channel:manage:clips` scope.",
+            "auth": "Requires an [app access token](https://dev.twitch.tv/docs/authentication#app-access-tokens) or a [user access token](https://dev.twitch.tv/docs/authentication#user-access-tokens)) with any of the following scopes: `editor:manage:clips`, `channel:manage:clips`",
             "token": [
                 "app",
                 "user"
@@ -3064,7 +3064,7 @@
                 "200": "Successfully retrieved conduits.",
                 "401": "Authorization header required with an app access token."
             },
-            "auth": "Requires an [app access token](https://dev.twitch.tv/docs/authentication#app-access-tokens).",
+            "auth": "Requires an [app access token](https://dev.twitch.tv/docs/authentication#app-access-tokens)",
             "token": [
                 "app"
             ],
@@ -3099,7 +3099,7 @@
                 "401": "Authorization header required with an app access token.",
                 "429": "Conduit limit reached."
             },
-            "auth": "Requires an [app access token](https://dev.twitch.tv/docs/authentication#app-access-tokens).",
+            "auth": "Requires an [app access token](https://dev.twitch.tv/docs/authentication#app-access-tokens)",
             "token": [
                 "app"
             ],
@@ -3134,7 +3134,7 @@
                 "401": "Authorization header required with an app access token.",
                 "404": "- Conduit not found.\n- Conduit’s owner must match the client ID in the access token."
             },
-            "auth": "Requires an [app access token](https://dev.twitch.tv/docs/authentication#app-access-tokens).",
+            "auth": "Requires an [app access token](https://dev.twitch.tv/docs/authentication#app-access-tokens)",
             "token": [
                 "app"
             ],
@@ -3162,7 +3162,7 @@
                 "401": "Authorization header required with an app access token.",
                 "404": "- Conduit not found.\n- Conduit’s owner must match the client ID in the access token."
             },
-            "auth": "Requires an [app access token](https://dev.twitch.tv/docs/authentication#app-access-tokens).",
+            "auth": "Requires an [app access token](https://dev.twitch.tv/docs/authentication#app-access-tokens)",
             "token": [
                 "app"
             ],
@@ -3245,7 +3245,7 @@
                 "401": "Authorization header required with an app access token.",
                 "404": "- Conduit not found.\n- Conduit’s owner must match the client ID in the access token."
             },
-            "auth": "Requires an [app access token](https://dev.twitch.tv/docs/authentication#app-access-tokens).",
+            "auth": "Requires an [app access token](https://dev.twitch.tv/docs/authentication#app-access-tokens)",
             "token": [
                 "app"
             ],
@@ -3331,7 +3331,7 @@
                 "401": "Authorization header required with an app access token.",
                 "404": "- Conduit not found.\n- Conduit’s owner must match the client ID in the access token."
             },
-            "auth": "Requires an [app access token](https://dev.twitch.tv/docs/authentication#app-access-tokens).",
+            "auth": "Requires an [app access token](https://dev.twitch.tv/docs/authentication#app-access-tokens)",
             "token": [
                 "app"
             ],
@@ -3377,7 +3377,7 @@
             },
             "body": {},
             "codes": {},
-            "auth": "Requires an [app access token](https://dev.twitch.tv/docs/authentication#app-access-tokens) or [user access token](https://dev.twitch.tv/docs/authentication#user-access-tokens).",
+            "auth": "Requires an [app access token](https://dev.twitch.tv/docs/authentication#app-access-tokens) or a [user access token](https://dev.twitch.tv/docs/authentication#user-access-tokens))",
             "token": [
                 "app",
                 "user"
@@ -3475,7 +3475,7 @@
                 "403": "- The organization associated with the client in the access token must own the game specified in the game_id query parameter.\n- The organization associated with the client in the access token must own the entitlements specified in the id query parameter.",
                 "500": ""
             },
-            "auth": "Requires an [app access token](https://dev.twitch.tv/docs/authentication#app-access-tokens) or [user access token](https://dev.twitch.tv/docs/authentication#user-access-tokens). The Client ID associated with the access token must be owned by a user who is a member of the [organization](https://dev.twitch.tv/docs/docs/companies/) that holds ownership of the game.",
+            "auth": "Requires an [app access token](https://dev.twitch.tv/docs/authentication#app-access-tokens) or a [user access token](https://dev.twitch.tv/docs/authentication#user-access-tokens))\nINFO: The ID in the broadcaster_id query parameter must match the user ID in the access token or the user ID in the access token must be a moderator for the specified broadcaster.",
             "token": [
                 "app",
                 "user"
@@ -3522,7 +3522,7 @@
                 "401": "- The Authorization header is required and must specify an app access token or user access token.\n- The access token is not valid.\n- The ID in the Client-Id header must match the Client ID in the access token.",
                 "500": ""
             },
-            "auth": "Requires an [app access token](https://dev.twitch.tv/docs/authentication#app-access-tokens) or [user access token](https://dev.twitch.tv/docs/authentication#user-access-tokens). The Client ID associated with the access token must be owned by a user who is a member of the [organization](https://dev.twitch.tv/docs/docs/companies/) that holds ownership of the game.",
+            "auth": "Requires an [app access token](https://dev.twitch.tv/docs/authentication#app-access-tokens) or a [user access token](https://dev.twitch.tv/docs/authentication#user-access-tokens))\nINFO: The ID in the broadcaster_id query parameter must match the user ID in the access token or the user ID in the access token must be a moderator for the specified broadcaster.",
             "token": [
                 "app",
                 "user"
@@ -3585,7 +3585,7 @@
                 "401": "- The Authorization header is required and must specify a JWT token.\n- The JWT token is not valid.\n- The Client-Id header is required.",
                 "429": "- The app exceeded the number of requests that it may make per minute. See Rate Limits above."
             },
-            "auth": "Requires a signed JSON Web Token (JWT) created by an Extension Backend Service (EBS). For signing requirements, see [Signing the JWT](https://dev.twitch.tv/docs/extensions/building/#signing-the-jwt). The signed JWT must include the `role`, `user_id`, and `exp` fields (see [JWT Schema](https://dev.twitch.tv/docs/extensions/reference/#jwt-schema)). The `role` field must be set to external.",
+            "auth": "Requires a signed JSON Web Token (JWT) created by an Extension Backend Service (EBS). For signing requirements, see [Signing the JWT](https://dev.twitch.tv/docs/extensions/building/#signing-the-jwt).\nINFO: The signed JWT must include the `role`, `user_id`, and `exp` fields (see [JWT Schema](https://dev.twitch.tv/docs/extensions/reference/#jwt-schema)). The `role` field must be set to external.",
             "token": [
                 "JWT"
             ],
@@ -3632,7 +3632,7 @@
                 "400": "- The `broadcaster_id` field is required if `segment` is set to developer or broadcaster.",
                 "401": "- The Authorization header is required and must specify a JWT token.\n- The JWT token is not valid.\n- The Client-Id header is required."
             },
-            "auth": "Requires a signed JSON Web Token (JWT) created by an Extension Backend Service (EBS). For signing requirements, see [Signing the JWT](https://dev.twitch.tv/docs/extensions/building/#signing-the-jwt). The signed JWT must include the `role`, `user_id`, and `exp` fields (see [JWT Schema](https://dev.twitch.tv/docs/extensions/reference/#jwt-schema)). The `role` field must be set to external.",
+            "auth": "Requires a signed JSON Web Token (JWT) created by an Extension Backend Service (EBS). For signing requirements, see [Signing the JWT](https://dev.twitch.tv/docs/extensions/building/#signing-the-jwt).\nINFO: The signed JWT must include the `role`, `user_id`, and `exp` fields (see [JWT Schema](https://dev.twitch.tv/docs/extensions/reference/#jwt-schema)). The `role` field must be set to external.",
             "token": [
                 "JWT"
             ],
@@ -3675,7 +3675,7 @@
                 "400": "- The broadcaster_id query parameter is required.\n- The `extension_id` field is required.\n- The `extension_version` field is required.\n- The `required_configuration` field is required.",
                 "401": "- The Authorization header is required and must specify a JWT token.\n- The JWT token is not valid.\n- The Client-Id header is required."
             },
-            "auth": "Requires a signed JSON Web Token (JWT) created by an EBS. For signing requirements, see [Signing the JWT](https://dev.twitch.tv/docs/extensions/building/#signing-the-jwt). The signed JWT must include the `role`, `user_id`, and `exp` fields (see [JWT Schema](https://dev.twitch.tv/docs/extensions/reference/#jwt-schema)). Set the `role` field to external and the `user_id` field to the ID of the user that owns the extension.",
+            "auth": "Requires a signed JSON Web Token (JWT) created by an Extension Backend Service (EBS). For signing requirements, see [Signing the JWT](https://dev.twitch.tv/docs/extensions/building/#signing-the-jwt).\nINFO: The signed JWT must include the `role`, `user_id`, and `exp` fields (see [JWT Schema](https://dev.twitch.tv/docs/extensions/reference/#jwt-schema)). The `role` field must be set to external.",
             "token": [
                 "JWT"
             ],
@@ -3692,7 +3692,7 @@
             "reqBody": {},
             "body": {},
             "codes": {},
-            "auth": "Requires a signed JSON Web Token (JWT) created by an Extension Backend Service (EBS). For signing requirements, see [Signing the JWT](https://dev.twitch.tv/docs/extensions/building/#signing-the-jwt). The signed JWT must include the `role`, `user_id`, and `exp` fields (see [JWT Schema](https://dev.twitch.tv/docs/extensions/reference/#jwt-schema)) along with the `channel_id` and `pubsub_perms` fields. The `role` field must be set to external.",
+            "auth": "Requires a signed JSON Web Token (JWT) created by an Extension Backend Service (EBS). For signing requirements, see [Signing the JWT](https://dev.twitch.tv/docs/extensions/building/#signing-the-jwt).\nINFO: The signed JWT must include the `role`, `user_id`, and `exp` fields (see [JWT Schema](https://dev.twitch.tv/docs/extensions/reference/#jwt-schema)) along with the `channel_id` and `pubsub_perms` fields. The `role` field must be set to external.",
             "token": [
                 "JWT"
             ],
@@ -3757,7 +3757,7 @@
                 "401": "- The Authorization header is required and must specify an app access token or user access token.\n- The access token is not valid.\n- The ID in the Client-Id header must match the client ID in the access token.",
                 "404": "- The extension specified in the extension_id query parameter was not found or it's not being used in a live stream."
             },
-            "auth": "Requires an [app access token](https://dev.twitch.tv/docs/authentication#app-access-tokens) or [user access token](https://dev.twitch.tv/docs/authentication#user-access-tokens).",
+            "auth": "Requires an [app access token](https://dev.twitch.tv/docs/authentication#app-access-tokens) or a [user access token](https://dev.twitch.tv/docs/authentication#user-access-tokens))",
             "token": [
                 "app",
                 "user"
@@ -3775,7 +3775,7 @@
             "reqBody": {},
             "body": {},
             "codes": {},
-            "auth": "Requires a signed JSON Web Token (JWT) created by an Extension Backend Service (EBS). For signing requirements, see [Signing the JWT](https://dev.twitch.tv/docs/extensions/building/#signing-the-jwt). The signed JWT must include the `role`, `user_id`, and `exp` fields (see [JWT Schema](https://dev.twitch.tv/docs/extensions/reference/#jwt-schema)). The `role` field must be set to external.",
+            "auth": "Requires a signed JSON Web Token (JWT) created by an Extension Backend Service (EBS). For signing requirements, see [Signing the JWT](https://dev.twitch.tv/docs/extensions/building/#signing-the-jwt).\nINFO: The signed JWT must include the `role`, `user_id`, and `exp` fields (see [JWT Schema](https://dev.twitch.tv/docs/extensions/reference/#jwt-schema)). The `role` field must be set to external.",
             "token": [
                 "JWT"
             ],
@@ -3832,7 +3832,7 @@
                 "400": "- The extension_id query parameter is required.\n- The delay specified in the delay query parameter is too short.",
                 "401": "- The Authorization header is required and must specify a JWT token.\n- The JWT token is not valid.\n- The Client-Id header is required."
             },
-            "auth": "Requires a signed JSON Web Token (JWT) created by an Extension Backend Service (EBS). For signing requirements, see [Signing the JWT](https://dev.twitch.tv/docs/extensions/building/#signing-the-jwt). The signed JWT must include the `role`, `user_id`, and `exp` fields (see [JWT Schema](https://dev.twitch.tv/docs/extensions/reference/#jwt-schema)). The `role` field must be set to external.",
+            "auth": "Requires a signed JSON Web Token (JWT) created by an Extension Backend Service (EBS). For signing requirements, see [Signing the JWT](https://dev.twitch.tv/docs/extensions/building/#signing-the-jwt).\nINFO: The signed JWT must include the `role`, `user_id`, and `exp` fields (see [JWT Schema](https://dev.twitch.tv/docs/extensions/reference/#jwt-schema)). The `role` field must be set to external.",
             "token": [
                 "JWT"
             ],
@@ -3875,7 +3875,7 @@
                 "400": "- The broadcaster_id query parameter is required.\n- The `extension_id` field in the request's body is required.\n- The `extension_version` field in the request's body is required.\n- The `text` field in the request's body is required.\n- The message is too long.",
                 "401": "- The Authorization header is required and must specify a JWT token.\n- The ID in the broadcaster_id query parameter must match the `channel_id` claim in the JWT.\n- The JWT token is not valid.\n- The Client-Id header is required."
             },
-            "auth": "Requires a signed JSON Web Token (JWT) created by an Extension Backend Service (EBS). For signing requirements, see [Signing the JWT](https://dev.twitch.tv/docs/extensions/building/#signing-the-jwt). The signed JWT must include the `role` and `user_id` fields (see [JWT Schema](https://dev.twitch.tv/docs/extensions/reference/#jwt-schema)). The `role` field must be set to external.",
+            "auth": "Requires a signed JSON Web Token (JWT) created by an Extension Backend Service (EBS). For signing requirements, see [Signing the JWT](https://dev.twitch.tv/docs/extensions/building/#signing-the-jwt).\nINFO: The signed JWT must include the `role` and `user_id` fields (see [JWT Schema](https://dev.twitch.tv/docs/extensions/reference/#jwt-schema)). The `role` field must be set to external.",
             "token": [
                 "JWT"
             ],
@@ -4057,7 +4057,7 @@
                 "401": "- The request must specify the Authorization header.\n- The Authorization header is required and must specify a JWT token.\n- The JWT token is not valid.\n- The request must specify the Client-Id header.",
                 "404": "- The extension in the extension_id query parameter was not found."
             },
-            "auth": "Requires a signed JSON Web Token (JWT) created by an Extension Backend Service (EBS). For signing requirements, see [Signing the JWT](https://dev.twitch.tv/docs/extensions/building/#signing-the-jwt). The signed JWT must include the `role` field (see [JWT Schema](https://dev.twitch.tv/docs/extensions/reference/#jwt-schema)), and the `role` field must be set to external.",
+            "auth": "Requires a signed JSON Web Token (JWT) created by an Extension Backend Service (EBS). For signing requirements, see [Signing the JWT](https://dev.twitch.tv/docs/extensions/building/#signing-the-jwt).\nINFO: The signed JWT must include the `role` and `user_id` fields (see [JWT Schema](https://dev.twitch.tv/docs/extensions/reference/#jwt-schema)). The `role` field must be set to external.",
             "token": [
                 "JWT"
             ],
@@ -4239,7 +4239,7 @@
                 "401": "- The Authorization header must specify an app access token or user access token.\n- The access token is not valid.\n- The ID in the Client-Id header must match the client ID in the access token.",
                 "404": "- The extension specified in the extension_id query parameter was not found or is not released."
             },
-            "auth": "Requires an [app access token](https://dev.twitch.tv/docs/authentication#app-access-tokens) or [user access token](https://dev.twitch.tv/docs/authentication#user-access-tokens).",
+            "auth": "Requires an [app access token](https://dev.twitch.tv/docs/authentication#app-access-tokens) or a [user access token](https://dev.twitch.tv/docs/authentication#user-access-tokens))",
             "token": [
                 "app",
                 "user"
@@ -4304,7 +4304,7 @@
                 "400": "- The ID in the Client-Id header must belong to an extension.",
                 "401": "- The Authorization header is required and must specify an app access token; you may not specify a user access token.\n- The OAuth token is not valid.\n- The ID in the Client-Id header must match the Client ID in the OAuth token."
             },
-            "auth": "Requires an [app access token](https://dev.twitch.tv/docs/authentication#app-access-tokens). The client ID in the app access token must be the extension’s client ID.",
+            "auth": "Requires an [app access token](https://dev.twitch.tv/docs/authentication#app-access-tokens)\nINFO: The client ID in the app access token must be the extension’s client ID.",
             "token": [
                 "app"
             ],
@@ -4322,7 +4322,7 @@
             "reqBody": {},
             "body": {},
             "codes": {},
-            "auth": "Requires an [app access token](https://dev.twitch.tv/docs/authentication#app-access-tokens). The client ID in the app access token must match the extension’s client ID.",
+            "auth": "Requires an [app access token](https://dev.twitch.tv/docs/authentication#app-access-tokens)\nINFO: The client ID in the app access token must be the extension’s client ID.",
             "token": [
                 "app"
             ],
@@ -4342,7 +4342,7 @@
             "reqBody": {},
             "body": {},
             "codes": {},
-            "auth": "If you use [webhooks to receive events](https://dev.twitch.tv/docs/eventsub/handling-webhook-events), the request must specify an app access token. The request will fail if you use a user access token. If the subscription type requires user authorization, the user must have granted your app (client ID) permissions to receive those events before you subscribe to them. For example, to subscribe to [channel.subscribe](https://dev.twitch.tv/docs/eventsub/eventsub-subscription-types/#channelsubscribe) events, your app must get a user access token that includes the `channel:read:subscriptions` scope, which adds the required permission to your app access token’s client ID.",
+            "auth": "Requires an [app access token](https://dev.twitch.tv/docs/authentication#app-access-tokens) or a [user access token](https://dev.twitch.tv/docs/authentication#user-access-tokens))\nINFO: If you use [webhooks to receive events](https://dev.twitch.tv/docs/eventsub/handling-webhook-events), the request must specify an app access token. The request will fail if you use a user access token. If the subscription type requires user authorization, the user must have granted your app (client ID) permissions to receive those events before you subscribe to them. For example, to subscribe to [channel.subscribe](https://dev.twitch.tv/docs/eventsub/eventsub-subscription-types/#channelsubscribe) events, your app must get a user access token that includes the `channel:read:subscriptions` scope, which adds the required permission to your app access token’s client ID.",
             "token": [
                 "app",
                 "user"
@@ -4359,7 +4359,7 @@
             "reqBody": {},
             "body": {},
             "codes": {},
-            "auth": "If you use [webhooks to receive events](https://dev.twitch.tv/docs/eventsub/handling-webhook-events), the request must specify an app access token. The request will fail if you use a user access token.",
+            "auth": "Requires an [app access token](https://dev.twitch.tv/docs/authentication#app-access-tokens) or a [user access token](https://dev.twitch.tv/docs/authentication#user-access-tokens))\nINFO: If you use [webhooks to receive events](https://dev.twitch.tv/docs/eventsub/handling-webhook-events), the request must specify an app access token. The request will fail if you use a user access token.",
             "token": [
                 "app",
                 "user"
@@ -4376,7 +4376,7 @@
             "reqBody": {},
             "body": {},
             "codes": {},
-            "auth": "If you use [Webhooks](https://dev.twitch.tv/docs/eventsub/handling-webhook-events) or [Conduits](https://dev.twitch.tv/docs/eventsub/handling-conduit-events/) to receive events, the request must specify an app access token. The request will fail if you use a user access token.",
+            "auth": "Requires an [app access token](https://dev.twitch.tv/docs/authentication#app-access-tokens) or a [user access token](https://dev.twitch.tv/docs/authentication#user-access-tokens))\nINFO: If you use [Webhooks](https://dev.twitch.tv/docs/eventsub/handling-webhook-events) or [Conduits](https://dev.twitch.tv/docs/eventsub/handling-conduit-events/) to receive events, the request must specify an app access token. The request will fail if you use a user access token.",
             "token": [
                 "app",
                 "user"
@@ -4444,7 +4444,7 @@
                 "400": "- The value in the first query parameter is not valid.\n- The cursor in the after or before query parameter is not valid.",
                 "401": "- The Authorization header is required and must specify an app access token or user access token.\n- The access token is not valid.\n- The ID in the Client-Id header must match the client ID in the access token."
             },
-            "auth": "Requires an [app access token](https://dev.twitch.tv/docs/authentication#app-access-tokens) or [user access token](https://dev.twitch.tv/docs/authentication#user-access-tokens).",
+            "auth": "Requires an [app access token](https://dev.twitch.tv/docs/authentication#app-access-tokens) or a [user access token](https://dev.twitch.tv/docs/authentication#user-access-tokens))",
             "token": [
                 "app",
                 "user"
@@ -4503,7 +4503,7 @@
                 "400": "- The request must specify the id or name or igdb_id query parameter.\n- The combined number of game IDs (id and igdb_id) and game names that you specify in the request must not exceed 100.",
                 "401": "- The Authorization header is required and must specify an app access token or user access token.\n- The access token is not valid.\n- The ID in the Client-Id header must match the client ID in the access token."
             },
-            "auth": "Requires an [app access token](https://dev.twitch.tv/docs/authentication#app-access-tokens) or [user access token](https://dev.twitch.tv/docs/authentication#user-access-tokens).",
+            "auth": "Requires an [app access token](https://dev.twitch.tv/docs/authentication#app-access-tokens) or a [user access token](https://dev.twitch.tv/docs/authentication#user-access-tokens))",
             "token": [
                 "app",
                 "user"
@@ -4574,7 +4574,7 @@
                 "400": "- The broadcaster_id query parameter is required.",
                 "401": "- The Authorization header is required and must contain a user access token.\n- The user access token must include the channel:read:goals scope.\n- The ID in broadcaster_id must match the user ID in the user access token.\n- The access token is not valid.\n- The client ID specified in the Client-Id header does not match the client ID specified in the access token."
             },
-            "auth": "Requires a [user access token](https://dev.twitch.tv/docs/authentication#user-access-tokens) that includes the *channel:read:goals* scope.",
+            "auth": "Requires a [user access token](https://dev.twitch.tv/docs/authentication#user-access-tokens)) with any of the following scopes: `channel:read:goals`",
             "token": [
                 "user"
             ],
@@ -4630,7 +4630,7 @@
                 "400": "- Missing broadcaster_id\n- Missing moderator_id",
                 "403": "Insufficient authorization for viewing channel’s Guest Star settings"
             },
-            "auth": "- Query parameter `moderator_id` must match the `user_id` in the [User-Access token](https://dev.twitch.tv/docs/authentication#user-access-tokens)\n- Requires OAuth Scope: `channel:read:guest_star`, `channel:manage:guest_star`, `moderator:read:guest_star` or `moderator:manage:guest_star`",
+            "auth": "Requires a [user access token](https://dev.twitch.tv/docs/authentication#user-access-tokens)) with any of the following scopes: `channel:read:guest_star`, `channel:manage:guest_star`, `moderator:read:guest_star`, `moderator:manage:guest_star`",
             "token": [
                 "user"
             ],
@@ -4689,7 +4689,7 @@
                 "204": "Successfully updated channel settings",
                 "400": "- Missing broadcaster_id\n- Invalid slot_count\n- Invalid group_layout"
             },
-            "auth": "- Query parameter `broadcaster_id` must match the `user_id` in the [User-Access token](https://dev.twitch.tv/docs/authentication#user-access-tokens)\n- Requires OAuth Scope: `channel:manage:guest_star`",
+            "auth": "Requires a [user access token](https://dev.twitch.tv/docs/authentication#user-access-tokens)) with any of the following scopes: `channel:manage:guest_star`",
             "token": [
                 "user"
             ],
@@ -4785,7 +4785,7 @@
                 "400": "- Missing broadcaster_id\n- Missing moderator_id",
                 "401": "moderator_id and user token do not match"
             },
-            "auth": "- Requires OAuth Scope: `channel:read:guest_star`, `channel:manage:guest_star`, `moderator:read:guest_star` or `moderator:manage:guest_star`\n- Guests must be either invited or assigned a slot within the session",
+            "auth": "Requires a [user access token](https://dev.twitch.tv/docs/authentication#user-access-tokens)) with any of the following scopes: `channel:read:guest_star`, `channel:manage:guest_star`, `moderator:read:guest_star`, `moderator:manage:guest_star`\nINFO: Guests must be either invited or assigned a slot within the session",
             "token": [
                 "user"
             ],
@@ -4879,7 +4879,7 @@
                 "401": "Phone verification missing",
                 "403": "Insufficient authorization for creating session"
             },
-            "auth": "- Query parameter `broadcaster_id` must match the `user_id` in the [User-Access token](https://dev.twitch.tv/docs/authentication#user-access-tokens)\n- Requires OAuth Scope: `channel:manage:guest_star`",
+            "auth": "Requires a [user access token](https://dev.twitch.tv/docs/authentication#user-access-tokens)) with any of the following scopes: `channel:manage:guest_star`",
             "token": [
                 "user"
             ],
@@ -4975,7 +4975,7 @@
                 "400": "- Missing or invalid broadcaster_id\n- Missing or invalid session_id\n- Session has already been ended",
                 "403": "Insufficient authorization for ending session"
             },
-            "auth": "- Query parameter `broadcaster_id` must match the `user_id` in the [User-Access token](https://dev.twitch.tv/docs/authentication#user-access-tokens)\n- Requires OAuth Scope: `channel:manage:guest_star`",
+            "auth": "Requires a [user access token](https://dev.twitch.tv/docs/authentication#user-access-tokens)) with any of the following scopes: `channel:manage:guest_star`",
             "token": [
                 "user"
             ],
@@ -5047,7 +5047,7 @@
             "codes": {
                 "400": "- Missing broadcaster_id\n- Missing session_id"
             },
-            "auth": "- Query parameter `broadcaster_id` must match the `user_id` in the [User-Access token](https://dev.twitch.tv/docs/authentication#user-access-tokens)\n- Requires OAuth Scope: `channel:read:guest_star`, `channel:manage:guest_star`, `moderator:read:guest_star` or `moderator:manage:guest_star`",
+            "auth": "Requires a [user access token](https://dev.twitch.tv/docs/authentication#user-access-tokens)) with any of the following scopes: `channel:read:guest_star`, `channel:manage:guest_star`, `moderator:read:guest_star`, `moderator:manage:guest_star`",
             "token": [
                 "user"
             ],
@@ -5095,7 +5095,7 @@
                 "400": "- Missing broadcaster_id\n- Missing moderator_id\n- Missing session_id\n- Missing guest_id\n- Invalid session_id",
                 "403": "- Unauthorized guest invited\n- Guest already invited"
             },
-            "auth": "- Query parameter `moderator_id` must match the `user_id` in the [User-Access token](https://dev.twitch.tv/docs/authentication#user-access-tokens)\n- Requires OAuth Scope: `channel:manage:guest_star` or `moderator:manage:guest_star`",
+            "auth": "Requires a [user access token](https://dev.twitch.tv/docs/authentication#user-access-tokens)) with any of the following scopes: `channel:manage:guest_star`, `moderator:manage:guest_star`",
             "token": [
                 "user"
             ],
@@ -5141,7 +5141,7 @@
                 "400": "- Missing broadcaster_id\n- Missing session_id\n- Missing guest_id\n- Invalid session_id",
                 "404": "No invite exists for specified guest_id"
             },
-            "auth": "- Query parameter `moderator_id` must match the `user_id` in the [User-Access token](https://dev.twitch.tv/docs/authentication#user-access-tokens)\n- Requires OAuth Scope: `channel:manage:guest_star` or `moderator:manage:guest_star`",
+            "auth": "Requires a [user access token](https://dev.twitch.tv/docs/authentication#user-access-tokens)) with any of the following scopes: `channel:manage:guest_star`, `moderator:manage:guest_star`",
             "token": [
                 "user"
             ],
@@ -5194,7 +5194,7 @@
                 "401": "moderator_id is not a guest star moderator",
                 "403": "- Cannot assign host slot\n- Guest not invited to session\n- Guest already assigned to slot\n- Guest is not ready to join"
             },
-            "auth": "- Query parameter `moderator_id` must match the `user_id` in the [User-Access token](https://dev.twitch.tv/docs/authentication#user-access-tokens)\n- Requires OAuth Scope: `channel:manage:guest_star` or `moderator:manage:guest_star`",
+            "auth": "Requires a [user access token](https://dev.twitch.tv/docs/authentication#user-access-tokens)) with any of the following scopes: `channel:manage:guest_star`, `moderator:manage:guest_star`",
             "token": [
                 "user"
             ],
@@ -5245,7 +5245,7 @@
                 "204": "Successfuly updated slot(s)",
                 "400": "- Missing broadcaster_id\n- Missing or invalid session_id \n- Missing or invalid slot_id"
             },
-            "auth": "- Query parameter `moderator_id` must match the `user_id` in the [User-Access token](https://dev.twitch.tv/docs/authentication#user-access-tokens)\n- Requires OAuth Scope: `channel:manage:guest_star` or `moderator:manage:guest_star`",
+            "auth": "Requires a [user access token](https://dev.twitch.tv/docs/authentication#user-access-tokens)) with any of the following scopes: `channel:manage:guest_star`, `moderator:manage:guest_star`",
             "token": [
                 "user"
             ],
@@ -5303,7 +5303,7 @@
                 "403": "- moderator_id is not a Guest Star moderator\n- The request is attempting to modify a restricted slot",
                 "404": "guest_id or slot_id not found"
             },
-            "auth": "- Query parameter `moderator_id` must match the `user_id` in the [User-Access token](https://dev.twitch.tv/docs/authentication#user-access-tokens)\n- Requires OAuth Scope: `channel:manage:guest_star` or `moderator:manage:guest_star`",
+            "auth": "Requires a [user access token](https://dev.twitch.tv/docs/authentication#user-access-tokens)) with any of the following scopes: `channel:manage:guest_star`, `moderator:manage:guest_star`",
             "token": [
                 "user"
             ],
@@ -5370,7 +5370,7 @@
                 "400": "- Missing broadcaster_id\n- Missing moderator_id\n- Missing or invalid session_id \n- Missing or invalid slot_id",
                 "403": "- moderator_id is not a Guest Star moderator\n- The request is attempting to modify a restricted slot"
             },
-            "auth": "- Query parameter `moderator_id` must match the `user_id` in the [User-Access token](https://dev.twitch.tv/docs/authentication#user-access-tokens)\n- Requires OAuth Scope: `channel:manage:guest_star` or `moderator:manage:guest_star`",
+            "auth": "Requires a [user access token](https://dev.twitch.tv/docs/authentication#user-access-tokens)) with any of the following scopes: `channel:manage:guest_star`, `moderator:manage:guest_star`",
             "token": [
                 "user"
             ],
@@ -5494,7 +5494,7 @@
                 "401": "- The OAuth token is not valid.\n- The Authorization header is required and must contain a user access token.",
                 "500": "Internal Server Error."
             },
-            "auth": "- Requires an [user access token](https://dev.twitch.tv/docs/authentication/#user-access-tokens).\n- Requires OAuth Scope: `channel:read:hype_train`.\n- Requires that `broadcaster_id` and `user_id` match in the User-Access token.",
+            "auth": "Requires a [user access token](https://dev.twitch.tv/docs/authentication#user-access-tokens)) with any of the following scopes: `channel:read:hype_train`",
             "token": [
                 "user"
             ],
@@ -5547,7 +5547,7 @@
                 "403": "- The ID in broadcaster_id must match the user ID in the user access token.",
                 "429": "- The broadcaster exceeded the number of chat message checks that they may make. See the endpoint's rate limits."
             },
-            "auth": "Requires a [user access token](https://dev.twitch.tv/docs/authentication#user-access-tokens) that includes the *moderation:read* scope.",
+            "auth": "Requires a [user access token](https://dev.twitch.tv/docs/authentication#user-access-tokens)) with any of the following scopes: `moderation:read`",
             "token": [
                 "user"
             ],
@@ -5588,7 +5588,7 @@
                 "403": "- The user in user_id is not one of the broadcaster's moderators.",
                 "404": "- The message specified in the `msg_id` field was not found."
             },
-            "auth": "Requires a [user access token](https://dev.twitch.tv/docs/authentication#user-access-tokens) that includes the *moderator:manage:automod* scope.",
+            "auth": "Requires a [user access token](https://dev.twitch.tv/docs/authentication#user-access-tokens)) with any of the following scopes: `moderator:manage:automod`",
             "token": [
                 "user"
             ],
@@ -5672,7 +5672,7 @@
                 "401": "- The ID in moderator_id must match the user ID in the user access token.\n- The Authorization header is required and must contain a user access token.\n- The user access token must include the moderator:read:automod_settings scope.\n- The access token is not valid.\n- The client ID specified in the Client-Id header does not match the client ID specified in the access token.",
                 "403": "- The user in moderator_id is not one of the broadcaster's moderators."
             },
-            "auth": "Requires a [user access token](https://dev.twitch.tv/docs/authentication#user-access-tokens) that includes the *moderator:read:automod_settings* scope.",
+            "auth": "Requires a [user access token](https://dev.twitch.tv/docs/authentication#user-access-tokens)) with any of the following scopes: `moderator:read:automod_settings`",
             "token": [
                 "user"
             ],
@@ -5756,7 +5756,7 @@
                 "401": "- The ID in moderator_id must match the user ID in the user access token.\n- The Authorization header is required and must contain a user access token.\n- The user access token must include the moderator:manage:automod_settings scope.\n- The access token is not valid.\n- The client ID specified in the Client-Id header does not match the client ID specified in the access token.",
                 "403": "- The user in moderator_id is not one of the broadcaster's moderators."
             },
-            "auth": "Requires a [user access token](https://dev.twitch.tv/docs/authentication#user-access-tokens) that includes the *moderator:manage:automod_settings* scope.",
+            "auth": "Requires a [user access token](https://dev.twitch.tv/docs/authentication#user-access-tokens)) with any of the following scopes: `moderator:manage:automod_settings`",
             "token": [
                 "user"
             ],
@@ -5855,7 +5855,7 @@
                 "400": "- The broadcaster_id query parameter is required.",
                 "401": "- The ID in broadcaster_id must match the user ID in the user access token.\n- The Authorization header is required and must contain a user access token.\n- The user access token must include the moderation:read scope.\n- The access token is not valid.\n- The client ID specified in the Client-Id header does not match the client ID specified in the access token."
             },
-            "auth": "Requires a [user access token](https://dev.twitch.tv/docs/authentication#user-access-tokens) that includes the *moderation:read* or *moderator:manage:banned_users* scope.",
+            "auth": "Requires a [user access token](https://dev.twitch.tv/docs/authentication#user-access-tokens)) with any of the following scopes: `moderation:read`, `moderator:manage:banned_users`",
             "token": [
                 "user"
             ],
@@ -5928,7 +5928,7 @@
                 "409": "- You may not update the user's ban state while someone else is updating the state. For example, someone else is currently banning the user or putting them in a timeout, moving the user from a timeout to a ban, or removing the user from a ban or timeout. Please retry your request.",
                 "429": "- The app has exceeded the number of requests it may make per minute for this broadcaster."
             },
-            "auth": "Requires a [user access token](https://dev.twitch.tv/docs/authentication#user-access-tokens) that includes the *moderator:manage:banned_users* scope.",
+            "auth": "Requires a [user access token](https://dev.twitch.tv/docs/authentication#user-access-tokens)) with any of the following scopes: `moderator:manage:banned_users`",
             "token": [
                 "user"
             ],
@@ -5970,7 +5970,7 @@
                 "409": "- You may not update the user's ban state while someone else is updating the state. For example, someone else is currently removing the ban or timeout, or they're moving the user from a timeout to a ban. Please retry your request.",
                 "429": "- The app has exceeded the number of requests it may make per minute for this broadcaster."
             },
-            "auth": "Requires a [user access token](https://dev.twitch.tv/docs/authentication#user-access-tokens) that includes the *moderator:manage:banned_users* scope.",
+            "auth": "Requires a [user access token](https://dev.twitch.tv/docs/authentication#user-access-tokens)) with any of the following scopes: `moderator:manage:banned_users`",
             "token": [
                 "user"
             ],
@@ -6097,7 +6097,7 @@
                 "400": "- The broadcaster_id query parameter is required.\n- The ID in the broadcaster_id query parameter is not valid.\n- The moderator_id query parameter is required.\n- The ID in the moderator_id query parameter is not valid.\n- The pagination cursor is not valid.",
                 "401": "- The ID in moderator_id must match the user ID in the user access token.\n- The Authorization header is required and must contain a user access token.\n- The user access token must include the *moderator:read:unban_requests* or *moderator:manage:unban_requests* scope.\n- The access token is not valid.\n- The client ID specified in the Client-Id header does not match the client ID specified in the access token."
             },
-            "auth": "- Requires a user access token that includes the *moderator:read:unban_requests* or *moderator:manage:unban_requests* scope.\n- Query parameter `moderator_id` must match the `user_id` in the [user access token](https://dev.twitch.tv/docs/authentication/#user-access-tokens).",
+            "auth": "Requires a [user access token](https://dev.twitch.tv/docs/authentication#user-access-tokens)) with any of the following scopes: `moderator:read:unban_requests`, `moderator:manage:unban_requests`",
             "token": [
                 "user"
             ],
@@ -6215,7 +6215,7 @@
                 "401": "- The ID in moderator_id must match the user ID in the user access token.\n- The Authorization header is required and must contain a user access token.\n- The user access token must include the moderator:manage:unban_requests scope.\n- The access token is not valid.\n- The client ID specified in the Client-Id header does not match the client ID specified in the access token.",
                 "404": "The unban request ID was not found."
             },
-            "auth": "- Requires a user access token that includes the *moderator:manage:unban_requests* scope.\n\n- Query parameter `moderator_id` must match the `user_id` in the[user access token](https://dev.twitch.tv/docs/authentication/#user-access-tokens).",
+            "auth": "Requires a [user access token](https://dev.twitch.tv/docs/authentication#user-access-tokens)) with any of the following scopes: `moderator:manage:unban_requests`",
             "token": [
                 "user"
             ],
@@ -6303,7 +6303,7 @@
                 "401": "- The ID in moderator_id must match the user ID in the user access token.\n- The Authorization header must contain a user access token.\n- The user access token must include the moderator:read:blocked_terms scope.\n- The access token is not valid.\n- The client ID specified in the Client-Id header does not match the client ID specified in the access token.",
                 "403": "- The user in moderator_id is not one of the broadcaster's moderators."
             },
-            "auth": "Requires a [user access token](https://dev.twitch.tv/docs/authentication#user-access-tokens) that includes the *moderator:read:blocked_terms* or *moderator:manage:blocked_terms* scope.",
+            "auth": "Requires a [user access token](https://dev.twitch.tv/docs/authentication#user-access-tokens)) with any of the following scopes: `moderator:read:blocked_terms`, `moderator:manage:blocked_terms`",
             "token": [
                 "user"
             ],
@@ -6372,7 +6372,7 @@
                 "401": "- The ID in moderator_id must match the user ID in the user access token.\n- The Authorization header is required and must contain a user access token.\n- The user access token must include the moderator:manage:blocked_terms scope.\n- The access token is not valid.\n- The client ID specified in the Client-Id header does not match the client ID specified in the access token.",
                 "403": "- The user in moderator_id is not one of the broadcaster's moderators."
             },
-            "auth": "Requires a [user access token](https://dev.twitch.tv/docs/authentication#user-access-tokens) that includes the *moderator:manage:blocked_terms* scope.",
+            "auth": "Requires a [user access token](https://dev.twitch.tv/docs/authentication#user-access-tokens)) with any of the following scopes: `moderator:manage:blocked_terms`",
             "token": [
                 "user"
             ],
@@ -6412,7 +6412,7 @@
                 "401": "- The ID in moderator_id must match the user ID in the user access token.\n- The Authorization header is required and must contain a user access token.\n- The user access token must include the moderator:manage:blocked_terms scope.\n- The access token is not valid.\n- The client ID specified in the Client-Id header does not match the client ID specified in the access token.",
                 "403": "- The user in moderator_id is not one of the broadcaster's moderators."
             },
-            "auth": "Requires a [user access token](https://dev.twitch.tv/docs/authentication#user-access-tokens) that includes the *moderator:manage:blocked_terms* scope.",
+            "auth": "Requires a [user access token](https://dev.twitch.tv/docs/authentication#user-access-tokens)) with any of the following scopes: `moderator:manage:blocked_terms`",
             "token": [
                 "user"
             ],
@@ -6453,7 +6453,7 @@
                 "403": "- The user in moderator_id is not one of the broadcaster's moderators.",
                 "404": "- The ID in message_id was not found.\n- The specified message was created more than 6 hours ago."
             },
-            "auth": "Requires a [user access token](https://dev.twitch.tv/docs/authentication#user-access-tokens) that includes the *moderator:manage:chat_messages* scope.",
+            "auth": "Requires a [user access token](https://dev.twitch.tv/docs/authentication#user-access-tokens)) with any of the following scopes: `moderator:manage:chat_messages`",
             "token": [
                 "user"
             ],
@@ -6513,7 +6513,7 @@
             },
             "body": {},
             "codes": {},
-            "auth": "- Query parameter `user_id` must match the user ID in the [User-Access token](https://dev.twitch.tv/docs/authentication#user-access-tokens)\n- Requires OAuth Scope: `user:read:moderated_channels`",
+            "auth": "Requires a [user access token](https://dev.twitch.tv/docs/authentication#user-access-tokens)) with any of the following scopes: `user:read:moderated_channels`",
             "token": [
                 "user"
             ],
@@ -6584,7 +6584,7 @@
                 "400": "- The broadcaster_id query parameter is required.",
                 "401": "- The ID in broadcaster_id must match the user ID found in the access token.\n- The Authorization header is required and must contain a user access token.\n- The user access token must include the moderation:read scope.\n- The access token is not valid.\n- The client ID specified in the Client-Id header does not match the client ID specified in the access token."
             },
-            "auth": "Requires a [user access token](https://dev.twitch.tv/docs/authentication#user-access-tokens) that includes the *moderation:read* scope. If your app also adds and removes moderators, you can use the *channel:manage:moderators* scope instead.",
+            "auth": "Requires a [user access token](https://dev.twitch.tv/docs/authentication#user-access-tokens)) with any of the following scopes: `moderation:read`, `channel:manage:moderators`",
             "token": [
                 "user"
             ],
@@ -6621,7 +6621,7 @@
                 "422": "- The user in user_id is a VIP. To make them a moderator, you must first remove them as a VIP (see [Remove Channel VIP](https://dev.twitch.tv/docs/api/reference#remove-channel-vip)).",
                 "429": "- The broadcaster has exceeded the number of requests allowed within a 10-second window. See this endpoint's rate limits."
             },
-            "auth": "Requires a [user access token](https://dev.twitch.tv/docs/authentication#user-access-tokens) that includes the *channel:manage:moderators* scope.",
+            "auth": "Requires a [user access token](https://dev.twitch.tv/docs/authentication#user-access-tokens)) with any of the following scopes: `channel:manage:moderators`",
             "token": [
                 "user"
             ],
@@ -6656,7 +6656,7 @@
                 "401": "- The Authorization header is required and must contain a user access token.\n- The user access token must include the channel:manage:moderators scope.\n- The access token is not valid.\n- The ID in the broadcaster_id query parameter must match the user ID in the access token.\n- The client ID specified in the Client-Id header does not match the client ID specified in the access token.",
                 "429": "- The broadcaster has exceeded the number of requests allowed within a 10-second window. See this endpoint's rate limits."
             },
-            "auth": "Requires a [user access token](https://dev.twitch.tv/docs/authentication#user-access-tokens) that includes the *channel:manage:moderators* scope.",
+            "auth": "Requires a [user access token](https://dev.twitch.tv/docs/authentication#user-access-tokens)) with any of the following scopes: `channel:manage:moderators`",
             "token": [
                 "user"
             ],
@@ -6725,7 +6725,7 @@
                 "400": "- The broadcaster_id query parameter is required.\n- The ID in the user_id query parameter is not valid.\n- The number of user_id query parameters exceeds the maximum allowed.",
                 "401": "- The Authorization header is required and must contain a user access token.\n- The user access token must include the channel:read:vips or channel:manage:vips scope.\n- The OAuth token is not valid.\n- The ID in the broadcaster_id query parameter must match the user ID in the access token.\n- The client ID specified in the Client-Id header does not match the client ID specified in the OAuth token."
             },
-            "auth": "Requires a [user access token](https://dev.twitch.tv/docs/authentication#user-access-tokens) that includes the *channel:read:vips* scope. If your app also adds and removes VIP status, you can use the *channel:manage:vips* scope instead.",
+            "auth": "Requires a [user access token](https://dev.twitch.tv/docs/authentication#user-access-tokens)) with any of the following scopes: `channel:read:vips`, `channel:manage:vips`",
             "token": [
                 "user"
             ],
@@ -6756,7 +6756,7 @@
             "reqBody": {},
             "body": {},
             "codes": {},
-            "auth": "Requires a [user access token](https://dev.twitch.tv/docs/authentication#user-access-tokens) that includes the *channel:manage:vips* scope.",
+            "auth": "Requires a [user access token](https://dev.twitch.tv/docs/authentication#user-access-tokens)) with any of the following scopes: `channel:manage:vips`",
             "token": [
                 "user"
             ],
@@ -6787,7 +6787,7 @@
             "reqBody": {},
             "body": {},
             "codes": {},
-            "auth": "Requires a [user access token](https://dev.twitch.tv/docs/authentication#user-access-tokens) that includes the *channel:manage:vips* scope.",
+            "auth": "Requires a [user access token](https://dev.twitch.tv/docs/authentication#user-access-tokens)) with any of the following scopes: `channel:manage:vips`",
             "token": [
                 "user"
             ],
@@ -6848,7 +6848,7 @@
                 "401": "- The ID in moderator_id must match the user ID in the user access token.\n- The Authorization header is required and must contain a user access token.\n- The user access token must include the moderator:manage:shield_mode scope.\n- The access token is not valid.\n- The client ID specified in the Client-Id header does not match the client ID specified in the access token.",
                 "403": "- The user in moderator_id is not one of the broadcaster's moderators."
             },
-            "auth": "Requires a [user access token](https://dev.twitch.tv/docs/authentication#user-access-tokens) that includes the *moderator:manage:shield_mode* scope.",
+            "auth": "Requires a [user access token](https://dev.twitch.tv/docs/authentication#user-access-tokens)) with any of the following scopes: `moderator:manage:shield_mode`",
             "token": [
                 "user"
             ],
@@ -6908,7 +6908,7 @@
                 "401": "- The ID in moderator_id must match the user ID in the user access token.\n- The Authorization header is required and must contain a user access token.\n- The user access token must include the moderator:read:shield_mode or moderator:manage:shield_mode scope.\n- The access token is not valid.\n- The client ID specified in the Client-Id header does not match the client ID specified in the access token.",
                 "403": "- The user in moderator_id is not one of the broadcaster's moderators."
             },
-            "auth": "Requires a [user access token](https://dev.twitch.tv/docs/authentication#user-access-tokens) that includes the *moderator:read:shield_mode* or *moderator:manage:shield_mode* scope.",
+            "auth": "Requires a [user access token](https://dev.twitch.tv/docs/authentication#user-access-tokens)) with any of the following scopes: `moderator:read:shield_mode`, `moderator:manage:shield_mode`",
             "token": [
                 "user"
             ],
@@ -6968,7 +6968,7 @@
                 "429": "The app has exceeded the number of requests it may make per minute for this broadcaster.",
                 "500": "Internal Server Error."
             },
-            "auth": "Requires a user access token that includes the *moderator:manage:warnings* scope. Query parameter `moderator_id` must match the `user_id` in the [user access token](https://dev.twitch.tv/docs/authentication/#user-access-tokens).",
+            "auth": "Requires a [user access token](https://dev.twitch.tv/docs/authentication#user-access-tokens)) with any of the following scopes: `moderator:manage:warnings`",
             "token": [
                 "user"
             ],
@@ -7000,7 +7000,7 @@
             "reqBody": {},
             "body": {},
             "codes": {},
-            "auth": "Requires an [app access token](https://dev.twitch.tv/docs/authentication#app-access-tokens) or [user access token](https://dev.twitch.tv/docs/authentication#user-access-tokens) that includes the *moderator:manage:suspicious_users* scope.",
+            "auth": "Requires an [app access token](https://dev.twitch.tv/docs/authentication#app-access-tokens) or a [user access token](https://dev.twitch.tv/docs/authentication#user-access-tokens)) with any of the following scopes: `moderator:manage:suspicious_users`",
             "token": [
                 "app",
                 "user"
@@ -7070,7 +7070,7 @@
                 "401": "- The Authorization header is required and must specify user access token.\n- The user access token must include the moderator:manage:suspicious_users scope.\n- The OAuth token is not valid.\n- The ID in the Client-Id header must match the Client ID in the OAuth token.",
                 "403": "- The user in the moderator_id query parameter is not one of the broadcaster's moderators."
             },
-            "auth": "Requires an [app access token](https://dev.twitch.tv/docs/authentication#app-access-tokens) or [user access token](https://dev.twitch.tv/docs/authentication#user-access-tokens) that includes the *moderator:manage:suspicious_users* scope.",
+            "auth": "Requires an [app access token](https://dev.twitch.tv/docs/authentication#app-access-tokens) or a [user access token](https://dev.twitch.tv/docs/authentication#user-access-tokens)) with any of the following scopes: `moderator:manage:suspicious_users`",
             "token": [
                 "app",
                 "user"
@@ -7199,7 +7199,7 @@
                 "401": "- The ID in broadcaster_id must match the user ID in the access token.\n- The Authorization header is required and must contain a user access token.\n- The user access token is missing the channel:read:polls scope.\n- The access token is not valid.\n- The client ID specified in the Client-Id header must match the client ID specified in the access token.",
                 "404": "- None of the IDs in the id query parameters were found."
             },
-            "auth": "Requires a [user access token](https://dev.twitch.tv/docs/authentication#user-access-tokens) that includes the *channel:read:polls* or *channel:manage:polls* scope.",
+            "auth": "Requires a [user access token](https://dev.twitch.tv/docs/authentication#user-access-tokens)) with any of the following scopes: `channel:read:polls`, `channel:manage:polls`",
             "token": [
                 "user"
             ],
@@ -7296,7 +7296,7 @@
                 "400": "- The `broadcaster_id` field is required.\n- The `title` field is required.\n- The `choices` field is required.\n- The `duration` field is required.\n- The value in `duration` is outside the allowed range of values.\n- The value in `channel_points_per_vote` is outside the allowed range of values.\n- The value in `bits_per_vote` is outside the allowed range of values.\n- The poll's `title` is too long.\n- The choice's `title` is too long.\n- The choice's `title` failed AutoMod checks.\n- The number of choices in the poll may not be less than 2 or greater that 5.\n- The broadcaster already has a poll that's running; you may not create another poll until the current poll completes.",
                 "401": "- The ID in `broadcaster_id` must match the user ID in the access token.\n- The Authorization header is required and must contain a user access token.\n- The user access token is missing the channel:manage:polls scope.\n- The access token is not valid.\n- The client ID specified in the Client-Id header does not match the client ID specified in the access token."
             },
-            "auth": "Requires a [user access token](https://dev.twitch.tv/docs/authentication#user-access-tokens) that includes the *channel:manage:polls* scope.",
+            "auth": "Requires a [user access token](https://dev.twitch.tv/docs/authentication#user-access-tokens)) with any of the following scopes: `channel:manage:polls`",
             "token": [
                 "user"
             ],
@@ -7392,7 +7392,7 @@
                 "400": "- The `broadcaster_id` field is required.\n- The `id` field is required.\n- The `status` field is required.\n- The value in the `status` field is not valid.\n- The poll must be active to terminate or archive it.",
                 "401": "- The ID in `broadcaster_id` must match the user ID in the user access token.\n- The Authorization header is required and must contain a user access token.\n- The user access token must include the channel:manage:polls scope.\n- The access token is not valid.\n- The client ID specified in the Client-Id header must match the client ID specified in the access token."
             },
-            "auth": "Requires a [user access token](https://dev.twitch.tv/docs/authentication#user-access-tokens) that includes the *channel:manage:polls* scope.",
+            "auth": "Requires a [user access token](https://dev.twitch.tv/docs/authentication#user-access-tokens)) with any of the following scopes: `channel:manage:polls`",
             "token": [
                 "user"
             ],
@@ -7535,7 +7535,7 @@
                 "400": "- The broadcaster_id query parameter is required.",
                 "401": "- The ID in broadcaster_id must match the user ID in the access token.\n- The Authorization header is required and must contain a user access token.\n- The user access token must include the channel:read:predictions scope.\n- The access token is not valid.\n- The client ID specified in the Client-Id header does not match the client ID specified in the access token."
             },
-            "auth": "Requires a [user access token](https://dev.twitch.tv/docs/authentication#user-access-tokens) that includes the *channel:read:predictions* or *channel:manage:predictions* scope.",
+            "auth": "Requires a [user access token](https://dev.twitch.tv/docs/authentication#user-access-tokens)) with any of the following scopes: `channel:read:predictions`, `channel:manage:predictions`",
             "token": [
                 "user"
             ],
@@ -7649,7 +7649,7 @@
                 "401": "- The ID in `broadcaster_id` must match the user ID in the access token.\n- The Authorization header is required and must contain a user access token.\n- The user access token must include the channel:manage:predictions scope.\n- The access token is not valid.\n- The client ID specified in the Client-Id header does not match the client ID specified in the access token.",
                 "429": ""
             },
-            "auth": "Requires a [user access token](https://dev.twitch.tv/docs/authentication#user-access-tokens) that includes the *channel:manage:predictions* scope.",
+            "auth": "Requires a [user access token](https://dev.twitch.tv/docs/authentication#user-access-tokens)) with any of the following scopes: `channel:manage:predictions`",
             "token": [
                 "user"
             ],
@@ -7762,7 +7762,7 @@
                 "401": "- The ID in `broadcaster_id` must match the user ID in the OAuth token.\n- The Authorization header is required and must contain a user access token.\n- The user access token must include the channel:manage:predictions scope.\n- The access token is not valid.\n- The client ID specified in the Client-Id header does not match the client ID specified in the access token.",
                 "404": "- The prediction in the `id` field was not found.\n- The outcome in the `winning_outcome_id` field was not found."
             },
-            "auth": "Requires a [user access token](https://dev.twitch.tv/docs/authentication#user-access-tokens) that includes the *channel:manage:predictions* scope.",
+            "auth": "Requires a [user access token](https://dev.twitch.tv/docs/authentication#user-access-tokens)) with any of the following scopes: `channel:manage:predictions`",
             "token": [
                 "user"
             ],
@@ -7814,7 +7814,7 @@
                 "409": "- The broadcaster is already in the process of raiding another channel.",
                 "429": "- The broadcaster exceeded the number of raid requests that they may make. The limit is 10 requests within a 10-minute window."
             },
-            "auth": "Requires a [user access token](https://dev.twitch.tv/docs/authentication#user-access-tokens) that includes the *channel:manage:raids* scope.",
+            "auth": "Requires a [user access token](https://dev.twitch.tv/docs/authentication#user-access-tokens)) with any of the following scopes: `channel:manage:raids`",
             "token": [
                 "user"
             ],
@@ -7845,7 +7845,7 @@
                 "404": "- The broadcaster doesn't have a pending raid to cancel.",
                 "429": "- The broadcaster exceeded the number of raid requests that they may make. The limit is 10 requests within a 10-minute window."
             },
-            "auth": "Requires a [user access token](https://dev.twitch.tv/docs/authentication#user-access-tokens) that includes the *channel:manage:raids* scope.",
+            "auth": "Requires a [user access token](https://dev.twitch.tv/docs/authentication#user-access-tokens)) with any of the following scopes: `channel:manage:raids`",
             "token": [
                 "user"
             ],
@@ -7968,7 +7968,7 @@
                 "403": "- Only partners and affiliates may add non-recurring broadcast segments.",
                 "404": "- The broadcaster has not created a streaming schedule."
             },
-            "auth": "Requires an [app access token](https://dev.twitch.tv/docs/authentication#app-access-tokens) or [user access token](https://dev.twitch.tv/docs/authentication#user-access-tokens).",
+            "auth": "Requires an [app access token](https://dev.twitch.tv/docs/authentication#app-access-tokens) or a [user access token](https://dev.twitch.tv/docs/authentication#user-access-tokens))",
             "token": [
                 "app",
                 "user"
@@ -7992,7 +7992,7 @@
             "reqBody": {},
             "body": {},
             "codes": {},
-            "auth": "The Client-Id and Authorization headers are not required.",
+            "auth": "Requires ",
             "token": [],
             "method": "GET",
             "url": "https://api.twitch.tv/helix/schedule/icalendar",
@@ -8039,7 +8039,7 @@
                 "401": "- The ID in the broadcaster_id query parameter must match the user ID in the user access token.\n- The Authorization header is required and must contain a user access token.\n- The user access token must include the channel:manage:schedule scope.\n- The access token is not valid.\n- The ID in the Client-Id header must match the client ID in the access token.",
                 "404": "- The broadcaster's schedule was not found."
             },
-            "auth": "Requires a [user access token](https://dev.twitch.tv/docs/authentication#user-access-tokens) that includes the *channel:manage:schedule* scope.",
+            "auth": "Requires a [user access token](https://dev.twitch.tv/docs/authentication#user-access-tokens)) with any of the following scopes: `channel:manage:schedule`",
             "token": [
                 "user"
             ],
@@ -8141,7 +8141,7 @@
                 "401": "- The ID in the broadcaster_id query parameter must match the user ID in the user access token.\n- The Authorization header is required and must contain a user access token.\n- The user access token must include the channel:manage:schedule scope.\n- The access token is not valid.\n- The ID in the Client-Id header must match the client ID in the access token.",
                 "403": "- Only partners and affiliates may add non-recurring broadcast segments."
             },
-            "auth": "Requires a [user access token](https://dev.twitch.tv/docs/authentication#user-access-tokens) that includes the *channel:manage:schedule* scope.",
+            "auth": "Requires a [user access token](https://dev.twitch.tv/docs/authentication#user-access-tokens)) with any of the following scopes: `channel:manage:schedule`",
             "token": [
                 "user"
             ],
@@ -8253,7 +8253,7 @@
                 "401": "- The ID in the broadcaster_id query parameter must match the user ID in the user access token.\n- The Authorization header is required and must contain a user access token.\n- The user access token must include the channel:manage:schedule scope.\n- The access token is not valid.\n- The ID in the Client-Id header must match the client ID in the access token.",
                 "404": "- The specified broadcast segment was not found."
             },
-            "auth": "Requires a [user access token](https://dev.twitch.tv/docs/authentication#user-access-tokens) that includes the *channel:manage:schedule* scope.",
+            "auth": "Requires a [user access token](https://dev.twitch.tv/docs/authentication#user-access-tokens)) with any of the following scopes: `channel:manage:schedule`",
             "token": [
                 "user"
             ],
@@ -8287,7 +8287,7 @@
                 "400": "- The broadcaster_id query parameter is required.\n- The ID in the broadcaster_id query parameter is not valid.\n- The id query parameter is required.\n- The ID in the id query parameter is not valid.",
                 "401": "- The ID in the broadcaster_id query parameter must match the user ID in the user access token.\n- The Authorization header is required and must contain a user access token.\n- The user access token must include the channel:manage:schedule scope.\n- The access token is not valid.\n- The ID in the Client-Id header must match the client ID in the OAuth token."
             },
-            "auth": "Requires a [user access token](https://dev.twitch.tv/docs/authentication#user-access-tokens) that includes the *channel:manage:schedule* scope.",
+            "auth": "Requires a [user access token](https://dev.twitch.tv/docs/authentication#user-access-tokens)) with any of the following scopes: `channel:manage:schedule`",
             "token": [
                 "user"
             ],
@@ -8345,7 +8345,7 @@
                 "400": "- The query query parameter is required.",
                 "401": "- The Authorization header is required and must contain an app access token or user access token.\n- The access token is not valid.\n- The client ID specified in the Client-Id header does not match the client ID specified in the access token."
             },
-            "auth": "Requires an [app access token](https://dev.twitch.tv/docs/authentication#app-access-tokens) or [user access token](https://dev.twitch.tv/docs/authentication#user-access-tokens).",
+            "auth": "Requires an [app access token](https://dev.twitch.tv/docs/authentication#app-access-tokens) or a [user access token](https://dev.twitch.tv/docs/authentication#user-access-tokens))",
             "token": [
                 "app",
                 "user"
@@ -8441,7 +8441,7 @@
                 "400": "- The query query parameter is required.",
                 "401": "- The Authorization header is required and must contain an app access token or user access token.\n- The access token is not valid.\n- The client ID specified in the Client-Id header does not match the client ID specified in the access token."
             },
-            "auth": "Requires an [app access token](https://dev.twitch.tv/docs/authentication#app-access-tokens) or [user access token](https://dev.twitch.tv/docs/authentication#user-access-tokens).",
+            "auth": "Requires an [app access token](https://dev.twitch.tv/docs/authentication#app-access-tokens) or a [user access token](https://dev.twitch.tv/docs/authentication#user-access-tokens))",
             "token": [
                 "app",
                 "user"
@@ -8481,7 +8481,7 @@
                 "401": "- The ID in broadcaster_id must match the user ID in the access token.\n- The Authorization header is required and must contain a user access token.\n- The user access token must include the channel:read:stream_key scope.\n- The access token is not valid.\n- The client ID specified in the Client-Id header must match the client ID specified in the access token.",
                 "403": "The user must complete additional steps in order to stream. Present the user with the returned error message."
             },
-            "auth": "Requires a [user access token](https://dev.twitch.tv/docs/authentication#user-access-tokens) that includes the *channel:read:stream_key* scope.",
+            "auth": "Requires a [user access token](https://dev.twitch.tv/docs/authentication#user-access-tokens)) with any of the following scopes: `channel:read:stream_key`",
             "token": [
                 "user"
             ],
@@ -8617,7 +8617,7 @@
                 "400": "- The value in the type query parameter is not valid.",
                 "401": "- The Authorization header is required and must specify an app access token or user access token.\n- The access token is not valid.\n- The ID in the Client-Id header must match the Client ID in the access token."
             },
-            "auth": "Requires an [app access token](https://dev.twitch.tv/docs/authentication#app-access-tokens) or [user access token](https://dev.twitch.tv/docs/authentication#user-access-tokens).",
+            "auth": "Requires an [app access token](https://dev.twitch.tv/docs/authentication#app-access-tokens) or a [user access token](https://dev.twitch.tv/docs/authentication#user-access-tokens))",
             "token": [
                 "app",
                 "user"
@@ -8728,7 +8728,7 @@
                 "400": "- The user_id query parameter is required.",
                 "401": "- The ID in user_id must match the user ID found in the access token.\n- The Authorization header is required and must contain a user access token.\n- The user access token must include the user:read:follows scope.\n- The OAuth token is not valid.\n- The client ID specified in the Client-Id header does not match the client ID specified in the access token."
             },
-            "auth": "Requires a [user access token](https://dev.twitch.tv/docs/authentication#user-access-tokens) that includes the *user:read:follows* scope.",
+            "auth": "Requires a [user access token](https://dev.twitch.tv/docs/authentication#user-access-tokens)) with any of the following scopes: `user:read:follows`",
             "token": [
                 "user"
             ],
@@ -8779,7 +8779,7 @@
                 "403": "- The user in the access token is not authorized to create video markers for the user in the `user_id` field. The user in the access token must own the video or they must be one of the broadcaster's editors.",
                 "404": "- The user in the `user_id` field is not streaming live.\n- The ID in the user_id field is not valid.\n- The user hasn't enabled video on demand (VOD)."
             },
-            "auth": "Requires a [user access token](https://dev.twitch.tv/docs/authentication#user-access-tokens) that includes the *channel:manage:broadcast* scope.",
+            "auth": "Requires a [user access token](https://dev.twitch.tv/docs/authentication#user-access-tokens)) with any of the following scopes: `channel:manage:broadcast`",
             "token": [
                 "user"
             ],
@@ -8798,7 +8798,7 @@
             "reqBody": {},
             "body": {},
             "codes": {},
-            "auth": "Requires a [user access token](https://dev.twitch.tv/docs/authentication#user-access-tokens) that includes the *user:read:broadcast* or *channel:manage:broadcast* scope.",
+            "auth": "Requires a [user access token](https://dev.twitch.tv/docs/authentication#user-access-tokens)) with any of the following scopes: `user:read:broadcast`, `channel:manage:broadcast`",
             "token": [
                 "user"
             ],
@@ -8820,7 +8820,7 @@
             "reqBody": {},
             "body": {},
             "codes": {},
-            "auth": "Requires a [user access token](https://dev.twitch.tv/docs/authentication#user-access-tokens) that includes the *channel:read:subscriptions* scope.",
+            "auth": "Requires a [user access token](https://dev.twitch.tv/docs/authentication#user-access-tokens)) with any of the following scopes: `channel:read:subscriptions`",
             "token": [
                 "user"
             ],
@@ -8837,7 +8837,7 @@
             "reqBody": {},
             "body": {},
             "codes": {},
-            "auth": "Requires a [user access token](https://dev.twitch.tv/docs/authentication#user-access-tokens) that includes the *user:read:subscriptions* scope.",
+            "auth": "Requires a [user access token](https://dev.twitch.tv/docs/authentication#user-access-tokens)) with any of the following scopes: `user:read:subscription`",
             "token": [
                 "user"
             ],
@@ -8905,7 +8905,7 @@
                 "400": "- The tag_id query parameter is empty (for example, `&tag_id=`).\n- The list of tag IDs is too long.",
                 "401": "- The Authorization header is required and must specify an app access token or user access token.\n- The access token is not valid.\n- The ID in the Client-Id header must match the Client ID in the access token."
             },
-            "auth": "Requires an [app access token](https://dev.twitch.tv/docs/authentication#app-access-tokens) or [user access token](https://dev.twitch.tv/docs/authentication#user-access-tokens).",
+            "auth": "Requires an [app access token](https://dev.twitch.tv/docs/authentication#app-access-tokens) or a [user access token](https://dev.twitch.tv/docs/authentication#user-access-tokens))",
             "token": [
                 "app",
                 "user"
@@ -8954,7 +8954,7 @@
                 "400": "- The broadcaster_id field is required.\n- The ID in the broadcaster_id field is not valid.",
                 "401": "- The Authorization header is required and must specify an app access token or user access token.\n- The access token is not valid.\n- The ID in the Client-Id header must match the Client ID in the access token."
             },
-            "auth": "Requires an [app access token](https://dev.twitch.tv/docs/authentication#app-access-tokens) or [user access token](https://dev.twitch.tv/docs/authentication#user-access-tokens).",
+            "auth": "Requires an [app access token](https://dev.twitch.tv/docs/authentication#app-access-tokens) or a [user access token](https://dev.twitch.tv/docs/authentication#user-access-tokens))",
             "token": [
                 "app",
                 "user"
@@ -9038,7 +9038,7 @@
                 "401": "- The Authorization header must contain an app access token or user access token.\n- The access token is not valid.\n- The ID specified in the Client-Id header does not match the client ID specified in the access token.",
                 "404": "- The broadcaster was not found."
             },
-            "auth": "Requires an [app access token](https://dev.twitch.tv/docs/authentication#app-access-tokens) or [user access token](https://dev.twitch.tv/docs/authentication#user-access-tokens).",
+            "auth": "Requires an [app access token](https://dev.twitch.tv/docs/authentication#app-access-tokens) or a [user access token](https://dev.twitch.tv/docs/authentication#user-access-tokens))",
             "token": [
                 "app",
                 "user"
@@ -9129,7 +9129,7 @@
                 "401": "- The Authorization header must contain an app access token or user access token.\n- The access token is not valid.\n- The ID specified in the Client-Id header does not match the client ID specified in the access token.",
                 "404": "- The specified team was not found."
             },
-            "auth": "Requires an [app access token](https://dev.twitch.tv/docs/authentication#app-access-tokens) or [user access token](https://dev.twitch.tv/docs/authentication#user-access-tokens).",
+            "auth": "Requires an [app access token](https://dev.twitch.tv/docs/authentication#app-access-tokens) or a [user access token](https://dev.twitch.tv/docs/authentication#user-access-tokens))",
             "token": [
                 "app",
                 "user"
@@ -9213,7 +9213,7 @@
                 "400": "- The *id* or *login* query parameter is required unless the request uses a user access token.\n- The request exceeded the maximum allowed number of *id* and/or *login* query parameters.",
                 "401": "- The Authorization header is required and must contain an app access token or user access token.\n- The access token is not valid.\n- The ID specified in the Client-Id header does not match the client ID specified in the access token."
             },
-            "auth": "Requires an [app access token](https://dev.twitch.tv/docs/authentication#app-access-tokens) or [user access token](https://dev.twitch.tv/docs/authentication#user-access-tokens).",
+            "auth": "Requires an [app access token](https://dev.twitch.tv/docs/authentication#app-access-tokens) or a [user access token](https://dev.twitch.tv/docs/authentication#user-access-tokens))",
             "token": [
                 "app",
                 "user"
@@ -9291,7 +9291,7 @@
                 "401": "- The Authorization header is required and must contain a user access token.\n- The user access token must include the user:edit scope.\n- The access token is not valid.\n- The ID specified in the Client-Id header does not match the client ID specified in the access token.",
                 "429": "The app exceeded the number of requests that it may make."
             },
-            "auth": "Requires a [user access token](https://dev.twitch.tv/docs/authentication#user-access-tokens) that includes the *user:edit* scope.",
+            "auth": "Requires a [user access token](https://dev.twitch.tv/docs/authentication#user-access-tokens)) with any of the following scopes: `user:edit`",
             "token": [
                 "user"
             ],
@@ -9343,7 +9343,7 @@
                 "403": "The client-id in the header must match the client ID in the access token.",
                 "500": "Internal Server Error."
             },
-            "auth": "Requires an [app access token](https://dev.twitch.tv/docs/authentication#app-access-tokens).",
+            "auth": "Requires an [app access token](https://dev.twitch.tv/docs/authentication#app-access-tokens)",
             "token": [
                 "app"
             ],
@@ -9397,7 +9397,7 @@
                 "400": "- The broadcaster_id query parameter is required.",
                 "401": "- The ID in broadcaster_id must match the user ID found in the request’s access token.\n- The Authorization header is required and must contain a user access token.\n- The user access token must include the user:read:blocked_users scope.\n- The access token is not valid.\n- The ID specified in the Client-Id header does not match the client ID specified in the access token."
             },
-            "auth": "Requires a [user access token](https://dev.twitch.tv/docs/authentication#user-access-tokens) that includes the *user:read:blocked_users* scope.",
+            "auth": "Requires a [user access token](https://dev.twitch.tv/docs/authentication#user-access-tokens)) with any of the following scopes: `user:read:blocked_users`",
             "token": [
                 "user"
             ],
@@ -9436,7 +9436,7 @@
                 "400": "- The target_user_id query parameter is required.\n- The ID in target_user_id cannot be the same as the user ID in the access token.\n- The value in source_context is not valid.\n- The value in reason is not valid.",
                 "401": "- The Authorization header is required and must contain a user access token.\n- The user access token must include the user:manage:blocked_users scope.\n- The access token is not valid.\n- The ID specified in the Client-Id header does not match the client ID specified in the access token."
             },
-            "auth": "Requires a [user access token](https://dev.twitch.tv/docs/authentication#user-access-tokens) that includes the *user:manage:blocked_users* scope.",
+            "auth": "Requires a [user access token](https://dev.twitch.tv/docs/authentication#user-access-tokens)) with any of the following scopes: `user:manage:blocked_users`",
             "token": [
                 "user"
             ],
@@ -9465,7 +9465,7 @@
                 "400": "- The target_user_id query parameter is required.",
                 "401": "- The Authorization header is required and must contain a user access token.\n- The user access token must include the user:read:blocked_users scope.\n- The access token is not valid.\n- The ID specified in the Client-Id header does not match the client ID specified in the access token."
             },
-            "auth": "Requires a [user access token](https://dev.twitch.tv/docs/authentication#user-access-tokens) that includes the *user:manage:blocked_users* scope.",
+            "auth": "Requires a [user access token](https://dev.twitch.tv/docs/authentication#user-access-tokens)) with any of the following scopes: `user:manage:blocked_users`",
             "token": [
                 "user"
             ],
@@ -9512,7 +9512,7 @@
                 "200": "Successfully retrieved the user's installed extensions.",
                 "401": "- The Authorization header is required and must contain a user access token.\n- The user access token must include the user:read:broadcast scope.\n- The access token is not valid.\n- The ID specified in the Client-Id header does not match the client ID specified in the access token."
             },
-            "auth": "Requires a [user access token](https://dev.twitch.tv/docs/authentication#user-access-tokens) that includes the *user:read:broadcast* or *user:edit:broadcast* scope. To include inactive extensions, you must include the *user:edit:broadcast* scope.",
+            "auth": "Requires a [user access token](https://dev.twitch.tv/docs/authentication#user-access-tokens)) with any of the following scopes: `user:read:broadcast`, `user:edit:broadcast`\nINFO: To include inactive extensions, you must include the *user:edit:broadcast* scope",
             "token": [
                 "user"
             ],
@@ -9584,7 +9584,7 @@
                 "400": "- The user_id query parameter is required if you specify an app access token.",
                 "401": "- The Authorization header is required and must contain an app access token or user access token.\n- The access token is not valid.\n- The ID specified in the Client-Id header does not match the client ID specified in the access token."
             },
-            "auth": "Requires an [app access token](https://dev.twitch.tv/docs/authentication#app-access-tokens) or [user access token](https://dev.twitch.tv/docs/authentication#user-access-tokens).",
+            "auth": "Requires an [app access token](https://dev.twitch.tv/docs/authentication#app-access-tokens) or a [user access token](https://dev.twitch.tv/docs/authentication#user-access-tokens))",
             "token": [
                 "app",
                 "user"
@@ -9648,7 +9648,7 @@
                 "401": "- The Authorization header is required and must contain a user access token.\n- The user access token must include the user:edit:broadcast scope.\n- The access token is not valid.\n- The ID specified in the Client-Id header does not match the client ID specified in the access token.",
                 "404": "- An extension with the specified `id` and `version` values was not found."
             },
-            "auth": "Requires a [user access token](https://dev.twitch.tv/docs/authentication#user-access-tokens) that includes the *user:edit:broadcast* scope.",
+            "auth": "Requires a [user access token](https://dev.twitch.tv/docs/authentication#user-access-tokens)) with any of the following scopes: `user:edit:broadcast`",
             "token": [
                 "user"
             ],
@@ -9810,7 +9810,7 @@
                 "401": "- The Authorization header is required and must contain an app access token or user access token.\n- The access token is not valid.\n- The ID specified in the Client-Id header does not match the client ID specified in the access token.",
                 "404": "- The ID in the game_id query parameter was not found.\n- The ID in the id query parameter was not found. Returned only if all the IDs were not found; otherwise, the ID is ignored."
             },
-            "auth": "Requires an [app access token](https://dev.twitch.tv/docs/authentication#app-access-tokens) or [user access token](https://dev.twitch.tv/docs/authentication#user-access-tokens).",
+            "auth": "Requires an [app access token](https://dev.twitch.tv/docs/authentication#app-access-tokens) or a [user access token](https://dev.twitch.tv/docs/authentication#user-access-tokens))",
             "token": [
                 "app",
                 "user"
@@ -9843,7 +9843,7 @@
                 "400": "- The id query parameter is required.\n- The request exceeded the number of allowed id query parameters.",
                 "401": "- The caller is not authorized to delete the specified video.\n- The Authorization header is required and must contain a user access token.\n- The user access token must include the channel:manage:videos scope.\n- The access token is not valid.\n- The ID specified in the Client-Id header does not match the client ID specified in the access token."
             },
-            "auth": "Requires a [user access token](https://dev.twitch.tv/docs/authentication#user-access-tokens) that includes the *channel:manage:videos* scope.",
+            "auth": "Requires a [user access token](https://dev.twitch.tv/docs/authentication#user-access-tokens)) with any of the following scopes: `channel:manage:videos`",
             "token": [
                 "user"
             ],
@@ -9875,7 +9875,7 @@
             "reqBody": {},
             "body": {},
             "codes": {},
-            "auth": "Requires a [user access token](https://dev.twitch.tv/docs/authentication#user-access-tokens) that includes the *user:manage:whispers* scope.",
+            "auth": "Requires a [user access token](https://dev.twitch.tv/docs/authentication#user-access-tokens)) with any of the following scopes: `user:manage:whispers`",
             "token": [
                 "user"
             ],
