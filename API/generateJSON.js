@@ -342,6 +342,60 @@ while(main.children[i]?.name === 'section') {
         if(b) break;
         x+=4;
     }
+
+    const examples = $(segment, '.right-code');
+    
+    RawInfo[name].examples = [];
+    let currentExample = null;
+    let currentResponse = null;
+    x = 1;
+    while(examples.children[x]) {
+        if(examples.children[x].children[0].toLowerCase() == 'example request') {
+            if(currentExample) {
+                RawInfo[name].examples.push(currentExample);
+                if(currentResponse) currentExample.responses.push(currentResponse);
+            }
+            currentExample = {
+                request: "",
+                comment: "",
+                responses: []
+            }
+            currentResponse = null;
+        }
+        if(examples.children[x].children[0].toLowerCase() == 'example response') {
+            if(currentResponse) currentExample.responses.push(currentResponse);
+            currentResponse = {
+                response: "",
+                comment: ""
+            }
+        }
+        currentExample ??= {
+            request: "",
+            comment: "",
+            responses: []
+        }
+        if(!currentResponse) {
+            if(examples.children[x].name == 'p') {
+                currentExample.comment += asText(examples.children[x]);
+            }
+            if(examples.children[x].name == 'div') {
+                currentExample.request = asRaw(examples.children[x]);
+            }
+        } else {
+            if(examples.children[x].name == 'p') {
+                currentResponse.comment += asText(examples.children[x]);
+            }
+            if(examples.children[x].name == 'div') {
+                currentResponse.response = asRaw(examples.children[x]);
+            }
+        }
+        x+=2;
+    }
+    if(currentExample) {
+        if(currentResponse) currentExample.responses.push(currentResponse);
+        RawInfo[name].examples.push(currentExample);
+    }
+
     i+=2;
 }
 require('fs').writeFileSync('docs_raw.json', JSON.stringify(RawInfo, null, 4));
