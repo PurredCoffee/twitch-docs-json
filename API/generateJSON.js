@@ -292,7 +292,7 @@ while(main.children[i]?.name === 'section') {
                     //@ts-expect-error
                     const row = table.children[y];
                     const Rname = asRaw(row.children[1], false);
-                    RawInfo[name].reqBody.push({
+                    RawInfo[name].body.push({
                         name: Rname,
                         type: asRaw(row.children[3]).toLowerCase(),
                         description: asText(row.children[5])
