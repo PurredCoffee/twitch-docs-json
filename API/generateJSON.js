@@ -163,6 +163,11 @@ while(main.children[i]?.name === 'section') {
                     warnings[name].params = RawInfo[name].paramsInfo;
                     x+=2;
                 }
+                if(RawInfo[name].paramsInfo == "None") {
+                    delete warnings[name].params;
+                    delete RawInfo[name].paramsInfo;
+                    if(Object.keys(warnings[name]).length == 0) delete warnings[name];
+                }
                 if(doc.children[x+2].name == 'h3') {
                     break;
                 }
@@ -213,6 +218,11 @@ while(main.children[i]?.name === 'section') {
                     warnings[name] = warnings[name] ?? {};
                     warnings[name].reqBody = RawInfo[name].reqBodyInfo;
                     x+=2;
+                }
+                if(RawInfo[name].reqBodyInfo == "None") {
+                    delete warnings[name].reqBody;
+                    delete RawInfo[name].reqBodyInfo;
+                    if(Object.keys(warnings[name]).length == 0) delete warnings[name];
                 }
                 if(doc.children[x+2].name == 'h3') {
                     break;
@@ -265,6 +275,11 @@ while(main.children[i]?.name === 'section') {
                     warnings[name].body = RawInfo[name].bodyInfo;
                     x+=2;
                 }
+                if(RawInfo[name].bodyInfo == "None") {
+                    delete warnings[name].body;
+                    delete RawInfo[name].bodyInfo;
+                    if(Object.keys(warnings[name]).length == 0) delete warnings[name];
+                }
                 if(doc.children[x+2].name == 'h3') {
                     break;
                 }
@@ -292,6 +307,11 @@ while(main.children[i]?.name === 'section') {
                     warnings[name] = warnings[name] ?? {};
                     warnings[name].codes = RawInfo[name].codesInfo;
                     x+=2;
+                }
+                if(RawInfo[name].codesInfo == "None") {
+                    delete warnings[name].codes;
+                    delete RawInfo[name].codesInfo;
+                    if(Object.keys(warnings[name]).length == 0) delete warnings[name];
                 }
                 if(doc.children[x+2].name == 'h3') {
                     break;

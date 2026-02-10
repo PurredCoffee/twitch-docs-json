@@ -4,35 +4,50 @@ const scopes = require('./scopes.json');
 
 const output = {};
 
-/**
- * 
- * @param {{ 
- *  name: string,
- *  type: string,
- *  required: boolean,
- *  description: string
- * }[]} param 
- */
-function paramToObj(param, depth = 0) {
-    const retObj = {};
-    let c;
-    while(c = param.shift()) {
-        if(c.name.length - c.name.trimStart().length != depth) {
-            param.unshift(c);
-            return retObj;
-        }
-        retObj[c.name.trim()] = {
-            type: c.type,
-            required: c.required,
-            description: c.description
-        }
-        if(c.type.toLowerCase().startsWith('object')) {
-            retObj[c.name.trim()].attr = paramToObj(param, param[0].name.length - param[0].name.trim().length);
-        }
-    }
-    return retObj;
-}
 for(let key in docs) {
+    /**
+     * 
+     * @param {{ 
+     *  name: string,
+     *  type: string,
+     *  required: boolean,
+     *  description: string
+     * }[]} param 
+     */
+    function paramToObj(param, depth = 0) {
+        const retObj = {};
+        let c;
+        while(c = param.shift()) {
+            if(c.name.length - c.name.trimStart().length != depth) {
+                param.unshift(c);
+                return retObj;
+            }
+            
+            retObj[c.name.trim()] = {
+                type: c.type,
+                required: c.required,
+                description: c.description
+            }
+            if(c.type.toLo)
+            if(c.type.toLowerCase().startsWith('map')) {
+                const types = /map\[(.*),(.*)]|map\[(.*)](.*)/.exec(c.type);
+                retObj[c.name.trim()].type = 'map<' + (types[1] ?? types[3]) + ',' + (types[2] ?? types[4]) + '>';
+                if(!['string', 'bool', 'unsigned integer', 'integer', 'boolean', 'float', 'int64'].some((v => (types[2] ?? types[4]).toLowerCase().startsWith(v)))) {
+                    let nextname = param[0]?.name ?? "";
+                    if(nextname.length - nextname.trim().length == depth) retObj[c.name.trim()].attr = {};
+                    else retObj[c.name.trim()].attr = paramToObj(param, nextname.length - nextname.trim().length);
+                    if(Object.keys(retObj[c.name.trim()].attr).length == 0) console.warn(key, 'found with no documented attributes:', c.name.trim(), ":", c.type);
+                }
+            }
+            if(!['string', 'bool', 'unsigned integer', 'integer', 'boolean', 'map', 'float', 'int64'].some((v => c.type.toLowerCase().startsWith(v)))) {
+                let nextname = param[0]?.name ?? "";
+                if(nextname.length - nextname.trim().length == depth) retObj[c.name.trim()].attr = {};
+                else retObj[c.name.trim()].attr = paramToObj(param, nextname.length - nextname.trim().length);
+                if(Object.keys(retObj[c.name.trim()].attr).length == 0) console.warn(key, 'found with no documented attributes:', c.name.trim(), ":", c.type);
+            }
+        }
+        return retObj;
+    }
     const cat = docs[key].category;
     output[cat] ??= {};
     output[cat][key] = docs[key];

@@ -2513,8 +2513,7 @@
             "user"
         ],
         "method": "GET",
-        "url": "https://api.twitch.tv/helix/chat/emotes/global",
-        "paramsInfo": "None"
+        "url": "https://api.twitch.tv/helix/chat/emotes/global"
     },
     "Get Emote Sets": {
         "category": "Chat",
@@ -2644,8 +2643,7 @@
             "user"
         ],
         "method": "GET",
-        "url": "https://api.twitch.tv/helix/chat/badges/global",
-        "paramsInfo": "None"
+        "url": "https://api.twitch.tv/helix/chat/badges/global"
     },
     "Get Chat Settings": {
         "category": "Chat",
@@ -3092,8 +3090,7 @@
             "user"
         ],
         "method": "POST",
-        "url": "https://api.twitch.tv/helix/chat/announcements",
-        "bodyInfo": "None"
+        "url": "https://api.twitch.tv/helix/chat/announcements"
     },
     "Send a Shoutout": {
         "category": "Chat",
@@ -3127,8 +3124,7 @@
             "user"
         ],
         "method": "POST",
-        "url": "https://api.twitch.tv/helix/chat/shoutouts",
-        "bodyInfo": "None"
+        "url": "https://api.twitch.tv/helix/chat/shoutouts"
     },
     "Send Chat Message": {
         "category": "Chat",
@@ -3292,8 +3288,7 @@
             "user"
         ],
         "method": "PUT",
-        "url": "https://api.twitch.tv/helix/chat/color",
-        "bodyInfo": "None"
+        "url": "https://api.twitch.tv/helix/chat/color"
     },
     "Create Clip": {
         "category": "Clips",
@@ -7960,8 +7955,7 @@
             "user"
         ],
         "method": "POST",
-        "url": "https://api.twitch.tv/helix/channels/vips",
-        "bodyInfo": "None"
+        "url": "https://api.twitch.tv/helix/channels/vips"
     },
     "Remove Channel VIP": {
         "category": "Moderation",
@@ -7989,8 +7983,7 @@
             "user"
         ],
         "method": "DELETE",
-        "url": "https://api.twitch.tv/helix/channels/vips",
-        "bodyInfo": "None"
+        "url": "https://api.twitch.tv/helix/channels/vips"
     },
     "Update Shield Mode Status": {
         "category": "Moderation",

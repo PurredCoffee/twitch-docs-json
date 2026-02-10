@@ -11,7 +11,7 @@ if(!fs.existsSync('docs.html')) {
     require('./parseHTML');
     require('./generateJSON');
     require('./prettifyJSON');
-} else if(!fs.existsSync('docs_raw.json')) {
+} else {
     require('./generateJSON');
     require('./prettifyJSON');
 }
