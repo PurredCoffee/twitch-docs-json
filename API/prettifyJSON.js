@@ -31,12 +31,12 @@ for(let key in docs) {
             }
             if(c.type.toLowerCase().startsWith('string')) {
                 let possible = c.description.toLowerCase().indexOf('possible');
-                while((possible = c.description.indexOf('\n-', possible + 1)) >= 0) {
+                while((possible = c.description.indexOf('-', possible + 1)) >= 0) {
                     let end = [
                         c.description.indexOf("—", possible + 1),
                         c.description.indexOf("\n", possible + 1)
                     ].reduce((prev, v) => (v==-1?prev:Math.min(prev, v)), c.description.length);
-                    (retObj[c.name.trim()].possible ??= []).push(c.description.substring(possible + 3, end).trim());
+                    (retObj[c.name.trim()].possible ??= []).push(c.description.substring(possible + 2, end).trim());
                 }
             }
             if(c.type.toLowerCase().startsWith('map')) {

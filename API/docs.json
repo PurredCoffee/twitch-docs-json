@@ -102,7 +102,10 @@
                         },
                         "last_ad_at": {
                             "type": "string",
-                            "description": "The UTC timestamp of the broadcaster’s last ad-break, in RFC3339 format. Empty if the channel has not run an ad or is not live."
+                            "description": "The UTC timestamp of the broadcaster’s last ad-break, in RFC3339 format. Empty if the channel has not run an ad or is not live.",
+                            "possible": [
+                                "reak, in RFC3339 format. Empty if the channel has not run an ad or is not live."
+                            ]
                         },
                         "preroll_free_time": {
                             "type": "integer",
@@ -227,12 +230,20 @@
                 "started_at": {
                     "type": "string",
                     "required": false,
-                    "description": "The reporting window's start date, in RFC3339 format. Set the time portion to zeroes (for example, 2021-10-22T00:00:00Z).The start date must be on or after January 31, 2018. If you specify an earlier date, the API ignores it and uses January 31, 2018. If you specify a start date, you must specify an end date. If you don't specify a start and end date, the report includes all available data since January 31, 2018.The report contains one row of data for each day in the reporting window."
+                    "description": "The reporting window's start date, in RFC3339 format. Set the time portion to zeroes (for example, 2021-10-22T00:00:00Z).The start date must be on or after January 31, 2018. If you specify an earlier date, the API ignores it and uses January 31, 2018. If you specify a start date, you must specify an end date. If you don't specify a start and end date, the report includes all available data since January 31, 2018.The report contains one row of data for each day in the reporting window.",
+                    "possible": [
+                        "0-22T00:00:00Z).The start date must be on or after January 31, 2018. If you specify an earlier date, the API ignores it and uses January 31, 2018. If you specify a start date, you must specify an end date. If you don't specify a start and end date, the report includes all available data since January 31, 2018.The report contains one row of data for each day in the reporting window.",
+                        "2T00:00:00Z).The start date must be on or after January 31, 2018. If you specify an earlier date, the API ignores it and uses January 31, 2018. If you specify a start date, you must specify an end date. If you don't specify a start and end date, the report includes all available data since January 31, 2018.The report contains one row of data for each day in the reporting window."
+                    ]
                 },
                 "ended_at": {
                     "type": "string",
                     "required": false,
-                    "description": "The reporting window's end date, in RFC3339 format. Set the time portion to zeroes (for example, 2021-10-27T00:00:00Z). The report is inclusive of the end date.Specify an end date only if you provide a start date. Because it can take up to two days for the data to be available, you must specify an end date that's earlier than today minus one to two days. If not, the API ignores your end date and uses an end date that is today minus one to two days."
+                    "description": "The reporting window's end date, in RFC3339 format. Set the time portion to zeroes (for example, 2021-10-27T00:00:00Z). The report is inclusive of the end date.Specify an end date only if you provide a start date. Because it can take up to two days for the data to be available, you must specify an end date that's earlier than today minus one to two days. If not, the API ignores your end date and uses an end date that is today minus one to two days.",
+                    "possible": [
+                        "0-27T00:00:00Z). The report is inclusive of the end date.Specify an end date only if you provide a start date. Because it can take up to two days for the data to be available, you must specify an end date that's earlier than today minus one to two days. If not, the API ignores your end date and uses an end date that is today minus one to two days.",
+                        "7T00:00:00Z). The report is inclusive of the end date.Specify an end date only if you provide a start date. Because it can take up to two days for the data to be available, you must specify an end date that's earlier than today minus one to two days. If not, the API ignores your end date and uses an end date that is today minus one to two days."
+                    ]
                 },
                 "first": {
                     "type": "integer",
@@ -340,12 +351,20 @@
                 "started_at": {
                     "type": "string",
                     "required": false,
-                    "description": "The reporting window’s start date, in RFC3339 format. Set the time portion to zeroes (for example, 2021-10-22T00:00:00Z). If you specify a start date, you must specify an end date.The start date must be within one year of today’s date. If you specify an earlier date, the API ignores it and uses a date that’s one year prior to today’s date. If you don’t specify a start and end date, the report includes all available data for the last 365 days from today.The report contains one row of data for each day in the reporting window."
+                    "description": "The reporting window’s start date, in RFC3339 format. Set the time portion to zeroes (for example, 2021-10-22T00:00:00Z). If you specify a start date, you must specify an end date.The start date must be within one year of today’s date. If you specify an earlier date, the API ignores it and uses a date that’s one year prior to today’s date. If you don’t specify a start and end date, the report includes all available data for the last 365 days from today.The report contains one row of data for each day in the reporting window.",
+                    "possible": [
+                        "0-22T00:00:00Z). If you specify a start date, you must specify an end date.The start date must be within one year of today’s date. If you specify an earlier date, the API ignores it and uses a date that’s one year prior to today’s date. If you don’t specify a start and end date, the report includes all available data for the last 365 days from today.The report contains one row of data for each day in the reporting window.",
+                        "2T00:00:00Z). If you specify a start date, you must specify an end date.The start date must be within one year of today’s date. If you specify an earlier date, the API ignores it and uses a date that’s one year prior to today’s date. If you don’t specify a start and end date, the report includes all available data for the last 365 days from today.The report contains one row of data for each day in the reporting window."
+                    ]
                 },
                 "ended_at": {
                     "type": "string",
                     "required": false,
-                    "description": "The reporting window’s end date, in RFC3339 format. Set the time portion to zeroes (for example, 2021-10-22T00:00:00Z). The report is inclusive of the end date.Specify an end date only if you provide a start date. Because it can take up to two days for the data to be available, you must specify an end date that’s earlier than today minus one to two days. If not, the API ignores your end date and uses an end date that is today minus one to two days."
+                    "description": "The reporting window’s end date, in RFC3339 format. Set the time portion to zeroes (for example, 2021-10-22T00:00:00Z). The report is inclusive of the end date.Specify an end date only if you provide a start date. Because it can take up to two days for the data to be available, you must specify an end date that’s earlier than today minus one to two days. If not, the API ignores your end date and uses an end date that is today minus one to two days.",
+                    "possible": [
+                        "0-22T00:00:00Z). The report is inclusive of the end date.Specify an end date only if you provide a start date. Because it can take up to two days for the data to be available, you must specify an end date that’s earlier than today minus one to two days. If not, the API ignores your end date and uses an end date that is today minus one to two days.",
+                        "2T00:00:00Z). The report is inclusive of the end date.Specify an end date only if you provide a start date. Because it can take up to two days for the data to be available, you must specify an end date that’s earlier than today minus one to two days. If not, the API ignores your end date and uses an end date that is today minus one to two days."
+                    ]
                 },
                 "first": {
                     "type": "integer",
@@ -469,7 +488,18 @@
                 "started_at": {
                     "type": "string",
                     "required": false,
-                    "description": "The start date, in RFC3339 format, used for determining the aggregation period. Specify this parameter only if you specify the period query parameter. The start date is ignored if period is all.Note that the date is converted to PST before being used, so if you set the start time to `2022-01-01T00:00:00.0Z` and period to month, the actual reporting period is December 2021, not January 2022. If you want the reporting period to be January 2022, you must set the start time to `2022-01-01T08:00:00.0Z` or `2022-01-01T00:00:00.0-08:00`.If your start date uses the ‘+’ offset operator (for example, `2022-01-01T00:00:00.0+05:00`), you must URL encode the start date."
+                    "description": "The start date, in RFC3339 format, used for determining the aggregation period. Specify this parameter only if you specify the period query parameter. The start date is ignored if period is all.Note that the date is converted to PST before being used, so if you set the start time to `2022-01-01T00:00:00.0Z` and period to month, the actual reporting period is December 2021, not January 2022. If you want the reporting period to be January 2022, you must set the start time to `2022-01-01T08:00:00.0Z` or `2022-01-01T00:00:00.0-08:00`.If your start date uses the ‘+’ offset operator (for example, `2022-01-01T00:00:00.0+05:00`), you must URL encode the start date.",
+                    "possible": [
+                        "1-01T00:00:00.0Z` and period to month, the actual reporting period is December 2021, not January 2022. If you want the reporting period to be January 2022, you must set the start time to `2022-01-01T08:00:00.0Z` or `2022-01-01T00:00:00.0-08:00`.If your start date uses the ‘+’ offset operator (for example, `2022-01-01T00:00:00.0+05:00`), you must URL encode the start date.",
+                        "1T00:00:00.0Z` and period to month, the actual reporting period is December 2021, not January 2022. If you want the reporting period to be January 2022, you must set the start time to `2022-01-01T08:00:00.0Z` or `2022-01-01T00:00:00.0-08:00`.If your start date uses the ‘+’ offset operator (for example, `2022-01-01T00:00:00.0+05:00`), you must URL encode the start date.",
+                        "1-01T08:00:00.0Z` or `2022-01-01T00:00:00.0-08:00`.If your start date uses the ‘+’ offset operator (for example, `2022-01-01T00:00:00.0+05:00`), you must URL encode the start date.",
+                        "1T08:00:00.0Z` or `2022-01-01T00:00:00.0-08:00`.If your start date uses the ‘+’ offset operator (for example, `2022-01-01T00:00:00.0+05:00`), you must URL encode the start date.",
+                        "1-01T00:00:00.0-08:00`.If your start date uses the ‘+’ offset operator (for example, `2022-01-01T00:00:00.0+05:00`), you must URL encode the start date.",
+                        "1T00:00:00.0-08:00`.If your start date uses the ‘+’ offset operator (for example, `2022-01-01T00:00:00.0+05:00`), you must URL encode the start date.",
+                        "8:00`.If your start date uses the ‘+’ offset operator (for example, `2022-01-01T00:00:00.0+05:00`), you must URL encode the start date.",
+                        "1-01T00:00:00.0+05:00`), you must URL encode the start date.",
+                        "1T00:00:00.0+05:00`), you must URL encode the start date."
+                    ]
                 },
                 "user_id": {
                     "type": "string",
@@ -648,10 +678,14 @@
                             "description": "The type of Cheermote. Possible values are:\n- global_first_party — A Twitch-defined Cheermote that is shown in the Bits card.\n- global_third_party — A Twitch-defined Cheermote that is not shown in the Bits card.\n- channel_custom — A broadcaster-defined Cheermote.\n- display_only — Do not use; for internal use only.\n- sponsored — A sponsor-defined Cheermote. When used, the sponsor adds additional Bits to the amount that the user cheered. For example, if the user cheered Terminator100, the broadcaster might receive 110 Bits, which includes the sponsor's 10 Bits contribution.",
                             "possible": [
                                 "global_first_party",
+                                "efined Cheermote that is shown in the Bits card.",
                                 "global_third_party",
+                                "efined Cheermote that is not shown in the Bits card.",
                                 "channel_custom",
+                                "efined Cheermote.",
                                 "display_only",
-                                "sponsored"
+                                "sponsored",
+                                "efined Cheermote. When used, the sponsor adds additional Bits to the amount that the user cheered. For example, if the user cheered Terminator100, the broadcaster might receive 110 Bits, which includes the sponsor's 10 Bits contribution."
                             ]
                         },
                         "order": {
@@ -886,7 +920,11 @@
                         },
                         "broadcaster_language": {
                             "type": "string",
-                            "description": "The broadcaster’s preferred language. The value is an ISO 639-1 two-letter language code (for example, en for English). The value is set to “other” if the language is not a Twitch supported language."
+                            "description": "The broadcaster’s preferred language. The value is an ISO 639-1 two-letter language code (for example, en for English). The value is set to “other” if the language is not a Twitch supported language.",
+                            "possible": [
+                                "two-letter language code (for example, en for English). The value is set to “other” if the language is not a Twitch supported language.",
+                                "etter language code (for example, en for English). The value is set to “other” if the language is not a Twitch supported language."
+                            ]
                         },
                         "game_name": {
                             "type": "string",
@@ -968,7 +1006,11 @@
                 "broadcaster_language": {
                     "type": "string",
                     "required": false,
-                    "description": "The user’s preferred language. Set the value to an ISO 639-1 two-letter language code (for example, en for English). Set to “other” if the user’s preferred language is not a Twitch supported language. The language isn’t updated if the language code isn’t a Twitch supported language."
+                    "description": "The user’s preferred language. Set the value to an ISO 639-1 two-letter language code (for example, en for English). Set to “other” if the user’s preferred language is not a Twitch supported language. The language isn’t updated if the language code isn’t a Twitch supported language.",
+                    "possible": [
+                        "two-letter language code (for example, en for English). Set to “other” if the user’s preferred language is not a Twitch supported language. The language isn’t updated if the language code isn’t a Twitch supported language.",
+                        "etter language code (for example, en for English). Set to “other” if the user’s preferred language is not a Twitch supported language. The language isn’t updated if the language code isn’t a Twitch supported language."
+                    ]
                 },
                 "title": {
                     "type": "string",
@@ -983,7 +1025,12 @@
                 "tags": {
                     "type": "string[]",
                     "required": false,
-                    "description": "A list of channel-defined tags to apply to the channel. To remove all tags from the channel, set tags to an empty array. Tags help identify the content that the channel streams. [Learn More](https://help.twitch.tv/s/article/guide-to-tags)A channel may specify a maximum of 10 tags. Each tag is limited to a maximum of 25 characters and may not be an empty string or contain spaces or special characters. Tags are case insensitive. For readability, consider using camelCasing or PascalCasing."
+                    "description": "A list of channel-defined tags to apply to the channel. To remove all tags from the channel, set tags to an empty array. Tags help identify the content that the channel streams. [Learn More](https://help.twitch.tv/s/article/guide-to-tags)A channel may specify a maximum of 10 tags. Each tag is limited to a maximum of 25 characters and may not be an empty string or contain spaces or special characters. Tags are case insensitive. For readability, consider using camelCasing or PascalCasing.",
+                    "possible": [
+                        "efined tags to apply to the channel. To remove all tags from the channel, set tags to an empty array. Tags help identify the content that the channel streams. [Learn More](https://help.twitch.tv/s/article/guide-to-tags)A channel may specify a maximum of 10 tags. Each tag is limited to a maximum of 25 characters and may not be an empty string or contain spaces or special characters. Tags are case insensitive. For readability, consider using camelCasing or PascalCasing.",
+                        "o-tags)A channel may specify a maximum of 10 tags. Each tag is limited to a maximum of 25 characters and may not be an empty string or contain spaces or special characters. Tags are case insensitive. For readability, consider using camelCasing or PascalCasing.",
+                        "ags)A channel may specify a maximum of 10 tags. Each tag is limited to a maximum of 25 characters and may not be an empty string or contain spaces or special characters. Tags are case insensitive. For readability, consider using camelCasing or PascalCasing."
+                    ]
                 },
                 "content_classification_labels": {
                     "type": "label[]",
@@ -995,6 +1042,8 @@
                             "required": true,
                             "description": "ID of the [Content Classification Labels](https://help.twitch.tv/s/article/content-classification-labels) that must be added/removed from the channel. Can be one of the following values:\n- DebatedSocialIssuesAndPolitics\n- DrugsIntoxication\n- SexualThemes\n- ViolentGraphic\n- Gambling\n- ProfanityVulgarity",
                             "possible": [
+                                "lassification-labels) that must be added/removed from the channel. Can be one of the following values:",
+                                "abels) that must be added/removed from the channel. Can be one of the following values:",
                                 "DebatedSocialIssuesAndPolitics",
                                 "DrugsIntoxication",
                                 "SexualThemes",
@@ -1787,6 +1836,7 @@
                     "required": true,
                     "description": "The status of the redemptions to return. The possible case-sensitive values are:\n- CANCELED\n- FULFILLED\n- UNFULFILLED\n*NOTE*: This field is required only if you don’t specify the id query parameter.*NOTE*: Canceled and fulfilled redemptions are returned for only a few days after they’re canceled or fulfilled.",
                     "possible": [
+                        "ensitive values are:",
                         "CANCELED",
                         "FULFILLED",
                         "UNFULFILLED"
@@ -1802,6 +1852,7 @@
                     "required": false,
                     "description": "The order to sort redemptions by. The possible case-sensitive values are:\n- OLDEST\n- NEWEST\nThe default is OLDEST.",
                     "possible": [
+                        "ensitive values are:",
                         "OLDEST",
                         "NEWEST"
                     ]
@@ -2414,7 +2465,11 @@
                                 },
                                 "currency": {
                                     "type": "string",
-                                    "description": "The ISO-4217 three-letter currency code that identifies the type of currency in `value`."
+                                    "description": "The ISO-4217 three-letter currency code that identifies the type of currency in `value`.",
+                                    "possible": [
+                                        "217 three-letter currency code that identifies the type of currency in `value`.",
+                                        "etter currency code that identifies the type of currency in `value`."
+                                    ]
                                 }
                             }
                         },
@@ -2432,7 +2487,11 @@
                                 },
                                 "currency": {
                                     "type": "string",
-                                    "description": "The ISO-4217 three-letter currency code that identifies the type of currency in `value`."
+                                    "description": "The ISO-4217 three-letter currency code that identifies the type of currency in `value`.",
+                                    "possible": [
+                                        "217 three-letter currency code that identifies the type of currency in `value`.",
+                                        "etter currency code that identifies the type of currency in `value`."
+                                    ]
                                 }
                             }
                         }
@@ -2529,7 +2588,11 @@
                                 },
                                 "currency": {
                                     "type": "string",
-                                    "description": "The ISO-4217 three-letter currency code that identifies the type of currency in `value`."
+                                    "description": "The ISO-4217 three-letter currency code that identifies the type of currency in `value`.",
+                                    "possible": [
+                                        "217 three-letter currency code that identifies the type of currency in `value`.",
+                                        "etter currency code that identifies the type of currency in `value`."
+                                    ]
                                 }
                             }
                         }
@@ -2756,7 +2819,11 @@
                 },
                 "template": {
                     "type": "string",
-                    "description": "A templated URL. Use the values from the `id`, `format`, `scale`, and `theme_mode` fields to replace the like-named placeholder strings in the templated URL to create a CDN (content delivery network) URL that you use to fetch the emote. For information about what the template looks like and how to use it to fetch emotes, see [Emote CDN URL format](https://dev.twitch.tv/docs/irc/emotes#cdn-template). You should use this template instead of using the URLs in the `images` object."
+                    "description": "A templated URL. Use the values from the `id`, `format`, `scale`, and `theme_mode` fields to replace the like-named placeholder strings in the templated URL to create a CDN (content delivery network) URL that you use to fetch the emote. For information about what the template looks like and how to use it to fetch emotes, see [Emote CDN URL format](https://dev.twitch.tv/docs/irc/emotes#cdn-template). You should use this template instead of using the URLs in the `images` object.",
+                    "possible": [
+                        "amed placeholder strings in the templated URL to create a CDN (content delivery network) URL that you use to fetch the emote. For information about what the template looks like and how to use it to fetch emotes, see [Emote CDN URL format](https://dev.twitch.tv/docs/irc/emotes#cdn-template). You should use this template instead of using the URLs in the `images` object.",
+                        "emplate). You should use this template instead of using the URLs in the `images` object."
+                    ]
                 }
             },
             "codes": {
@@ -2824,7 +2891,11 @@
                 "emote_set_id": {
                     "type": "string",
                     "required": true,
-                    "description": "An ID that identifies the emote set to get. Include this parameter for each emote set you want to get. For example, `emote_set_id=1234&emote_set_id=5678`. You may specify a maximum of 25 IDs. The response contains only the IDs that were found and ignores duplicate IDs.To get emote set IDs, use the [Get Channel Emotes](#get-channel-emotes) API."
+                    "description": "An ID that identifies the emote set to get. Include this parameter for each emote set you want to get. For example, `emote_set_id=1234&emote_set_id=5678`. You may specify a maximum of 25 IDs. The response contains only the IDs that were found and ignores duplicate IDs.To get emote set IDs, use the [Get Channel Emotes](#get-channel-emotes) API.",
+                    "possible": [
+                        "hannel-emotes) API.",
+                        "motes) API."
+                    ]
                 }
             },
             "reqBody": {},
@@ -2863,6 +2934,7 @@
                             "type": "string",
                             "description": "The type of emote. The possible values are: - bitstier — A Bits tier emote.\n- follower — A follower emote.\n- subscriptions — A subscriber emote.",
                             "possible": [
+                                "bitstier",
                                 "follower",
                                 "subscriptions"
                             ]
@@ -2879,6 +2951,7 @@
                             "type": "string[]",
                             "description": "The formats that the emote is available in. For example, if the emote is available only as a static PNG, the array contains only `static`. But if the emote is available as a static PNG and an animated GIF, the array contains `static` and `animated`. The possible formats are: - animated — An animated GIF is available for this emote.\n- static — A static PNG file is available for this emote.",
                             "possible": [
+                                "animated",
                                 "static"
                             ]
                         },
@@ -2886,6 +2959,7 @@
                             "type": "string[]",
                             "description": "The sizes that the emote is available in. For example, if the emote is available in small and medium sizes, the array contains 1.0 and 2.0. Possible sizes are: - 1.0 — A small version (28px x 28px) is available.\n- 2.0 — A medium version (56px x 56px) is available.\n- 3.0 — A large version (112px x 112px) is available.",
                             "possible": [
+                                "1.0",
                                 "2.0",
                                 "3.0"
                             ]
@@ -2894,6 +2968,7 @@
                             "type": "string[]",
                             "description": "The background themes that the emote is available in. Possible themes are: - dark\n- light",
                             "possible": [
+                                "dark",
                                 "light"
                             ]
                         }
@@ -2901,7 +2976,11 @@
                 },
                 "template": {
                     "type": "string",
-                    "description": "A templated URL. Use the values from the `id`, `format`, `scale`, and `theme_mode` fields to replace the like-named placeholder strings in the templated URL to create a CDN (content delivery network) URL that you use to fetch the emote. For information about what the template looks like and how to use it to fetch emotes, see [Emote CDN URL format](https://dev.twitch.tv/docs/irc/emotes#cdn-template). You should use this template instead of using the URLs in the `images` object."
+                    "description": "A templated URL. Use the values from the `id`, `format`, `scale`, and `theme_mode` fields to replace the like-named placeholder strings in the templated URL to create a CDN (content delivery network) URL that you use to fetch the emote. For information about what the template looks like and how to use it to fetch emotes, see [Emote CDN URL format](https://dev.twitch.tv/docs/irc/emotes#cdn-template). You should use this template instead of using the URLs in the `images` object.",
+                    "possible": [
+                        "amed placeholder strings in the templated URL to create a CDN (content delivery network) URL that you use to fetch the emote. For information about what the template looks like and how to use it to fetch emotes, see [Emote CDN URL format](https://dev.twitch.tv/docs/irc/emotes#cdn-template). You should use this template instead of using the URLs in the `images` object.",
+                        "emplate). You should use this template instead of using the URLs in the `images` object."
+                    ]
                 }
             },
             "codes": {
@@ -3200,6 +3279,7 @@
                             "type": "string",
                             "description": "The type of emote. The possible values are: - none — No emote type was assigned to this emote.\n- bitstier — A Bits tier emote.\n- follower — A follower emote.\n- subscriptions — A subscriber emote.\n- channelpoints — An emote granted by using channel points.\n- rewards — An emote granted to the user through a special event.\n- hypetrain — An emote granted for participation in a Hype Train.\n- prime — An emote granted for linking an Amazon Prime account.\n- turbo — An emote granted for having Twitch Turbo.\n- smilies — Emoticons supported by Twitch.\n- globals — An emote accessible by everyone.\n- owl2019 — Emotes related to Overwatch League 2019.\n- twofactor — Emotes granted by enabling two-factor authentication on an account.\n- limitedtime — Emotes that were granted for only a limited time.",
                             "possible": [
+                                "none",
                                 "bitstier",
                                 "follower",
                                 "subscriptions",
@@ -3212,6 +3292,7 @@
                                 "globals",
                                 "owl2019",
                                 "twofactor",
+                                "actor authentication on an account.",
                                 "limitedtime"
                             ]
                         },
@@ -3227,6 +3308,7 @@
                             "type": "string[]",
                             "description": "The formats that the emote is available in. For example, if the emote is available only as a static PNG, the array contains only static. But if the emote is available as a static PNG and an animated GIF, the array contains static and animated. - animated — An animated GIF is available for this emote.\n- static — A static PNG file is available for this emote.",
                             "possible": [
+                                "animated",
                                 "static"
                             ]
                         },
@@ -3234,6 +3316,7 @@
                             "type": "string[]",
                             "description": "The sizes that the emote is available in. For example, if the emote is available in small and medium sizes, the array contains 1.0 and 2.0. - 1.0 — A small version (28px x 28px) is available.\n- 2.0 — A medium version (56px x 56px) is available.\n- 3.0 — A large version (112px x 112px) is available.",
                             "possible": [
+                                "1.0",
                                 "2.0",
                                 "3.0"
                             ]
@@ -3242,6 +3325,7 @@
                             "type": "string[]",
                             "description": "The background themes that the emote is available in. - dark\n- light",
                             "possible": [
+                                "dark",
                                 "light"
                             ]
                         }
@@ -3249,7 +3333,11 @@
                 },
                 "template": {
                     "type": "string",
-                    "description": "A templated URL. Uses the values from the id, format, scale, and theme_mode fields to replace the like-named placeholder strings in the templated URL to create a CDN (content delivery network) URL that you use to fetch the emote. For information about what the template looks like and how to use it to fetch emotes, see [Emote CDN URL](https://dev.twitch.tv/docs/irc/emotes#cdn-template) format."
+                    "description": "A templated URL. Uses the values from the id, format, scale, and theme_mode fields to replace the like-named placeholder strings in the templated URL to create a CDN (content delivery network) URL that you use to fetch the emote. For information about what the template looks like and how to use it to fetch emotes, see [Emote CDN URL](https://dev.twitch.tv/docs/irc/emotes#cdn-template) format.",
+                    "possible": [
+                        "amed placeholder strings in the templated URL to create a CDN (content delivery network) URL that you use to fetch the emote. For information about what the template looks like and how to use it to fetch emotes, see [Emote CDN URL](https://dev.twitch.tv/docs/irc/emotes#cdn-template) format.",
+                        "emplate) format."
+                    ]
                 },
                 "pagination": {
                     "type": "object",
@@ -3462,6 +3550,7 @@
                     "required": false,
                     "description": "The color used to highlight the announcement. Possible case-sensitive values are:\n- blue\n- green\n- orange\n- purple\n- primary (default)\nIf `color` is set to primary or is not set, the channel’s accent color is used to highlight the announcement (see *Profile Accent Color* under [profile settings](https://www.twitch.tv/settings/profile), *Channel and Videos*, and *Brand*).",
                     "possible": [
+                        "ensitive values are:",
                         "blue",
                         "green",
                         "orange",
@@ -3777,7 +3866,12 @@
                         },
                         "edit_url": {
                             "type": "string",
-                            "description": "A URL that you can use to edit the clip’s title, identify the part of the clip to publish, and publish the clip. [Learn More](https://help.twitch.tv/s/article/how-to-use-clips)The URL is valid for up to 24 hours or until the clip is published, whichever comes first."
+                            "description": "A URL that you can use to edit the clip’s title, identify the part of the clip to publish, and publish the clip. [Learn More](https://help.twitch.tv/s/article/how-to-use-clips)The URL is valid for up to 24 hours or until the clip is published, whichever comes first.",
+                            "possible": [
+                                "o-use-clips)The URL is valid for up to 24 hours or until the clip is published, whichever comes first.",
+                                "se-clips)The URL is valid for up to 24 hours or until the clip is published, whichever comes first.",
+                                "lips)The URL is valid for up to 24 hours or until the clip is published, whichever comes first."
+                            ]
                         }
                     }
                 }
@@ -3860,7 +3954,10 @@
                         },
                         "edit_url": {
                             "type": "string",
-                            "description": "A URL you can use to edit the clip’s title, feature the clip, create a portrait version of the clip, download the clip media, and share the clip directly to third-party platforms."
+                            "description": "A URL you can use to edit the clip’s title, feature the clip, create a portrait version of the clip, download the clip media, and share the clip directly to third-party platforms.",
+                            "possible": [
+                                "arty platforms."
+                            ]
                         }
                     }
                 }
@@ -3964,7 +4061,11 @@
                         },
                         "embed_url": {
                             "type": "string",
-                            "description": "A URL that you can use in an iframe to embed the clip (see [Embedding Video and Clips](https://dev.twitch.tv/docs/embed/video-and-clips/))."
+                            "description": "A URL that you can use in an iframe to embed the clip (see [Embedding Video and Clips](https://dev.twitch.tv/docs/embed/video-and-clips/)).",
+                            "possible": [
+                                "nd-clips/)).",
+                                "lips/))."
+                            ]
                         },
                         "broadcaster_id": {
                             "type": "string",
@@ -3992,7 +4093,11 @@
                         },
                         "language": {
                             "type": "string",
-                            "description": "The ISO 639-1 two-letter language code that the broadcaster broadcasts in. For example, en for English. The value is other if the broadcaster uses a language that Twitch doesn’t support."
+                            "description": "The ISO 639-1 two-letter language code that the broadcaster broadcasts in. For example, en for English. The value is other if the broadcaster uses a language that Twitch doesn’t support.",
+                            "possible": [
+                                "two-letter language code that the broadcaster broadcasts in. For example, en for English. The value is other if the broadcaster uses a language that Twitch doesn’t support.",
+                                "etter language code that the broadcaster broadcasts in. For example, en for English. The value is other if the broadcaster uses a language that Twitch doesn’t support."
+                            ]
                         },
                         "title": {
                             "type": "string",
@@ -4092,7 +4197,12 @@
                 "clip_id": {
                     "type": "string",
                     "required": true,
-                    "description": "The ID that identifies the clip you want to download. Include this parameter for each clip you want to download, up to a maximum of 10 clips. For example, `clip_id=SleepyGiftedPeppermintNerfRedBlaster-KbkBXYt3lOk3jy8-&clip_id=WimpyAltruisticKleeKeyboardCat-EiY5yMrEwZ4i4gwC`."
+                    "description": "The ID that identifies the clip you want to download. Include this parameter for each clip you want to download, up to a maximum of 10 clips. For example, `clip_id=SleepyGiftedPeppermintNerfRedBlaster-KbkBXYt3lOk3jy8-&clip_id=WimpyAltruisticKleeKeyboardCat-EiY5yMrEwZ4i4gwC`.",
+                    "possible": [
+                        "bkBXYt3lOk3jy8-&clip_id=WimpyAltruisticKleeKeyboardCat-EiY5yMrEwZ4i4gwC`.",
+                        "clip_id=WimpyAltruisticKleeKeyboardCat-EiY5yMrEwZ4i4gwC`.",
+                        "iY5yMrEwZ4i4gwC`."
+                    ]
                 }
             },
             "reqBody": {},
@@ -4384,10 +4494,12 @@
                                 "websocket_disconnected",
                                 "websocket_failed_ping_pong",
                                 "websocket_received_inbound_traffic",
+                                "ong message. Clients may only send pong messages (and only in response to a ping message).",
                                 "websocket_internal_error",
                                 "websocket_network_timeout",
                                 "websocket_network_error",
-                                "websocket_failed_to_reconnect - The client failed to reconnect to the Twitch WebSocket server within the required time after a Reconnect Message."
+                                "websocket_failed_to_reconnect - The client failed to reconnect to the Twitch WebSocket server within the required time after a Reconnect Message.",
+                                "The client failed to reconnect to the Twitch WebSocket server within the required time after a Reconnect Message."
                             ]
                         },
                         "transport": {
@@ -4535,10 +4647,12 @@
                                 "websocket_disconnected",
                                 "websocket_failed_ping_pong",
                                 "websocket_received_inbound_traffic",
+                                "ong message. Clients may only send pong messages (and only in response to a ping message).",
                                 "websocket_internal_error",
                                 "websocket_network_timeout",
                                 "websocket_network_error",
-                                "websocket_failed_to_reconnect - The client failed to reconnect to the Twitch WebSocket server within the required time after a Reconnect Message."
+                                "websocket_failed_to_reconnect - The client failed to reconnect to the Twitch WebSocket server within the required time after a Reconnect Message.",
+                                "The client failed to reconnect to the Twitch WebSocket server within the required time after a Reconnect Message."
                             ]
                         },
                         "transport": {
@@ -4638,7 +4752,40 @@
                 "locale": {
                     "type": "string",
                     "required": false,
-                    "description": "Locale for the Content Classification Labels. You may specify a maximum of 1 locale. Default: `“en-US”`Supported locales: `\"bg-BG\", \"cs-CZ\", \"da-DK\", \"da-DK\", \"de-DE\", \"el-GR\", \"en-GB\", \"en-US\", \"es-ES\", \"es-MX\", \"fi-FI\", \"fr-FR\", \"hu-HU\", \"it-IT\", \"ja-JP\", \"ko-KR\", \"nl-NL\", \"no-NO\", \"pl-PL\", \"pt-BT\", \"pt-PT\", \"ro-RO\", \"ru-RU\", \"sk-SK\", \"sv-SE\", \"th-TH\", \"tr-TR\", \"vi-VN\", \"zh-CN\", \"zh-TW\"`"
+                    "description": "Locale for the Content Classification Labels. You may specify a maximum of 1 locale. Default: `“en-US”`Supported locales: `\"bg-BG\", \"cs-CZ\", \"da-DK\", \"da-DK\", \"de-DE\", \"el-GR\", \"en-GB\", \"en-US\", \"es-ES\", \"es-MX\", \"fi-FI\", \"fr-FR\", \"hu-HU\", \"it-IT\", \"ja-JP\", \"ko-KR\", \"nl-NL\", \"no-NO\", \"pl-PL\", \"pt-BT\", \"pt-PT\", \"ro-RO\", \"ru-RU\", \"sk-SK\", \"sv-SE\", \"th-TH\", \"tr-TR\", \"vi-VN\", \"zh-CN\", \"zh-TW\"`",
+                    "possible": [
+                        "S”`Supported locales: `\"bg-BG\", \"cs-CZ\", \"da-DK\", \"da-DK\", \"de-DE\", \"el-GR\", \"en-GB\", \"en-US\", \"es-ES\", \"es-MX\", \"fi-FI\", \"fr-FR\", \"hu-HU\", \"it-IT\", \"ja-JP\", \"ko-KR\", \"nl-NL\", \"no-NO\", \"pl-PL\", \"pt-BT\", \"pt-PT\", \"ro-RO\", \"ru-RU\", \"sk-SK\", \"sv-SE\", \"th-TH\", \"tr-TR\", \"vi-VN\", \"zh-CN\", \"zh-TW\"`",
+                        "G\", \"cs-CZ\", \"da-DK\", \"da-DK\", \"de-DE\", \"el-GR\", \"en-GB\", \"en-US\", \"es-ES\", \"es-MX\", \"fi-FI\", \"fr-FR\", \"hu-HU\", \"it-IT\", \"ja-JP\", \"ko-KR\", \"nl-NL\", \"no-NO\", \"pl-PL\", \"pt-BT\", \"pt-PT\", \"ro-RO\", \"ru-RU\", \"sk-SK\", \"sv-SE\", \"th-TH\", \"tr-TR\", \"vi-VN\", \"zh-CN\", \"zh-TW\"`",
+                        "Z\", \"da-DK\", \"da-DK\", \"de-DE\", \"el-GR\", \"en-GB\", \"en-US\", \"es-ES\", \"es-MX\", \"fi-FI\", \"fr-FR\", \"hu-HU\", \"it-IT\", \"ja-JP\", \"ko-KR\", \"nl-NL\", \"no-NO\", \"pl-PL\", \"pt-BT\", \"pt-PT\", \"ro-RO\", \"ru-RU\", \"sk-SK\", \"sv-SE\", \"th-TH\", \"tr-TR\", \"vi-VN\", \"zh-CN\", \"zh-TW\"`",
+                        "K\", \"da-DK\", \"de-DE\", \"el-GR\", \"en-GB\", \"en-US\", \"es-ES\", \"es-MX\", \"fi-FI\", \"fr-FR\", \"hu-HU\", \"it-IT\", \"ja-JP\", \"ko-KR\", \"nl-NL\", \"no-NO\", \"pl-PL\", \"pt-BT\", \"pt-PT\", \"ro-RO\", \"ru-RU\", \"sk-SK\", \"sv-SE\", \"th-TH\", \"tr-TR\", \"vi-VN\", \"zh-CN\", \"zh-TW\"`",
+                        "K\", \"de-DE\", \"el-GR\", \"en-GB\", \"en-US\", \"es-ES\", \"es-MX\", \"fi-FI\", \"fr-FR\", \"hu-HU\", \"it-IT\", \"ja-JP\", \"ko-KR\", \"nl-NL\", \"no-NO\", \"pl-PL\", \"pt-BT\", \"pt-PT\", \"ro-RO\", \"ru-RU\", \"sk-SK\", \"sv-SE\", \"th-TH\", \"tr-TR\", \"vi-VN\", \"zh-CN\", \"zh-TW\"`",
+                        "E\", \"el-GR\", \"en-GB\", \"en-US\", \"es-ES\", \"es-MX\", \"fi-FI\", \"fr-FR\", \"hu-HU\", \"it-IT\", \"ja-JP\", \"ko-KR\", \"nl-NL\", \"no-NO\", \"pl-PL\", \"pt-BT\", \"pt-PT\", \"ro-RO\", \"ru-RU\", \"sk-SK\", \"sv-SE\", \"th-TH\", \"tr-TR\", \"vi-VN\", \"zh-CN\", \"zh-TW\"`",
+                        "R\", \"en-GB\", \"en-US\", \"es-ES\", \"es-MX\", \"fi-FI\", \"fr-FR\", \"hu-HU\", \"it-IT\", \"ja-JP\", \"ko-KR\", \"nl-NL\", \"no-NO\", \"pl-PL\", \"pt-BT\", \"pt-PT\", \"ro-RO\", \"ru-RU\", \"sk-SK\", \"sv-SE\", \"th-TH\", \"tr-TR\", \"vi-VN\", \"zh-CN\", \"zh-TW\"`",
+                        "B\", \"en-US\", \"es-ES\", \"es-MX\", \"fi-FI\", \"fr-FR\", \"hu-HU\", \"it-IT\", \"ja-JP\", \"ko-KR\", \"nl-NL\", \"no-NO\", \"pl-PL\", \"pt-BT\", \"pt-PT\", \"ro-RO\", \"ru-RU\", \"sk-SK\", \"sv-SE\", \"th-TH\", \"tr-TR\", \"vi-VN\", \"zh-CN\", \"zh-TW\"`",
+                        "S\", \"es-ES\", \"es-MX\", \"fi-FI\", \"fr-FR\", \"hu-HU\", \"it-IT\", \"ja-JP\", \"ko-KR\", \"nl-NL\", \"no-NO\", \"pl-PL\", \"pt-BT\", \"pt-PT\", \"ro-RO\", \"ru-RU\", \"sk-SK\", \"sv-SE\", \"th-TH\", \"tr-TR\", \"vi-VN\", \"zh-CN\", \"zh-TW\"`",
+                        "S\", \"es-MX\", \"fi-FI\", \"fr-FR\", \"hu-HU\", \"it-IT\", \"ja-JP\", \"ko-KR\", \"nl-NL\", \"no-NO\", \"pl-PL\", \"pt-BT\", \"pt-PT\", \"ro-RO\", \"ru-RU\", \"sk-SK\", \"sv-SE\", \"th-TH\", \"tr-TR\", \"vi-VN\", \"zh-CN\", \"zh-TW\"`",
+                        "X\", \"fi-FI\", \"fr-FR\", \"hu-HU\", \"it-IT\", \"ja-JP\", \"ko-KR\", \"nl-NL\", \"no-NO\", \"pl-PL\", \"pt-BT\", \"pt-PT\", \"ro-RO\", \"ru-RU\", \"sk-SK\", \"sv-SE\", \"th-TH\", \"tr-TR\", \"vi-VN\", \"zh-CN\", \"zh-TW\"`",
+                        "I\", \"fr-FR\", \"hu-HU\", \"it-IT\", \"ja-JP\", \"ko-KR\", \"nl-NL\", \"no-NO\", \"pl-PL\", \"pt-BT\", \"pt-PT\", \"ro-RO\", \"ru-RU\", \"sk-SK\", \"sv-SE\", \"th-TH\", \"tr-TR\", \"vi-VN\", \"zh-CN\", \"zh-TW\"`",
+                        "R\", \"hu-HU\", \"it-IT\", \"ja-JP\", \"ko-KR\", \"nl-NL\", \"no-NO\", \"pl-PL\", \"pt-BT\", \"pt-PT\", \"ro-RO\", \"ru-RU\", \"sk-SK\", \"sv-SE\", \"th-TH\", \"tr-TR\", \"vi-VN\", \"zh-CN\", \"zh-TW\"`",
+                        "U\", \"it-IT\", \"ja-JP\", \"ko-KR\", \"nl-NL\", \"no-NO\", \"pl-PL\", \"pt-BT\", \"pt-PT\", \"ro-RO\", \"ru-RU\", \"sk-SK\", \"sv-SE\", \"th-TH\", \"tr-TR\", \"vi-VN\", \"zh-CN\", \"zh-TW\"`",
+                        "T\", \"ja-JP\", \"ko-KR\", \"nl-NL\", \"no-NO\", \"pl-PL\", \"pt-BT\", \"pt-PT\", \"ro-RO\", \"ru-RU\", \"sk-SK\", \"sv-SE\", \"th-TH\", \"tr-TR\", \"vi-VN\", \"zh-CN\", \"zh-TW\"`",
+                        "P\", \"ko-KR\", \"nl-NL\", \"no-NO\", \"pl-PL\", \"pt-BT\", \"pt-PT\", \"ro-RO\", \"ru-RU\", \"sk-SK\", \"sv-SE\", \"th-TH\", \"tr-TR\", \"vi-VN\", \"zh-CN\", \"zh-TW\"`",
+                        "R\", \"nl-NL\", \"no-NO\", \"pl-PL\", \"pt-BT\", \"pt-PT\", \"ro-RO\", \"ru-RU\", \"sk-SK\", \"sv-SE\", \"th-TH\", \"tr-TR\", \"vi-VN\", \"zh-CN\", \"zh-TW\"`",
+                        "L\", \"no-NO\", \"pl-PL\", \"pt-BT\", \"pt-PT\", \"ro-RO\", \"ru-RU\", \"sk-SK\", \"sv-SE\", \"th-TH\", \"tr-TR\", \"vi-VN\", \"zh-CN\", \"zh-TW\"`",
+                        "O\", \"pl-PL\", \"pt-BT\", \"pt-PT\", \"ro-RO\", \"ru-RU\", \"sk-SK\", \"sv-SE\", \"th-TH\", \"tr-TR\", \"vi-VN\", \"zh-CN\", \"zh-TW\"`",
+                        "L\", \"pt-BT\", \"pt-PT\", \"ro-RO\", \"ru-RU\", \"sk-SK\", \"sv-SE\", \"th-TH\", \"tr-TR\", \"vi-VN\", \"zh-CN\", \"zh-TW\"`",
+                        "T\", \"pt-PT\", \"ro-RO\", \"ru-RU\", \"sk-SK\", \"sv-SE\", \"th-TH\", \"tr-TR\", \"vi-VN\", \"zh-CN\", \"zh-TW\"`",
+                        "T\", \"ro-RO\", \"ru-RU\", \"sk-SK\", \"sv-SE\", \"th-TH\", \"tr-TR\", \"vi-VN\", \"zh-CN\", \"zh-TW\"`",
+                        "O\", \"ru-RU\", \"sk-SK\", \"sv-SE\", \"th-TH\", \"tr-TR\", \"vi-VN\", \"zh-CN\", \"zh-TW\"`",
+                        "U\", \"sk-SK\", \"sv-SE\", \"th-TH\", \"tr-TR\", \"vi-VN\", \"zh-CN\", \"zh-TW\"`",
+                        "K\", \"sv-SE\", \"th-TH\", \"tr-TR\", \"vi-VN\", \"zh-CN\", \"zh-TW\"`",
+                        "E\", \"th-TH\", \"tr-TR\", \"vi-VN\", \"zh-CN\", \"zh-TW\"`",
+                        "H\", \"tr-TR\", \"vi-VN\", \"zh-CN\", \"zh-TW\"`",
+                        "R\", \"vi-VN\", \"zh-CN\", \"zh-TW\"`",
+                        "N\", \"zh-CN\", \"zh-TW\"`",
+                        "N\", \"zh-TW\"`",
+                        "W\"`"
+                    ]
                 }
             },
             "reqBody": {},
@@ -4718,6 +4865,7 @@
                     "required": false,
                     "description": "The entitlement’s fulfillment status. Used to filter the list to only those with the specified status. Possible values are: - CLAIMED\n- FULFILLED",
                     "possible": [
+                        "CLAIMED",
                         "FULFILLED"
                     ]
                 },
@@ -4762,6 +4910,7 @@
                             "type": "string",
                             "description": "The entitlement’s fulfillment status. Possible values are: - CLAIMED\n- FULFILLED",
                             "possible": [
+                                "CLAIMED",
                                 "FULFILLED"
                             ]
                         },
@@ -4907,6 +5056,8 @@
                     "required": true,
                     "description": "The type of configuration segment to get. Possible case-sensitive values are: - broadcaster\n- developer\n- global\nYou may specify one or more segments. To specify multiple segments, include the `segment` parameter for each segment to get. For example, `segment=broadcaster&segment=developer`. Ignores duplicate segments.",
                     "possible": [
+                        "ensitive values are: - broadcaster",
+                        "broadcaster",
                         "developer",
                         "global"
                     ]
@@ -4922,6 +5073,7 @@
                             "type": "string",
                             "description": "The type of segment. Possible values are: - broadcaster\n- developer\n- global",
                             "possible": [
+                                "broadcaster",
                                 "developer",
                                 "global"
                             ]
@@ -4932,7 +5084,11 @@
                         },
                         "content": {
                             "type": "string",
-                            "description": "The contents of the segment. This string may be a plain-text string or a string-encoded JSON object."
+                            "description": "The contents of the segment. This string may be a plain-text string or a string-encoded JSON object.",
+                            "possible": [
+                                "ext string or a string-encoded JSON object.",
+                                "ncoded JSON object."
+                            ]
                         },
                         "version": {
                             "type": "string",
@@ -4984,6 +5140,7 @@
                     "required": true,
                     "description": "The configuration segment to update. Possible case-sensitive values are:\n- broadcaster\n- developer\n- global",
                     "possible": [
+                        "ensitive values are:",
                         "broadcaster",
                         "developer",
                         "global"
@@ -4997,7 +5154,11 @@
                 "content": {
                     "type": "string",
                     "required": false,
-                    "description": "The contents of the segment. This string may be a plain-text string or a string-encoded JSON object."
+                    "description": "The contents of the segment. This string may be a plain-text string or a string-encoded JSON object.",
+                    "possible": [
+                        "ext string or a string-encoded JSON object.",
+                        "ncoded JSON object."
+                    ]
                 },
                 "version": {
                     "type": "string",
@@ -5493,7 +5654,10 @@
                                     "attr": {
                                         "viewer_url": {
                                             "type": "string",
-                                            "description": "The HTML file that is shown to viewers on the channel page when the extension is activated on the Video - Overlay slot."
+                                            "description": "The HTML file that is shown to viewers on the channel page when the extension is activated on the Video - Overlay slot.",
+                                            "possible": [
+                                                "Overlay slot."
+                                            ]
                                         },
                                         "can_link_external_content": {
                                             "type": "boolean",
@@ -5507,7 +5671,10 @@
                                     "attr": {
                                         "viewer_url": {
                                             "type": "string",
-                                            "description": "The HTML file that is shown to viewers on the channel page when the extension is activated in a Video - Component slot."
+                                            "description": "The HTML file that is shown to viewers on the channel page when the extension is activated in a Video - Component slot.",
+                                            "possible": [
+                                                "Component slot."
+                                            ]
                                         },
                                         "aspect_ratio_x": {
                                             "type": "integer",
@@ -5553,11 +5720,21 @@
                         },
                         "allowlisted_config_urls": {
                             "type": "string[]",
-                            "description": "Allowlisted configuration URLs for displaying the extension (the allowlist is configured on Twitch’s [developer site](https://dev.twitch.tv/console/extensions) under the *Extensions* -> *Extension* -> *Version* -> *Capabilities*)."
+                            "description": "Allowlisted configuration URLs for displaying the extension (the allowlist is configured on Twitch’s [developer site](https://dev.twitch.tv/console/extensions) under the *Extensions* -> *Extension* -> *Version* -> *Capabilities*).",
+                            "possible": [
+                                "*Extension* -> *Version* -> *Capabilities*).",
+                                "*Version* -> *Capabilities*).",
+                                "*Capabilities*)."
+                            ]
                         },
                         "allowlisted_panel_urls": {
                             "type": "string[]",
-                            "description": "Allowlisted panel URLs for displaying the extension (the allowlist is configured on Twitch’s [developer site](https://dev.twitch.tv/console/extensions) under the *Extensions* -> *Extension* -> *Version* -> *Capabilities*)."
+                            "description": "Allowlisted panel URLs for displaying the extension (the allowlist is configured on Twitch’s [developer site](https://dev.twitch.tv/console/extensions) under the *Extensions* -> *Extension* -> *Version* -> *Capabilities*).",
+                            "possible": [
+                                "*Extension* -> *Version* -> *Capabilities*).",
+                                "*Version* -> *Capabilities*).",
+                                "*Capabilities*)."
+                            ]
                         }
                     }
                 }
@@ -5749,7 +5926,10 @@
                                     "attr": {
                                         "viewer_url": {
                                             "type": "string",
-                                            "description": "The HTML file that is shown to viewers on the channel page when the extension is activated on the Video - Overlay slot."
+                                            "description": "The HTML file that is shown to viewers on the channel page when the extension is activated on the Video - Overlay slot.",
+                                            "possible": [
+                                                "Overlay slot."
+                                            ]
                                         },
                                         "can_link_external_content": {
                                             "type": "boolean",
@@ -5763,7 +5943,10 @@
                                     "attr": {
                                         "viewer_url": {
                                             "type": "string",
-                                            "description": "The HTML file that is shown to viewers on the channel page when the extension is activated in a Video - Component slot."
+                                            "description": "The HTML file that is shown to viewers on the channel page when the extension is activated in a Video - Component slot.",
+                                            "possible": [
+                                                "Component slot."
+                                            ]
                                         },
                                         "aspect_ratio_x": {
                                             "type": "integer",
@@ -5809,11 +5992,21 @@
                         },
                         "allowlisted_config_urls": {
                             "type": "string[]",
-                            "description": "Allowlisted configuration URLs for displaying the extension (the allowlist is configured on Twitch’s [developer site](https://dev.twitch.tv/console/extensions) under the *Extensions* -> *Extension* -> *Version* -> *Capabilities*)."
+                            "description": "Allowlisted configuration URLs for displaying the extension (the allowlist is configured on Twitch’s [developer site](https://dev.twitch.tv/console/extensions) under the *Extensions* -> *Extension* -> *Version* -> *Capabilities*).",
+                            "possible": [
+                                "*Extension* -> *Version* -> *Capabilities*).",
+                                "*Version* -> *Capabilities*).",
+                                "*Capabilities*)."
+                            ]
                         },
                         "allowlisted_panel_urls": {
                             "type": "string[]",
-                            "description": "Allowlisted panel URLs for displaying the extension (the allowlist is configured on Twitch’s [developer site](https://dev.twitch.tv/console/extensions) under the *Extensions* -> *Extension* -> *Version* -> *Capabilities*)."
+                            "description": "Allowlisted panel URLs for displaying the extension (the allowlist is configured on Twitch’s [developer site](https://dev.twitch.tv/console/extensions) under the *Extensions* -> *Extension* -> *Version* -> *Capabilities*).",
+                            "possible": [
+                                "*Extension* -> *Version* -> *Capabilities*).",
+                                "*Version* -> *Capabilities*).",
+                                "*Capabilities*)."
+                            ]
                         }
                     }
                 }
@@ -6236,6 +6429,7 @@
                             "type": "string",
                             "description": "The type of goal. Possible values are: - follower — The goal is to increase followers.\n- subscription — The goal is to increase subscriptions. This type shows the net increase or decrease in tier points associated with the subscriptions.\n- subscription_count — The goal is to increase subscriptions. This type shows the net increase or decrease in the number of subscriptions.\n- new_subscription — The goal is to increase subscriptions. This type shows only the net increase in tier points associated with the subscriptions (it does not account for users that unsubscribed since the goal started).\n- new_subscription_count — The goal is to increase subscriptions. This type shows only the net increase in the number of subscriptions (it does not account for users that unsubscribed since the goal started).",
                             "possible": [
+                                "follower",
                                 "subscription",
                                 "subscription_count",
                                 "new_subscription",
@@ -6325,6 +6519,7 @@
                     "type": "string",
                     "description": "This setting determines how the guests within a session should be laid out within the browser source. Can be one of the following values: - `TILED_LAYOUT`: All live guests are tiled within the browser source with the same size.\n- `SCREENSHARE_LAYOUT`: All live guests are tiled within the browser source with the same size. If there is an active screen share, it is sized larger than the other guests.",
                     "possible": [
+                        "`TILED_LAYOUT`: All live guests are tiled within the browser source with the same size.",
                         "`SCREENSHARE_LAYOUT`: All live guests are tiled within the browser source with the same size. If there is an active screen share, it is sized larger than the other guests."
                     ]
                 },
@@ -6397,6 +6592,7 @@
                     "required": false,
                     "description": "This setting determines how the guests within a session should be laid out within the browser source. Can be one of the following values: - `TILED_LAYOUT`: All live guests are tiled within the browser source with the same size.\n- `SCREENSHARE_LAYOUT`: All live guests are tiled within the browser source with the same size. If there is an active screen share, it is sized larger than the other guests.\n- `HORIZONTAL_LAYOUT`: All live guests are arranged in a horizontal bar within the browser source\n- `VERTICAL_LAYOUT`: All live guests are arranged in a vertical bar within the browser source",
                     "possible": [
+                        "`TILED_LAYOUT`: All live guests are tiled within the browser source with the same size.",
                         "`SCREENSHARE_LAYOUT`: All live guests are tiled within the browser source with the same size. If there is an active screen share, it is sized larger than the other guests.",
                         "`HORIZONTAL_LAYOUT`: All live guests are arranged in a horizontal bar within the browser source",
                         "`VERTICAL_LAYOUT`: All live guests are arranged in a vertical bar within the browser source"
@@ -6467,6 +6663,7 @@
                                     "type": "string",
                                     "description": "ID representing this guest’s slot assignment. - Host is always in slot \"0\"\n- Guests are assigned the following consecutive IDs (e.g, \"1\", \"2\", \"3\", etc)\n- Screen Share is represented as a special guest with the ID \"SCREENSHARE\"\n- The identifier here matches the ID referenced in browser source links used in broadcasting software.",
                                     "possible": [
+                                        "Host is always in slot \"0\"",
                                         "Guests are assigned the following consecutive IDs (e.g, \"1\", \"2\", \"3\", etc)",
                                         "Screen Share is represented as a special guest with the ID \"SCREENSHARE\"",
                                         "The identifier here matches the ID referenced in browser source links used in broadcasting software."
@@ -6597,6 +6794,7 @@
                                     "type": "string",
                                     "description": "ID representing this guest’s slot assignment. - Host is always in slot \"0\"\n- Guests are assigned the following consecutive IDs (e.g, \"1\", \"2\", \"3\", etc)\n- Screen Share is represented as a special guest with the ID \"SCREENSHARE\"\n- The identifier here matches the ID referenced in browser source links used in broadcasting software.",
                                     "possible": [
+                                        "Host is always in slot \"0\"",
                                         "Guests are assigned the following consecutive IDs (e.g, \"1\", \"2\", \"3\", etc)",
                                         "Screen Share is represented as a special guest with the ID \"SCREENSHARE\"",
                                         "The identifier here matches the ID referenced in browser source links used in broadcasting software."
@@ -6731,6 +6929,7 @@
                                     "type": "string",
                                     "description": "ID representing this guest’s slot assignment. - Host is always in slot \"0\"\n- Guests are assigned the following consecutive IDs (e.g, \"1\", \"2\", \"3\", etc)\n- Screen Share is represented as a special guest with the ID \"SCREENSHARE\"\n- The identifier here matches the ID referenced in browser source links used in broadcasting software.",
                                     "possible": [
+                                        "Host is always in slot \"0\"",
                                         "Guests are assigned the following consecutive IDs (e.g, \"1\", \"2\", \"3\", etc)",
                                         "Screen Share is represented as a special guest with the ID \"SCREENSHARE\"",
                                         "The identifier here matches the ID referenced in browser source links used in broadcasting software."
@@ -6869,6 +7068,7 @@
                             "type": "string",
                             "description": "Status representing the invited user’s join state. Can be one of the following: - `INVITED`: The user has been invited to the session but has not acknowledged it.\n- `ACCEPTED`: The invited user has acknowledged the invite and joined the waiting room, but may still be setting up their media devices or otherwise preparing to join the call.\n- `READY`: The invited user has signaled they are ready to join the call from the waiting room.",
                             "possible": [
+                                "`INVITED`: The user has been invited to the session but has not acknowledged it.",
                                 "`ACCEPTED`: The invited user has acknowledged the invite and joined the waiting room, but may still be setting up their media devices or otherwise preparing to join the call.",
                                 "`READY`: The invited user has signaled they are ready to join the call from the waiting room."
                             ]
@@ -7052,7 +7252,13 @@
                 "slot_id": {
                     "type": "string",
                     "required": true,
-                    "description": "The slot assignment to give to the user. Must be a numeric identifier between “1” and “N” where N is the max number of slots for the session. Max number of slots allowed for the session is reported by [Get Channel Guest Star Settings](#get-channel-guest-star-settings)."
+                    "description": "The slot assignment to give to the user. Must be a numeric identifier between “1” and “N” where N is the max number of slots for the session. Max number of slots allowed for the session is reported by [Get Channel Guest Star Settings](#get-channel-guest-star-settings).",
+                    "possible": [
+                        "hannel-guest-star-settings).",
+                        "uest-star-settings).",
+                        "tar-settings).",
+                        "ettings)."
+                    ]
                 }
             },
             "reqBody": {},
@@ -7361,8 +7567,11 @@
                                             "type": "string",
                                             "description": "The type of the Hype Train. Possible values are: - treasure\n- golden_kappa\n- regular\n[Learn More](https://help.twitch.tv/s/article/hype-train-guide#special)",
                                             "possible": [
+                                                "treasure",
                                                 "golden_kappa",
-                                                "regular"
+                                                "regular",
+                                                "rain-guide#special)",
+                                                "uide#special)"
                                             ]
                                         },
                                         "total": {
@@ -7495,7 +7704,10 @@
                         "msg_id": {
                             "type": "string",
                             "required": true,
-                            "description": "A caller-defined ID used to correlate this message with the same message in the response."
+                            "description": "A caller-defined ID used to correlate this message with the same message in the response.",
+                            "possible": [
+                                "efined ID used to correlate this message with the same message in the response."
+                            ]
                         },
                         "msg_text": {
                             "type": "string",
@@ -7512,7 +7724,10 @@
                     "attr": {
                         "msg_id": {
                             "type": "string",
-                            "description": "The caller-defined ID passed in the request."
+                            "description": "The caller-defined ID passed in the request.",
+                            "possible": [
+                                "efined ID passed in the request."
+                            ]
                         },
                         "is_permitted": {
                             "type": "boolean",
@@ -8284,6 +8499,7 @@
                     "required": true,
                     "description": "Resolution status. - approved\n- denied",
                     "possible": [
+                        "approved",
                         "denied"
                     ]
                 },
@@ -8347,6 +8563,7 @@
                             "type": "string",
                             "description": "Status of the request. One of: - approved\n- denied",
                             "possible": [
+                                "approved",
                                 "denied"
                             ]
                         },
@@ -8649,6 +8866,7 @@
                     "required": false,
                     "description": "The ID of the message to remove. The `id` tag in the [PRIVMSG](https://dev.twitch.tv/docs/irc/tags#privmsg-tags) tag contains the message’s ID. Restrictions:\n- The message must have been created within the last 6 hours.\n- The message must not belong to the broadcaster.\n- The message must not belong to another moderator.\nIf not specified, the request removes all messages in the broadcaster’s chat room.",
                     "possible": [
+                        "ags) tag contains the message’s ID. Restrictions:",
                         "The message must have been created within the last 6 hours.",
                         "The message must not belong to the broadcaster.",
                         "The message must not belong to another moderator."
@@ -9816,6 +10034,7 @@
                     "required": true,
                     "description": "The status to set the poll to. Possible case-sensitive values are:\n- TERMINATED — Ends the poll before the poll is scheduled to end. The poll remains publicly visible.\n- ARCHIVED — Ends the poll before the poll is scheduled to end, and then archives it so it's no longer publicly visible.",
                     "possible": [
+                        "ensitive values are:",
                         "TERMINATED",
                         "ARCHIVED"
                     ]
@@ -10323,6 +10542,7 @@
                     "required": true,
                     "description": "The status to set the prediction to. Possible case-sensitive values are:\n- RESOLVED — The winning outcome is determined and the Channel Points are distributed to the viewers who predicted the correct outcome.\n- CANCELED — The broadcaster is canceling the prediction and sending refunds to the participants.\n- LOCKED — The broadcaster is locking the prediction, which means viewers may no longer make predictions.\nThe broadcaster can update an active prediction to LOCKED, RESOLVED, or CANCELED; and update a locked prediction to RESOLVED or CANCELED.The broadcaster has up to 24 hours after the prediction window closes to resolve the prediction. If not, Twitch sets the status to CANCELED and returns the points.",
                     "possible": [
+                        "ensitive values are:",
                         "RESOLVED",
                         "CANCELED",
                         "LOCKED"
@@ -10601,7 +10821,11 @@
                 "start_time": {
                     "type": "string",
                     "required": false,
-                    "description": "The UTC date and time that identifies when in the broadcaster’s schedule to start returning segments. If not specified, the request returns segments starting after the current UTC date and time. Specify the date and time in RFC3339 format (for example, `2022-09-01T00:00:00Z`)."
+                    "description": "The UTC date and time that identifies when in the broadcaster’s schedule to start returning segments. If not specified, the request returns segments starting after the current UTC date and time. Specify the date and time in RFC3339 format (for example, `2022-09-01T00:00:00Z`).",
+                    "possible": [
+                        "9-01T00:00:00Z`).",
+                        "1T00:00:00Z`)."
+                    ]
                 },
                 "utc_offset": {
                     "type": "string",
@@ -10789,17 +11013,28 @@
                 "vacation_start_time": {
                     "type": "string",
                     "required": false,
-                    "description": "The UTC date and time of when the broadcaster’s vacation starts. Specify the date and time in RFC3339 format (for example, 2021-05-16T00:00:00Z). Required if is_vacation_enabled is *true*."
+                    "description": "The UTC date and time of when the broadcaster’s vacation starts. Specify the date and time in RFC3339 format (for example, 2021-05-16T00:00:00Z). Required if is_vacation_enabled is *true*.",
+                    "possible": [
+                        "5-16T00:00:00Z). Required if is_vacation_enabled is *true*.",
+                        "6T00:00:00Z). Required if is_vacation_enabled is *true*."
+                    ]
                 },
                 "vacation_end_time": {
                     "type": "string",
                     "required": false,
-                    "description": "The UTC date and time of when the broadcaster’s vacation ends. Specify the date and time in RFC3339 format (for example, 2021-05-30T23:59:59Z). Required if is_vacation_enabled is *true*."
+                    "description": "The UTC date and time of when the broadcaster’s vacation ends. Specify the date and time in RFC3339 format (for example, 2021-05-30T23:59:59Z). Required if is_vacation_enabled is *true*.",
+                    "possible": [
+                        "5-30T23:59:59Z). Required if is_vacation_enabled is *true*.",
+                        "0T23:59:59Z). Required if is_vacation_enabled is *true*."
+                    ]
                 },
                 "timezone": {
                     "type": "string",
                     "required": false,
-                    "description": "The time zone that the broadcaster broadcasts from. Specify the time zone using [IANA time zone database](https://www.iana.org/time-zones) format (for example, America/New_York). Required if is_vacation_enabled is *true*."
+                    "description": "The time zone that the broadcaster broadcasts from. Specify the time zone using [IANA time zone database](https://www.iana.org/time-zones) format (for example, America/New_York). Required if is_vacation_enabled is *true*.",
+                    "possible": [
+                        "ones) format (for example, America/New_York). Required if is_vacation_enabled is *true*."
+                    ]
                 }
             },
             "reqBody": {},
@@ -10843,12 +11078,19 @@
                 "start_time": {
                     "type": "string",
                     "required": true,
-                    "description": "The date and time that the broadcast segment starts. Specify the date and time in RFC3339 format (for example, 2021-07-01T18:00:00Z)."
+                    "description": "The date and time that the broadcast segment starts. Specify the date and time in RFC3339 format (for example, 2021-07-01T18:00:00Z).",
+                    "possible": [
+                        "7-01T18:00:00Z).",
+                        "1T18:00:00Z)."
+                    ]
                 },
                 "timezone": {
                     "type": "string",
                     "required": true,
-                    "description": "The time zone where the broadcast takes place. Specify the time zone using [IANA time zone database](https://www.iana.org/time-zones) format (for example, America/New_York)."
+                    "description": "The time zone where the broadcast takes place. Specify the time zone using [IANA time zone database](https://www.iana.org/time-zones) format (for example, America/New_York).",
+                    "possible": [
+                        "ones) format (for example, America/New_York)."
+                    ]
                 },
                 "duration": {
                     "type": "string",
@@ -10863,7 +11105,10 @@
                 "category_id": {
                     "type": "string",
                     "required": false,
-                    "description": "The ID of the category that best represents the broadcast’s content. To get the category ID, use the [Search Categories](#search-categories) endpoint."
+                    "description": "The ID of the category that best represents the broadcast’s content. To get the category ID, use the [Search Categories](#search-categories) endpoint.",
+                    "possible": [
+                        "ategories) endpoint."
+                    ]
                 },
                 "title": {
                     "type": "string",
@@ -10998,7 +11243,12 @@
                 "start_time": {
                     "type": "string",
                     "required": false,
-                    "description": "The date and time that the broadcast segment starts. Specify the date and time in RFC3339 format (for example, 2022-08-02T06:00:00Z).*NOTE*: Only partners and affiliates may update a broadcast’s start time and only for non-recurring segments."
+                    "description": "The date and time that the broadcast segment starts. Specify the date and time in RFC3339 format (for example, 2022-08-02T06:00:00Z).*NOTE*: Only partners and affiliates may update a broadcast’s start time and only for non-recurring segments.",
+                    "possible": [
+                        "8-02T06:00:00Z).*NOTE*: Only partners and affiliates may update a broadcast’s start time and only for non-recurring segments.",
+                        "2T06:00:00Z).*NOTE*: Only partners and affiliates may update a broadcast’s start time and only for non-recurring segments.",
+                        "ecurring segments."
+                    ]
                 },
                 "duration": {
                     "type": "string",
@@ -11008,7 +11258,10 @@
                 "category_id": {
                     "type": "string",
                     "required": false,
-                    "description": "The ID of the category that best represents the broadcast’s content. To get the category ID, use the [Search Categories](#search-categories) endpoint."
+                    "description": "The ID of the category that best represents the broadcast’s content. To get the category ID, use the [Search Categories](#search-categories) endpoint.",
+                    "possible": [
+                        "ategories) endpoint."
+                    ]
                 },
                 "title": {
                     "type": "string",
@@ -11023,7 +11276,10 @@
                 "timezone": {
                     "type": "string",
                     "required": false,
-                    "description": "The time zone where the broadcast takes place. Specify the time zone using [IANA time zone database](https://www.iana.org/time-zones) format (for example, America/New_York)."
+                    "description": "The time zone where the broadcast takes place. Specify the time zone using [IANA time zone database](https://www.iana.org/time-zones) format (for example, America/New_York).",
+                    "possible": [
+                        "ones) format (for example, America/New_York)."
+                    ]
                 }
             },
             "body": {
@@ -11184,7 +11440,10 @@
                 "query": {
                     "type": "string",
                     "required": true,
-                    "description": "The URI-encoded search string. For example, encode #archery as `%23archery` and search strings like angel of death as `angel%20of%20death`."
+                    "description": "The URI-encoded search string. For example, encode #archery as `%23archery` and search strings like angel of death as `angel%20of%20death`.",
+                    "possible": [
+                        "ncoded search string. For example, encode #archery as `%23archery` and search strings like angel of death as `angel%20of%20death`."
+                    ]
                 },
                 "first": {
                     "type": "integer",
@@ -11253,7 +11512,10 @@
                 "query": {
                     "type": "string",
                     "required": true,
-                    "description": "The URI-encoded search string. For example, encode search strings like angel of death as `angel%20of%20death`."
+                    "description": "The URI-encoded search string. For example, encode search strings like angel of death as `angel%20of%20death`.",
+                    "possible": [
+                        "ncoded search string. For example, encode search strings like angel of death as `angel%20of%20death`."
+                    ]
                 },
                 "live_only": {
                     "type": "boolean",
@@ -11279,7 +11541,13 @@
                     "attr": {
                         "broadcaster_language": {
                             "type": "string",
-                            "description": "The ISO 639-1 two-letter language code of the language used by the broadcaster. For example, en for English. If the broadcaster uses a language not in the list of [supported stream languages](https://help.twitch.tv/s/article/languages-on-twitch#streamlang), the value is other."
+                            "description": "The ISO 639-1 two-letter language code of the language used by the broadcaster. For example, en for English. If the broadcaster uses a language not in the list of [supported stream languages](https://help.twitch.tv/s/article/languages-on-twitch#streamlang), the value is other.",
+                            "possible": [
+                                "two-letter language code of the language used by the broadcaster. For example, en for English. If the broadcaster uses a language not in the list of [supported stream languages](https://help.twitch.tv/s/article/languages-on-twitch#streamlang), the value is other.",
+                                "etter language code of the language used by the broadcaster. For example, en for English. If the broadcaster uses a language not in the list of [supported stream languages](https://help.twitch.tv/s/article/languages-on-twitch#streamlang), the value is other.",
+                                "n-twitch#streamlang), the value is other.",
+                                "witch#streamlang), the value is other."
+                            ]
                         },
                         "broadcaster_login": {
                             "type": "string",
@@ -11451,7 +11719,13 @@
                 "language": {
                     "type": "string",
                     "required": false,
-                    "description": "A language code used to filter the list of streams. Returns only streams that broadcast in the specified language. Specify the language using an ISO 639-1 two-letter language code or other if the broadcast uses a language not in the list of [supported stream languages](https://help.twitch.tv/s/article/languages-on-twitch#streamlang).You may specify a maximum of 100 language codes. To specify multiple languages, include the language parameter for each language. For example, `&language=de&language=fr`."
+                    "description": "A language code used to filter the list of streams. Returns only streams that broadcast in the specified language. Specify the language using an ISO 639-1 two-letter language code or other if the broadcast uses a language not in the list of [supported stream languages](https://help.twitch.tv/s/article/languages-on-twitch#streamlang).You may specify a maximum of 100 language codes. To specify multiple languages, include the language parameter for each language. For example, `&language=de&language=fr`.",
+                    "possible": [
+                        "two-letter language code or other if the broadcast uses a language not in the list of [supported stream languages](https://help.twitch.tv/s/article/languages-on-twitch#streamlang).You may specify a maximum of 100 language codes. To specify multiple languages, include the language parameter for each language. For example, `&language=de&language=fr`.",
+                        "etter language code or other if the broadcast uses a language not in the list of [supported stream languages](https://help.twitch.tv/s/article/languages-on-twitch#streamlang).You may specify a maximum of 100 language codes. To specify multiple languages, include the language parameter for each language. For example, `&language=de&language=fr`.",
+                        "n-twitch#streamlang).You may specify a maximum of 100 language codes. To specify multiple languages, include the language parameter for each language. For example, `&language=de&language=fr`.",
+                        "witch#streamlang).You may specify a maximum of 100 language codes. To specify multiple languages, include the language parameter for each language. For example, `&language=de&language=fr`."
+                    ]
                 },
                 "first": {
                     "type": "integer",
@@ -11524,7 +11798,13 @@
                         },
                         "language": {
                             "type": "string",
-                            "description": "The language that the stream uses. This is an ISO 639-1 two-letter language code or other if the stream uses a language not in the list of [supported stream languages](https://help.twitch.tv/s/article/languages-on-twitch#streamlang)."
+                            "description": "The language that the stream uses. This is an ISO 639-1 two-letter language code or other if the stream uses a language not in the list of [supported stream languages](https://help.twitch.tv/s/article/languages-on-twitch#streamlang).",
+                            "possible": [
+                                "two-letter language code or other if the stream uses a language not in the list of [supported stream languages](https://help.twitch.tv/s/article/languages-on-twitch#streamlang).",
+                                "etter language code or other if the stream uses a language not in the list of [supported stream languages](https://help.twitch.tv/s/article/languages-on-twitch#streamlang).",
+                                "n-twitch#streamlang).",
+                                "witch#streamlang)."
+                            ]
                         },
                         "thumbnail_url": {
                             "type": "string",
@@ -11660,7 +11940,13 @@
                         },
                         "language": {
                             "type": "string",
-                            "description": "The language that the stream uses. This is an ISO 639-1 two-letter language code or other if the stream uses a language not in the list of [supported stream languages](https://help.twitch.tv/s/article/languages-on-twitch#streamlang)."
+                            "description": "The language that the stream uses. This is an ISO 639-1 two-letter language code or other if the stream uses a language not in the list of [supported stream languages](https://help.twitch.tv/s/article/languages-on-twitch#streamlang).",
+                            "possible": [
+                                "two-letter language code or other if the stream uses a language not in the list of [supported stream languages](https://help.twitch.tv/s/article/languages-on-twitch#streamlang).",
+                                "etter language code or other if the stream uses a language not in the list of [supported stream languages](https://help.twitch.tv/s/article/languages-on-twitch#streamlang).",
+                                "n-twitch#streamlang).",
+                                "witch#streamlang)."
+                            ]
                         },
                         "thumbnail_url": {
                             "type": "string",
@@ -12275,6 +12561,7 @@
                             "type": "string",
                             "description": "The type of user. Possible values are: - admin — Twitch administrator\n- global_mod\n- staff — Twitch staff\n- \"\" — Normal user",
                             "possible": [
+                                "admin",
                                 "global_mod",
                                 "staff",
                                 "\"\""
@@ -12284,7 +12571,13 @@
                             "type": "string",
                             "description": "The type of broadcaster. Possible values are: - affiliate — An affiliate broadcaster [affiliate broadcaster](https://help.twitch.tv/s/article/joining-the-affiliate-program target=)\n- partner — A partner broadcaster [partner broadcaster](https://help.twitch.tv/s/article/partner-program-overview)\n- \"\" — A normal broadcaster",
                             "possible": [
+                                "affiliate",
+                                "he-affiliate-program target=)",
+                                "ffiliate-program target=)",
+                                "rogram target=)",
                                 "partner",
+                                "rogram-overview)",
+                                "verview)",
                                 "\"\""
                             ]
                         },
@@ -12386,7 +12679,12 @@
                             "description": "The type of broadcaster. Possible values are:\n- affiliate — An [affiliate broadcaster](https://help.twitch.tv/s/article/joining-the-affiliate-program target=)\n- partner — A [partner broadcaster](https://help.twitch.tv/s/article/partner-program-overview)\n- \"\" — A normal broadcaster",
                             "possible": [
                                 "affiliate",
+                                "he-affiliate-program target=)",
+                                "ffiliate-program target=)",
+                                "rogram target=)",
                                 "partner",
+                                "rogram-overview)",
+                                "verview)",
                                 "\"\""
                             ]
                         },
@@ -13004,12 +13302,21 @@
                 "game_id": {
                     "type": "string",
                     "required": true,
-                    "description": "A category or game ID. The response contains a maximum of 500 videos that show this content. To get category/game IDs, use the [Search Categories](#search-categories) endpoint.The id, user_id, and game_id parameters are mutually exclusive."
+                    "description": "A category or game ID. The response contains a maximum of 500 videos that show this content. To get category/game IDs, use the [Search Categories](#search-categories) endpoint.The id, user_id, and game_id parameters are mutually exclusive.",
+                    "possible": [
+                        "ategories) endpoint.The id, user_id, and game_id parameters are mutually exclusive."
+                    ]
                 },
                 "language": {
                     "type": "string",
                     "required": false,
-                    "description": "A filter used to filter the list of videos by the language that the video owner broadcasts in. For example, to get videos that were broadcast in German, set this parameter to the ISO 639-1 two-letter code for German (i.e., DE). For a list of supported languages, see [Supported Stream Language](https://help.twitch.tv/s/article/languages-on-twitch#streamlang). If the language is not supported, use “other.”Specify this parameter only if you specify the game_id query parameter."
+                    "description": "A filter used to filter the list of videos by the language that the video owner broadcasts in. For example, to get videos that were broadcast in German, set this parameter to the ISO 639-1 two-letter code for German (i.e., DE). For a list of supported languages, see [Supported Stream Language](https://help.twitch.tv/s/article/languages-on-twitch#streamlang). If the language is not supported, use “other.”Specify this parameter only if you specify the game_id query parameter.",
+                    "possible": [
+                        "two-letter code for German (i.e., DE). For a list of supported languages, see [Supported Stream Language](https://help.twitch.tv/s/article/languages-on-twitch#streamlang). If the language is not supported, use “other.”Specify this parameter only if you specify the game_id query parameter.",
+                        "etter code for German (i.e., DE). For a list of supported languages, see [Supported Stream Language](https://help.twitch.tv/s/article/languages-on-twitch#streamlang). If the language is not supported, use “other.”Specify this parameter only if you specify the game_id query parameter.",
+                        "n-twitch#streamlang). If the language is not supported, use “other.”Specify this parameter only if you specify the game_id query parameter.",
+                        "witch#streamlang). If the language is not supported, use “other.”Specify this parameter only if you specify the game_id query parameter."
+                    ]
                 },
                 "period": {
                     "type": "string",
@@ -13037,8 +13344,10 @@
                     "required": false,
                     "description": "A filter used to filter the list of videos by the video's type. Possible case-sensitive values are:\n- all\n- archive — On-demand videos (VODs) of past streams.\n- highlight — Highlight reels of past streams.\n- upload — External videos that the broadcaster uploaded using the Video Producer.\nThe default is \"all,\" which returns all video types.Specify this parameter only if you specify the game_id or user_id query parameter.",
                     "possible": [
+                        "ensitive values are:",
                         "all",
                         "archive",
+                        "emand videos (VODs) of past streams.",
                         "highlight",
                         "upload"
                     ]
@@ -13119,15 +13428,28 @@
                         },
                         "language": {
                             "type": "string",
-                            "description": "The ISO 639-1 two-letter language code that the video was broadcast in. For example, the language code is DE if the video was broadcast in German. For a list of supported languages, see [Supported Stream Language](https://help.twitch.tv/s/article/languages-on-twitch#streamlang). The language value is \"other\" if the video was broadcast in a language not in the list of supported languages."
+                            "description": "The ISO 639-1 two-letter language code that the video was broadcast in. For example, the language code is DE if the video was broadcast in German. For a list of supported languages, see [Supported Stream Language](https://help.twitch.tv/s/article/languages-on-twitch#streamlang). The language value is \"other\" if the video was broadcast in a language not in the list of supported languages.",
+                            "possible": [
+                                "two-letter language code that the video was broadcast in. For example, the language code is DE if the video was broadcast in German. For a list of supported languages, see [Supported Stream Language](https://help.twitch.tv/s/article/languages-on-twitch#streamlang). The language value is \"other\" if the video was broadcast in a language not in the list of supported languages.",
+                                "etter language code that the video was broadcast in. For example, the language code is DE if the video was broadcast in German. For a list of supported languages, see [Supported Stream Language](https://help.twitch.tv/s/article/languages-on-twitch#streamlang). The language value is \"other\" if the video was broadcast in a language not in the list of supported languages.",
+                                "n-twitch#streamlang). The language value is \"other\" if the video was broadcast in a language not in the list of supported languages.",
+                                "witch#streamlang). The language value is \"other\" if the video was broadcast in a language not in the list of supported languages."
+                            ]
                         },
                         "type": {
                             "type": "string",
                             "description": "The video's type. Possible values are:\n- archive — An on-demand video (VOD) of one of the broadcaster's past streams.\n- highlight — A highlight reel of one of the broadcaster's past streams. See [Creating Highlights](https://help.twitch.tv/s/article/creating-highlights-and-stream-markers).\n- upload — A video that the broadcaster uploaded to their video library. See Upload under [Video Producer](https://help.twitch.tv/s/article/video-on-demand?language=en_US#videoproducer).",
                             "possible": [
                                 "archive",
+                                "emand video (VOD) of one of the broadcaster's past streams.",
                                 "highlight",
-                                "upload"
+                                "ighlights-and-stream-markers).",
+                                "nd-stream-markers).",
+                                "tream-markers).",
+                                "arkers).",
+                                "upload",
+                                "n-demand?language=en_US#videoproducer).",
+                                "emand?language=en_US#videoproducer)."
                             ]
                         },
                         "duration": {
