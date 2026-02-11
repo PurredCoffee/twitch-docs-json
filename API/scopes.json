@@ -190,7 +190,7 @@
         "queryRestraints": {}
     },
     "Get User Emotes": {
-        "authText": "- Requires a user access token that includes the *user:read:emotes* scope.\n\n- Query parameter `user_id` must match the `user_id` in the user access token.",
+        "authText": "- Requires a user access token that includes the *user:read:emotes* scope.\n- Query parameter `user_id` must match the `user_id` in the user access token.",
         "scopes": [
             "user:read:emotes"
         ],
@@ -560,7 +560,7 @@
         }
     },
     "Resolve Unban Requests": {
-        "authText": "- Requires a user access token that includes the *moderator:manage:unban_requests* scope.\n\n- Query parameter `moderator_id` must match the `user_id` in the[user access token](https://dev.twitch.tv/docs/authentication/#user-access-tokens).",
+        "authText": "- Requires a user access token that includes the *moderator:manage:unban_requests* scope.\n- Query parameter `moderator_id` must match the `user_id` in the[user access token](https://dev.twitch.tv/docs/authentication/#user-access-tokens).",
         "scopes": [
             "moderator:manage:unban_requests"
         ],

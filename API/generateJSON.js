@@ -62,7 +62,7 @@ function asText(htmlObj, trim=true) {
     let str = htmlObj.children.map((v) => {
         if(typeof v === 'string') return v.replaceAll(/\s/g, ' ');
         return asText(v, false);
-    }).join('').replaceAll(/(\s) */g, '$1');
+    }).join('').replaceAll(/(\s)\s*/g, '$1');
     /**
      * 
      * @param {string} str 
@@ -75,7 +75,7 @@ function asText(htmlObj, trim=true) {
             case 'code':
                 return '`' + str + '`';
             case 'li':
-                return '- ' + str.replaceAll('\n', '\n  ') + '\n';
+                return '\n- ' + str.replaceAll('\n', '\n  ') + '\n';
             case 'a':
                 //@ts-ignore
                 return '[' + str + '](' + (htmlObj.attr["href"]?.startsWith?.("/")?'https://dev.twitch.tv' + htmlObj.attr["href"]:htmlObj.attr["href"]) + ')';

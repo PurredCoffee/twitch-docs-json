@@ -219,7 +219,7 @@
                 "type": {
                     "type": "string",
                     "required": false,
-                    "description": "The type of analytics report to get. Possible values are:- overview_v2"
+                    "description": "The type of analytics report to get. Possible values are:\n- overview_v2"
                 },
                 "started_at": {
                     "type": "string",
@@ -329,7 +329,7 @@
                 "type": {
                     "type": "string",
                     "required": false,
-                    "description": "The type of analytics report to get. Possible values are:- overview_v2"
+                    "description": "The type of analytics report to get. Possible values are:\n- overview_v2"
                 },
                 "started_at": {
                     "type": "string",
@@ -451,7 +451,7 @@
                 "period": {
                     "type": "string",
                     "required": false,
-                    "description": "The time period over which data is aggregated (uses the PST time zone). Possible values are:- day — A day spans from 00:00:00 on the day specified in started_at and runs through 00:00:00 of the next day.\n- week — A week spans from 00:00:00 on the Monday of the week specified in started_at and runs through 00:00:00 of the next Monday.\n- month — A month spans from 00:00:00 on the first day of the month specified in started_at and runs through 00:00:00 of the first day of the next month.\n- year — A year spans from 00:00:00 on the first day of the year specified in started_at and runs through 00:00:00 of the first day of the next year.\n- all — Default. The lifetime of the broadcaster's channel."
+                    "description": "The time period over which data is aggregated (uses the PST time zone). Possible values are:\n- day — A day spans from 00:00:00 on the day specified in started_at and runs through 00:00:00 of the next day.\n- week — A week spans from 00:00:00 on the Monday of the week specified in started_at and runs through 00:00:00 of the next Monday.\n- month — A month spans from 00:00:00 on the first day of the month specified in started_at and runs through 00:00:00 of the first day of the next month.\n- year — A year spans from 00:00:00 on the first day of the year specified in started_at and runs through 00:00:00 of the first day of the next year.\n- all — Default. The lifetime of the broadcaster's channel."
                 },
                 "started_at": {
                     "type": "string",
@@ -571,7 +571,7 @@
                                 },
                                 "id": {
                                     "type": "string",
-                                    "description": "The tier level. Possible tiers are:- 1\n- 100\n- 500\n- 1000\n- 5000\n- 10000\n- 100000"
+                                    "description": "The tier level. Possible tiers are:\n- 1\n- 100\n- 500\n- 1000\n- 5000\n- 10000\n- 100000"
                                 },
                                 "color": {
                                     "type": "string",
@@ -623,7 +623,7 @@
                         },
                         "type": {
                             "type": "string",
-                            "description": "The type of Cheermote. Possible values are:- global_first_party — A Twitch-defined Cheermote that is shown in the Bits card.\n- global_third_party — A Twitch-defined Cheermote that is not shown in the Bits card.\n- channel_custom — A broadcaster-defined Cheermote.\n- display_only — Do not use; for internal use only.\n- sponsored — A sponsor-defined Cheermote. When used, the sponsor adds additional Bits to the amount that the user cheered. For example, if the user cheered Terminator100, the broadcaster might receive 110 Bits, which includes the sponsor's 10 Bits contribution."
+                            "description": "The type of Cheermote. Possible values are:\n- global_first_party — A Twitch-defined Cheermote that is shown in the Bits card.\n- global_third_party — A Twitch-defined Cheermote that is not shown in the Bits card.\n- channel_custom — A broadcaster-defined Cheermote.\n- display_only — Do not use; for internal use only.\n- sponsored — A sponsor-defined Cheermote. When used, the sponsor adds additional Bits to the amount that the user cheered. For example, if the user cheered Terminator100, the broadcaster might receive 110 Bits, which includes the sponsor's 10 Bits contribution."
                         },
                         "order": {
                             "type": "integer",
@@ -732,7 +732,7 @@
                         },
                         "product_type": {
                             "type": "string",
-                            "description": "The type of transaction. Possible values are:- BITS_IN_EXTENSION"
+                            "description": "The type of transaction. Possible values are:\n- BITS_IN_EXTENSION"
                         },
                         "product_data": {
                             "type": "object",
@@ -756,7 +756,7 @@
                                         },
                                         "type": {
                                             "type": "string",
-                                            "description": "The type of currency exchanged. Possible values are:- bits"
+                                            "description": "The type of currency exchanged. Possible values are:\n- bits"
                                         }
                                     }
                                 },
@@ -958,7 +958,7 @@
                         "id": {
                             "type": "string",
                             "required": true,
-                            "description": "ID of the [Content Classification Labels](https://help.twitch.tv/s/article/content-classification-labels) that must be added/removed from the channel. Can be one of the following values:- DebatedSocialIssuesAndPolitics\n- DrugsIntoxication\n- SexualThemes\n- ViolentGraphic\n- Gambling\n- ProfanityVulgarity"
+                            "description": "ID of the [Content Classification Labels](https://help.twitch.tv/s/article/content-classification-labels) that must be added/removed from the channel. Can be one of the following values:\n- DebatedSocialIssuesAndPolitics\n- DrugsIntoxication\n- SexualThemes\n- ViolentGraphic\n- Gambling\n- ProfanityVulgarity"
                         },
                         "is_enabled": {
                             "type": "boolean",
@@ -1128,8 +1128,8 @@
             },
             "codes": {
                 "200": "Successfully retrieved the broadcaster's list of followers.",
-                "400": "Possible reasons:- The user_id query parameter is required.\n- The broadcaster_id query parameter is not valid.\n- The user_id query parameter is required.",
-                "401": "Possible reasons:- The ID in the user_id query parameter must match the user ID in the access token.\n- The Authorization header is required and must contain a user access token.\n- The user access token is missing the user:read:follows scope.\n- The OAuth token is not valid.\n- The client ID specified in the Client-Id header does not match the client ID specified in the OAuth token."
+                "400": "Possible reasons:\n- The user_id query parameter is required.\n- The broadcaster_id query parameter is not valid.\n- The user_id query parameter is required.",
+                "401": "Possible reasons:\n- The ID in the user_id query parameter must match the user ID in the access token.\n- The Authorization header is required and must contain a user access token.\n- The user access token is missing the user:read:follows scope.\n- The OAuth token is not valid.\n- The client ID specified in the Client-Id header does not match the client ID specified in the OAuth token."
             },
             "auth": "Requires a [user access token](https://dev.twitch.tv/docs/authentication#user-access-tokens)) with any of the following scopes: `user:read:follows`",
             "token": [
@@ -1742,7 +1742,7 @@
                 "status": {
                     "type": "string",
                     "required": true,
-                    "description": "The status of the redemptions to return. The possible case-sensitive values are:- CANCELED\n- FULFILLED\n- UNFULFILLED\n*NOTE*: This field is required only if you don’t specify the id query parameter.*NOTE*: Canceled and fulfilled redemptions are returned for only a few days after they’re canceled or fulfilled."
+                    "description": "The status of the redemptions to return. The possible case-sensitive values are:\n- CANCELED\n- FULFILLED\n- UNFULFILLED\n*NOTE*: This field is required only if you don’t specify the id query parameter.*NOTE*: Canceled and fulfilled redemptions are returned for only a few days after they’re canceled or fulfilled."
                 },
                 "id": {
                     "type": "string",
@@ -1752,7 +1752,7 @@
                 "sort": {
                     "type": "string",
                     "required": false,
-                    "description": "The order to sort redemptions by. The possible case-sensitive values are:- OLDEST\n- NEWEST\nThe default is OLDEST."
+                    "description": "The order to sort redemptions by. The possible case-sensitive values are:\n- OLDEST\n- NEWEST\nThe default is OLDEST."
                 },
                 "after": {
                     "type": "string",
@@ -1805,7 +1805,7 @@
                         },
                         "status": {
                             "type": "string",
-                            "description": "The state of the redemption. Possible values are:- CANCELED\n- FULFILLED\n- UNFULFILLED"
+                            "description": "The state of the redemption. Possible values are:\n- CANCELED\n- FULFILLED\n- UNFULFILLED"
                         },
                         "redeemed_at": {
                             "type": "string",
@@ -2114,7 +2114,7 @@
             },
             "codes": {
                 "200": "Successfully updated the custom reward.",
-                "400": "ul>- The broadcaster_id query parameter is required.\n- The id query parameter is required.\n- The `title` must contain a minimum of 1 character and a maximum of 45 characters.\n- The `title` must be unique amongst all of the broadcaster's custom rewards.\n- The `cost` field must contain a minimum of 1 point.\n- The `prompt` field is limited to a maximum of 200 characters.\n- If `is_max_per_stream_enabled` is true, the minimum value for `max_per_stream` is 1.\n- If `is_max_per_user_per_stream_enabled` is true, the minimum value for `max_per_user_per_stream` is 1.\n- If `is_global_cooldown_enabled` is true, the minimum value for `global_cooldown_seconds` is 1 and the maximum is 604800.",
+                "400": "ul>\n- The broadcaster_id query parameter is required.\n- The id query parameter is required.\n- The `title` must contain a minimum of 1 character and a maximum of 45 characters.\n- The `title` must be unique amongst all of the broadcaster's custom rewards.\n- The `cost` field must contain a minimum of 1 point.\n- The `prompt` field is limited to a maximum of 200 characters.\n- If `is_max_per_stream_enabled` is true, the minimum value for `max_per_stream` is 1.\n- If `is_max_per_user_per_stream_enabled` is true, the minimum value for `max_per_user_per_stream` is 1.\n- If `is_global_cooldown_enabled` is true, the minimum value for `global_cooldown_seconds` is 1 and the maximum is 604800.",
                 "401": "- The Authorization header is required and must specify a user access token.\n- The user access token must include the channel:manage:redemptions scope.\n- The OAuth token is not valide.\n- The ID in the Client-Id header must match the Client ID in the OAuth token.",
                 "403": "- The ID in the Client-Id header must match the client ID used to create the custom reward.\n- The broadcaster is not a partner or affiliate.",
                 "404": "- The custom reward specified in the id query parameter was not found.",
@@ -2179,7 +2179,7 @@
                 "status": {
                     "type": "string",
                     "required": true,
-                    "description": "The status to set the redemption to. Possible values are:- CANCELED\n- FULFILLED\nSetting the status to CANCELED refunds the user’s channel points."
+                    "description": "The status to set the redemption to. Possible values are:\n- CANCELED\n- FULFILLED\nSetting the status to CANCELED refunds the user’s channel points."
                 }
             },
             "body": {
@@ -2243,7 +2243,7 @@
                         },
                         "status": {
                             "type": "string",
-                            "description": "The state of the redemption. Possible values are:- CANCELED\n- FULFILLED\n- UNFULFILLED"
+                            "description": "The state of the redemption. Possible values are:\n- CANCELED\n- FULFILLED\n- UNFULFILLED"
                         },
                         "redeemed_at": {
                             "type": "string",
@@ -2650,7 +2650,7 @@
                         },
                         "emote_type": {
                             "type": "string",
-                            "description": "The type of emote. The possible values are:- bitstier — A custom Bits tier emote.\n- follower — A custom follower emote.\n- subscriptions — A custom subscriber emote."
+                            "description": "The type of emote. The possible values are:\n- bitstier — A custom Bits tier emote.\n- follower — A custom follower emote.\n- subscriptions — A custom subscriber emote."
                         },
                         "emote_set_id": {
                             "type": "string",
@@ -2658,15 +2658,15 @@
                         },
                         "format": {
                             "type": "string[]",
-                            "description": "The formats that the emote is available in. For example, if the emote is available only as a static PNG, the array contains only `static`. But if the emote is available as a static PNG and an animated GIF, the array contains `static` and `animated`. The possible formats are:- animated — An animated GIF is available for this emote.\n- static — A static PNG file is available for this emote."
+                            "description": "The formats that the emote is available in. For example, if the emote is available only as a static PNG, the array contains only `static`. But if the emote is available as a static PNG and an animated GIF, the array contains `static` and `animated`. The possible formats are:\n- animated — An animated GIF is available for this emote.\n- static — A static PNG file is available for this emote."
                         },
                         "scale": {
                             "type": "string[]",
-                            "description": "The sizes that the emote is available in. For example, if the emote is available in small and medium sizes, the array contains 1.0 and 2.0. Possible sizes are:- 1.0 — A small version (28px x 28px) is available.\n- 2.0 — A medium version (56px x 56px) is available.\n- 3.0 — A large version (112px x 112px) is available."
+                            "description": "The sizes that the emote is available in. For example, if the emote is available in small and medium sizes, the array contains 1.0 and 2.0. Possible sizes are:\n- 1.0 — A small version (28px x 28px) is available.\n- 2.0 — A medium version (56px x 56px) is available.\n- 3.0 — A large version (112px x 112px) is available."
                         },
                         "theme_mode": {
                             "type": "string[]",
-                            "description": "The background themes that the emote is available in. Possible themes are:- dark\n- light"
+                            "description": "The background themes that the emote is available in. Possible themes are:\n- dark\n- light"
                         }
                     }
                 },
@@ -3209,7 +3209,7 @@
                 "non_moderator_chat_delay_duration": {
                     "type": "integer",
                     "required": false,
-                    "description": "The amount of time, in seconds, that messages are delayed before appearing in chat. Set only if `non_moderator_chat_delay` is *true*. Possible values are:- 2 — 2 second delay (recommended)\n- 4 — 4 second delay\n- 6 — 6 second delay"
+                    "description": "The amount of time, in seconds, that messages are delayed before appearing in chat. Set only if `non_moderator_chat_delay` is *true*. Possible values are:\n- 2 — 2 second delay (recommended)\n- 4 — 4 second delay\n- 6 — 6 second delay"
                 },
                 "slow_mode": {
                     "type": "boolean",
@@ -3337,7 +3337,7 @@
                 "color": {
                     "type": "string",
                     "required": false,
-                    "description": "The color used to highlight the announcement. Possible case-sensitive values are:- blue\n- green\n- orange\n- purple\n- primary (default)\nIf `color` is set to primary or is not set, the channel’s accent color is used to highlight the announcement (see *Profile Accent Color* under [profile settings](https://www.twitch.tv/settings/profile), *Channel and Videos*, and *Brand*)."
+                    "description": "The color used to highlight the announcement. Possible case-sensitive values are:\n- blue\n- green\n- orange\n- purple\n- primary (default)\nIf `color` is set to primary or is not set, the channel’s accent color is used to highlight the announcement (see *Profile Accent Color* under [profile settings](https://www.twitch.tv/settings/profile), *Channel and Videos*, and *Brand*)."
                 }
             },
             "body": {},
@@ -3571,7 +3571,7 @@
                 "color": {
                     "type": "string",
                     "required": true,
-                    "description": "The color to use for the user's name in chat. All users may specify one of the following named color values.- blue\n- blue_violet\n- cadet_blue\n- chocolate\n- coral\n- dodger_blue\n- firebrick\n- golden_rod\n- green\n- hot_pink\n- orange_red\n- red\n- sea_green\n- spring_green\n- yellow_green\nTurbo and Prime users may specify a named color or a Hex color code like #9146FF. If you use a Hex color code, remember to URL encode it."
+                    "description": "The color to use for the user's name in chat. All users may specify one of the following named color values.\n- blue\n- blue_violet\n- cadet_blue\n- chocolate\n- coral\n- dodger_blue\n- firebrick\n- golden_rod\n- green\n- hot_pink\n- orange_red\n- red\n- sea_green\n- spring_green\n- yellow_green\nTurbo and Prime users may specify a named color or a Hex color code like #9146FF. If you use a Hex color code, remember to URL encode it."
                 }
             },
             "reqBody": {},
@@ -4228,7 +4228,7 @@
                         },
                         "status": {
                             "type": "string",
-                            "description": "The shard status. The subscriber receives events only for enabled shards. Possible values are:- enabled — The shard is enabled.\n- webhook_callback_verification_pending — The shard is pending verification of the specified callback URL.\n- webhook_callback_verification_failed — The specified callback URL failed verification.\n- notification_failures_exceeded — The notification delivery failure rate was too high.\n- websocket_disconnected — The client closed the connection.\n- websocket_failed_ping_pong — The client failed to respond to a ping message.\n- websocket_received_inbound_traffic — The client sent a non-pong message. Clients may only send pong messages (and only in response to a ping message).\n- websocket_internal_error — The Twitch WebSocket server experienced an unexpected error.\n- websocket_network_timeout — The Twitch WebSocket server timed out writing the message to the client.\n- websocket_network_error — The Twitch WebSocket server experienced a network error writing the message to the client.\n- websocket_failed_to_reconnect - The client failed to reconnect to the Twitch WebSocket server within the required time after a Reconnect Message."
+                            "description": "The shard status. The subscriber receives events only for enabled shards. Possible values are:\n- enabled — The shard is enabled.\n- webhook_callback_verification_pending — The shard is pending verification of the specified callback URL.\n- webhook_callback_verification_failed — The specified callback URL failed verification.\n- notification_failures_exceeded — The notification delivery failure rate was too high.\n- websocket_disconnected — The client closed the connection.\n- websocket_failed_ping_pong — The client failed to respond to a ping message.\n- websocket_received_inbound_traffic — The client sent a non-pong message. Clients may only send pong messages (and only in response to a ping message).\n- websocket_internal_error — The Twitch WebSocket server experienced an unexpected error.\n- websocket_network_timeout — The Twitch WebSocket server timed out writing the message to the client.\n- websocket_network_error — The Twitch WebSocket server experienced a network error writing the message to the client.\n- websocket_failed_to_reconnect - The client failed to reconnect to the Twitch WebSocket server within the required time after a Reconnect Message."
                         },
                         "transport": {
                             "type": "object",
@@ -4236,7 +4236,7 @@
                             "attr": {
                                 "method": {
                                     "type": "string",
-                                    "description": "The transport method. Possible values are:- webhook\n- websocket"
+                                    "description": "The transport method. Possible values are:\n- webhook\n- websocket"
                                 },
                                 "callback": {
                                     "type": "string",
@@ -4325,7 +4325,7 @@
                                 "method": {
                                     "type": "string",
                                     "required": false,
-                                    "description": "The transport method. Possible values are:- webhook\n- websocket"
+                                    "description": "The transport method. Possible values are:\n- webhook\n- websocket"
                                 },
                                 "callback": {
                                     "type": "string",
@@ -4358,7 +4358,7 @@
                         },
                         "status": {
                             "type": "string",
-                            "description": "The shard status. The subscriber receives events only for enabled shards. Possible values are:- enabled — The shard is enabled.\n- webhook_callback_verification_pending — The shard is pending verification of the specified callback URL.\n- webhook_callback_verification_failed — The specified callback URL failed verification.\n- notification_failures_exceeded — The notification delivery failure rate was too high.\n- websocket_disconnected — The client closed the connection.\n- websocket_failed_ping_pong — The client failed to respond to a ping message.\n- websocket_received_inbound_traffic — The client sent a non-pong message. Clients may only send pong messages (and only in response to a ping message).\n- websocket_internal_error — The Twitch WebSocket server experienced an unexpected error.\n- websocket_network_timeout — The Twitch WebSocket server timed out writing the message to the client.\n- websocket_network_error — The Twitch WebSocket server experienced a network error writing the message to the client.\n- websocket_failed_to_reconnect - The client failed to reconnect to the Twitch WebSocket server within the required time after a Reconnect Message."
+                            "description": "The shard status. The subscriber receives events only for enabled shards. Possible values are:\n- enabled — The shard is enabled.\n- webhook_callback_verification_pending — The shard is pending verification of the specified callback URL.\n- webhook_callback_verification_failed — The specified callback URL failed verification.\n- notification_failures_exceeded — The notification delivery failure rate was too high.\n- websocket_disconnected — The client closed the connection.\n- websocket_failed_ping_pong — The client failed to respond to a ping message.\n- websocket_received_inbound_traffic — The client sent a non-pong message. Clients may only send pong messages (and only in response to a ping message).\n- websocket_internal_error — The Twitch WebSocket server experienced an unexpected error.\n- websocket_network_timeout — The Twitch WebSocket server timed out writing the message to the client.\n- websocket_network_error — The Twitch WebSocket server experienced a network error writing the message to the client.\n- websocket_failed_to_reconnect - The client failed to reconnect to the Twitch WebSocket server within the required time after a Reconnect Message."
                         },
                         "transport": {
                             "type": "object",
@@ -4366,7 +4366,7 @@
                             "attr": {
                                 "method": {
                                     "type": "string",
-                                    "description": "The transport method. Possible values are:- webhook\n- websocket"
+                                    "description": "The transport method. Possible values are:\n- webhook\n- websocket"
                                 },
                                 "callback": {
                                     "type": "string",
@@ -4398,7 +4398,7 @@
                         },
                         "message": {
                             "type": "string",
-                            "description": "The error that occurred while updating the shard. Possible errors:- The length of the string in the secret field is not valid.\n- The URL in the transport's callback field is not valid. The URL must use the HTTPS protocol and the 443 port number.\n- The value specified in the method field is not valid.\n- The callback field is required if you specify the webhook transport method.\n- The session_id field is required if you specify the WebSocket transport method.\n- The websocket session is not connected.\n- The shard id is outside of the conduit’s range."
+                            "description": "The error that occurred while updating the shard. Possible errors:\n- The length of the string in the secret field is not valid.\n- The URL in the transport's callback field is not valid. The URL must use the HTTPS protocol and the 443 port number.\n- The value specified in the method field is not valid.\n- The callback field is required if you specify the webhook transport method.\n- The session_id field is required if you specify the WebSocket transport method.\n- The websocket session is not connected.\n- The shard id is outside of the conduit’s range."
                         },
                         "code": {
                             "type": "string",
@@ -4626,7 +4626,7 @@
                 "fulfillment_status": {
                     "type": "string",
                     "required": false,
-                    "description": "The fulfillment status to set the entitlements to. Possible values are:- CLAIMED — The user claimed the benefit.\n- FULFILLED — The developer granted the benefit that the user claimed."
+                    "description": "The fulfillment status to set the entitlements to. Possible values are:\n- CLAIMED — The user claimed the benefit.\n- FULFILLED — The developer granted the benefit that the user claimed."
                 }
             },
             "body": {
@@ -4636,7 +4636,7 @@
                     "attr": {
                         "status": {
                             "type": "string",
-                            "description": "A string that indicates whether the status of the entitlements in the `ids` field were successfully updated. Possible values are:- INVALID_ID — The entitlement IDs in the `ids` field are not valid.\n- NOT_FOUND — The entitlement IDs in the `ids` field were not found.\n- SUCCESS — The status of the entitlements in the `ids` field were successfully updated.\n- UNAUTHORIZED — The user or organization identified by the user access token is not authorized to update the entitlements.\n- UPDATE_FAILED — The update failed. These are considered transient errors and the request should be retried later."
+                            "description": "A string that indicates whether the status of the entitlements in the `ids` field were successfully updated. Possible values are:\n- INVALID_ID — The entitlement IDs in the `ids` field are not valid.\n- NOT_FOUND — The entitlement IDs in the `ids` field were not found.\n- SUCCESS — The status of the entitlements in the `ids` field were successfully updated.\n- UNAUTHORIZED — The user or organization identified by the user access token is not authorized to update the entitlements.\n- UPDATE_FAILED — The update failed. These are considered transient errors and the request should be retried later."
                         },
                         "ids": {
                             "type": "string[]",
@@ -4763,7 +4763,7 @@
                 "segment": {
                     "type": "string",
                     "required": true,
-                    "description": "The configuration segment to update. Possible case-sensitive values are:- broadcaster\n- developer\n- global"
+                    "description": "The configuration segment to update. Possible case-sensitive values are:\n- broadcaster\n- developer\n- global"
                 },
                 "broadcaster_id": {
                     "type": "string",
@@ -5145,7 +5145,7 @@
                         },
                         "configuration_location": {
                             "type": "string",
-                            "description": "The location of where the extension’s configuration is stored. Possible values are:- hosted — The Extensions Configuration Service hosts the configuration.\n- custom — The Extension Backend Service (EBS) hosts the configuration.\n- none — The extension doesn't require configuration."
+                            "description": "The location of where the extension’s configuration is stored. Possible values are:\n- hosted — The Extensions Configuration Service hosts the configuration.\n- custom — The Extension Backend Service (EBS) hosts the configuration.\n- none — The extension doesn't require configuration."
                         },
                         "description": {
                             "type": "string",
@@ -5189,11 +5189,11 @@
                         },
                         "state": {
                             "type": "string",
-                            "description": "The extension’s state. Possible values are:- Approved\n- AssetsUploaded\n- Deleted\n- Deprecated\n- InReview\n- InTest\n- PendingAction\n- Rejected\n- Released"
+                            "description": "The extension’s state. Possible values are:\n- Approved\n- AssetsUploaded\n- Deleted\n- Deprecated\n- InReview\n- InTest\n- PendingAction\n- Rejected\n- Released"
                         },
                         "subscriptions_support_level": {
                             "type": "string",
-                            "description": "Indicates whether the extension can view the user’s subscription level on the channel that the extension is installed on. Possible values are:- none — The extension can't view the user’s subscription level.\n- optional — The extension can view the user’s subscription level."
+                            "description": "Indicates whether the extension can view the user’s subscription level on the channel that the extension is installed on. Possible values are:\n- none — The extension can't view the user’s subscription level.\n- optional — The extension can view the user’s subscription level."
                         },
                         "summary": {
                             "type": "string",
@@ -5381,7 +5381,7 @@
                         },
                         "configuration_location": {
                             "type": "string",
-                            "description": "The location of where the extension’s configuration is stored. Possible values are:- hosted — The Extensions Configuration Service hosts the configuration.\n- custom — The Extension Backend Service (EBS) hosts the configuration.\n- none — The extension doesn't require configuration."
+                            "description": "The location of where the extension’s configuration is stored. Possible values are:\n- hosted — The Extensions Configuration Service hosts the configuration.\n- custom — The Extension Backend Service (EBS) hosts the configuration.\n- none — The extension doesn't require configuration."
                         },
                         "description": {
                             "type": "string",
@@ -5425,11 +5425,11 @@
                         },
                         "state": {
                             "type": "string",
-                            "description": "The extension’s state. Possible values are:- Approved\n- AssetsUploaded\n- Deleted\n- Deprecated\n- InReview\n- InTest\n- PendingAction\n- Rejected\n- Released"
+                            "description": "The extension’s state. Possible values are:\n- Approved\n- AssetsUploaded\n- Deleted\n- Deprecated\n- InReview\n- InTest\n- PendingAction\n- Rejected\n- Released"
                         },
                         "subscriptions_support_level": {
                             "type": "string",
-                            "description": "Indicates whether the extension can view the user’s subscription level on the channel that the extension is installed on. Possible values are:- none — The extension can't view the user’s subscription level.\n- optional — The extension can view the user’s subscription level."
+                            "description": "Indicates whether the extension can view the user’s subscription level on the channel that the extension is installed on. Possible values are:\n- none — The extension can't view the user’s subscription level.\n- optional — The extension can view the user’s subscription level."
                         },
                         "summary": {
                             "type": "string",
@@ -5613,7 +5613,7 @@
                                 },
                                 "type": {
                                     "type": "string",
-                                    "description": "The type of currency. Possible values are:- bits"
+                                    "description": "The type of currency. Possible values are:\n- bits"
                                 }
                             }
                         },
@@ -6759,7 +6759,7 @@
             "body": {},
             "codes": {
                 "204": "Successfuly assigned guest to slot",
-                "400": "- Missing broadcaster_id\n- Missing moderator_id\n- Missing guest_id\n- Missing or invalid session_id \n- Missing or invalid slot_id",
+                "400": "- Missing broadcaster_id\n- Missing moderator_id\n- Missing guest_id\n- Missing or invalid session_id - Missing or invalid slot_id",
                 "401": "moderator_id is not a guest star moderator",
                 "403": "- Cannot assign host slot\n- Guest not invited to session\n- Guest already assigned to slot\n- Guest is not ready to join"
             },
@@ -6824,7 +6824,7 @@
             "body": {},
             "codes": {
                 "204": "Successfuly updated slot(s)",
-                "400": "- Missing broadcaster_id\n- Missing or invalid session_id \n- Missing or invalid slot_id"
+                "400": "- Missing broadcaster_id\n- Missing or invalid session_id - Missing or invalid slot_id"
             },
             "auth": "Requires a [user access token](https://dev.twitch.tv/docs/authentication#user-access-tokens)) with any of the following scopes: `channel:manage:guest_star`, `moderator:manage:guest_star`",
             "token": [
@@ -6887,7 +6887,7 @@
             "body": {},
             "codes": {
                 "204": "Successfuly removed user from slot",
-                "400": "- Missing broadcaster_id\n- Missing moderator_id\n- Missing or invalid session_id \n- Missing or invalid slot_id",
+                "400": "- Missing broadcaster_id\n- Missing moderator_id\n- Missing or invalid session_id - Missing or invalid slot_id",
                 "403": "- moderator_id is not a Guest Star moderator\n- The request is attempting to modify a restricted slot",
                 "404": "guest_id or slot_id not found"
             },
@@ -6962,7 +6962,7 @@
             "body": {},
             "codes": {
                 "204": "Successfuly updated slot settings",
-                "400": "- Missing broadcaster_id\n- Missing moderator_id\n- Missing or invalid session_id \n- Missing or invalid slot_id",
+                "400": "- Missing broadcaster_id\n- Missing moderator_id\n- Missing or invalid session_id - Missing or invalid slot_id",
                 "403": "- moderator_id is not a Guest Star moderator\n- The request is attempting to modify a restricted slot"
             },
             "auth": "Requires a [user access token](https://dev.twitch.tv/docs/authentication#user-access-tokens)) with any of the following scopes: `channel:manage:guest_star`, `moderator:manage:guest_star`",
@@ -7266,7 +7266,7 @@
                 "action": {
                     "type": "string",
                     "required": true,
-                    "description": "The action to take for the message. Possible values are:- ALLOW\n- DENY"
+                    "description": "The action to take for the message. Possible values are:\n- ALLOW\n- DENY"
                 }
             },
             "body": {},
@@ -7809,7 +7809,7 @@
                 "status": {
                     "type": "string",
                     "required": true,
-                    "description": "Filter by a status.- pending\n- approved\n- denied\n- acknowledged\n- canceled"
+                    "description": "Filter by a status.\n- pending\n- approved\n- denied\n- acknowledged\n- canceled"
                 },
                 "user_id": {
                     "type": "string",
@@ -7879,7 +7879,7 @@
                         },
                         "status": {
                             "type": "string",
-                            "description": "Status of the request. One of:- pending\n- approved\n- denied\n- acknowledged\n- canceled"
+                            "description": "Status of the request. One of:\n- pending\n- approved\n- denied\n- acknowledged\n- canceled"
                         },
                         "created_at": {
                             "type": "string",
@@ -8319,7 +8319,7 @@
                 "message_id": {
                     "type": "string",
                     "required": false,
-                    "description": "The ID of the message to remove. The `id` tag in the [PRIVMSG](https://dev.twitch.tv/docs/irc/tags#privmsg-tags) tag contains the message’s ID. Restrictions:- The message must have been created within the last 6 hours.\n- The message must not belong to the broadcaster.\n- The message must not belong to another moderator.\nIf not specified, the request removes all messages in the broadcaster’s chat room."
+                    "description": "The ID of the message to remove. The `id` tag in the [PRIVMSG](https://dev.twitch.tv/docs/irc/tags#privmsg-tags) tag contains the message’s ID. Restrictions:\n- The message must have been created within the last 6 hours.\n- The message must not belong to the broadcaster.\n- The message must not belong to another moderator.\nIf not specified, the request removes all messages in the broadcaster’s chat room."
                 }
             },
             "reqBody": {},
@@ -9231,7 +9231,7 @@
                         },
                         "status": {
                             "type": "string",
-                            "description": "The poll's status. Valid values are:- ACTIVE — The poll is running.\n- COMPLETED — The poll ended on schedule (see the `duration` field).\n- TERMINATED — The poll was terminated before its scheduled end.\n- ARCHIVED — The poll has been archived and is no longer visible on the channel.\n- MODERATED — The poll was deleted.\n- INVALID — Something went wrong while determining the state."
+                            "description": "The poll's status. Valid values are:\n- ACTIVE — The poll is running.\n- COMPLETED — The poll ended on schedule (see the `duration` field).\n- TERMINATED — The poll was terminated before its scheduled end.\n- ARCHIVED — The poll has been archived and is no longer visible on the channel.\n- MODERATED — The poll was deleted.\n- INVALID — Something went wrong while determining the state."
                         },
                         "duration": {
                             "type": "integer",
@@ -9401,7 +9401,7 @@
                         },
                         "status": {
                             "type": "string",
-                            "description": "The poll’s status. Valid values are:- ACTIVE — The poll is running.\n- COMPLETED — The poll ended on schedule (see the `duration` field).\n- TERMINATED — The poll was terminated before its scheduled end.\n- ARCHIVED — The poll has been archived and is no longer visible on the channel.\n- MODERATED — The poll was deleted.\n- INVALID — Something went wrong while determining the state."
+                            "description": "The poll’s status. Valid values are:\n- ACTIVE — The poll is running.\n- COMPLETED — The poll ended on schedule (see the `duration` field).\n- TERMINATED — The poll was terminated before its scheduled end.\n- ARCHIVED — The poll has been archived and is no longer visible on the channel.\n- MODERATED — The poll was deleted.\n- INVALID — Something went wrong while determining the state."
                         },
                         "duration": {
                             "type": "integer",
@@ -9465,7 +9465,7 @@
                 "status": {
                     "type": "string",
                     "required": true,
-                    "description": "The status to set the poll to. Possible case-sensitive values are:- TERMINATED — Ends the poll before the poll is scheduled to end. The poll remains publicly visible.\n- ARCHIVED — Ends the poll before the poll is scheduled to end, and then archives it so it's no longer publicly visible."
+                    "description": "The status to set the poll to. Possible case-sensitive values are:\n- TERMINATED — Ends the poll before the poll is scheduled to end. The poll remains publicly visible.\n- ARCHIVED — Ends the poll before the poll is scheduled to end, and then archives it so it's no longer publicly visible."
                 }
             },
             "body": {
@@ -9537,7 +9537,7 @@
                         },
                         "status": {
                             "type": "string",
-                            "description": "The poll’s status. Valid values are:- ACTIVE — The poll is running.\n- COMPLETED — The poll ended on schedule (see the `duration` field).\n- TERMINATED — The poll was terminated before its scheduled end.\n- ARCHIVED — The poll has been archived and is no longer visible on the channel.\n- MODERATED — The poll was deleted.\n- INVALID — Something went wrong while determining the state."
+                            "description": "The poll’s status. Valid values are:\n- ACTIVE — The poll is running.\n- COMPLETED — The poll ended on schedule (see the `duration` field).\n- TERMINATED — The poll was terminated before its scheduled end.\n- ARCHIVED — The poll has been archived and is no longer visible on the channel.\n- MODERATED — The poll was deleted.\n- INVALID — Something went wrong while determining the state."
                         },
                         "duration": {
                             "type": "integer",
@@ -9688,7 +9688,7 @@
                                 },
                                 "color": {
                                     "type": "string",
-                                    "description": "The color that visually identifies this outcome in the UX. Possible values are:- BLUE\n- PINK\nIf the number of outcomes is two, the color is BLUE for the first outcome and PINK for the second outcome. If there are more than two outcomes, the color is BLUE for all outcomes."
+                                    "description": "The color that visually identifies this outcome in the UX. Possible values are:\n- BLUE\n- PINK\nIf the number of outcomes is two, the color is BLUE for the first outcome and PINK for the second outcome. If there are more than two outcomes, the color is BLUE for all outcomes."
                                 }
                             }
                         },
@@ -9698,7 +9698,7 @@
                         },
                         "status": {
                             "type": "string",
-                            "description": "The prediction’s status. Valid values are:- ACTIVE — The Prediction is running and viewers can make predictions.\n- CANCELED — The broadcaster canceled the Prediction and refunded the Channel Points to the participants.\n- LOCKED — The broadcaster locked the Prediction, which means viewers can no longer make predictions.\n- RESOLVED — The winning outcome was determined and the Channel Points were distributed to the viewers who predicted the correct outcome."
+                            "description": "The prediction’s status. Valid values are:\n- ACTIVE — The Prediction is running and viewers can make predictions.\n- CANCELED — The broadcaster canceled the Prediction and refunded the Channel Points to the participants.\n- LOCKED — The broadcaster locked the Prediction, which means viewers can no longer make predictions.\n- RESOLVED — The winning outcome was determined and the Channel Points were distributed to the viewers who predicted the correct outcome."
                         },
                         "created_at": {
                             "type": "string",
@@ -9865,7 +9865,7 @@
                                 },
                                 "color": {
                                     "type": "string",
-                                    "description": "The color that visually identifies this outcome in the UX. Possible values are:- BLUE\n- PINK\nIf the number of outcomes is two, the color is BLUE for the first outcome and PINK for the second outcome. If there are more than two outcomes, the color is BLUE for all outcomes."
+                                    "description": "The color that visually identifies this outcome in the UX. Possible values are:\n- BLUE\n- PINK\nIf the number of outcomes is two, the color is BLUE for the first outcome and PINK for the second outcome. If there are more than two outcomes, the color is BLUE for all outcomes."
                                 }
                             }
                         },
@@ -9875,7 +9875,7 @@
                         },
                         "status": {
                             "type": "string",
-                            "description": "The prediction’s status. Valid values are:- ACTIVE — The Prediction is running and viewers can make predictions.\n- CANCELED — The broadcaster canceled the Prediction and refunded the Channel Points to the participants.\n- LOCKED — The broadcaster locked the Prediction, which means viewers can no longer make predictions.\n- RESOLVED — The winning outcome was determined and the Channel Points were distributed to the viewers who predicted the correct outcome."
+                            "description": "The prediction’s status. Valid values are:\n- ACTIVE — The Prediction is running and viewers can make predictions.\n- CANCELED — The broadcaster canceled the Prediction and refunded the Channel Points to the participants.\n- LOCKED — The broadcaster locked the Prediction, which means viewers can no longer make predictions.\n- RESOLVED — The winning outcome was determined and the Channel Points were distributed to the viewers who predicted the correct outcome."
                         },
                         "created_at": {
                             "type": "string",
@@ -9940,7 +9940,7 @@
                 "status": {
                     "type": "string",
                     "required": true,
-                    "description": "The status to set the prediction to. Possible case-sensitive values are:- RESOLVED — The winning outcome is determined and the Channel Points are distributed to the viewers who predicted the correct outcome.\n- CANCELED — The broadcaster is canceling the prediction and sending refunds to the participants.\n- LOCKED — The broadcaster is locking the prediction, which means viewers may no longer make predictions.\nThe broadcaster can update an active prediction to LOCKED, RESOLVED, or CANCELED; and update a locked prediction to RESOLVED or CANCELED.The broadcaster has up to 24 hours after the prediction window closes to resolve the prediction. If not, Twitch sets the status to CANCELED and returns the points."
+                    "description": "The status to set the prediction to. Possible case-sensitive values are:\n- RESOLVED — The winning outcome is determined and the Channel Points are distributed to the viewers who predicted the correct outcome.\n- CANCELED — The broadcaster is canceling the prediction and sending refunds to the participants.\n- LOCKED — The broadcaster is locking the prediction, which means viewers may no longer make predictions.\nThe broadcaster can update an active prediction to LOCKED, RESOLVED, or CANCELED; and update a locked prediction to RESOLVED or CANCELED.The broadcaster has up to 24 hours after the prediction window closes to resolve the prediction. If not, Twitch sets the status to CANCELED and returns the points."
                 },
                 "winning_outcome_id": {
                     "type": "string",
@@ -10025,7 +10025,7 @@
                                 },
                                 "color": {
                                     "type": "string",
-                                    "description": "The color that visually identifies this outcome in the UX. Possible values are:- BLUE\n- PINK\nIf the number of outcomes is two, the color is BLUE for the first outcome and PINK for the second outcome. If there are more than two outcomes, the color is BLUE for all outcomes."
+                                    "description": "The color that visually identifies this outcome in the UX. Possible values are:\n- BLUE\n- PINK\nIf the number of outcomes is two, the color is BLUE for the first outcome and PINK for the second outcome. If there are more than two outcomes, the color is BLUE for all outcomes."
                                 }
                             }
                         },
@@ -10035,7 +10035,7 @@
                         },
                         "status": {
                             "type": "string",
-                            "description": "The prediction’s status. Valid values are:- ACTIVE — The Prediction is running and viewers can make predictions.\n- CANCELED — The broadcaster canceled the Prediction and refunded the Channel Points to the participants.\n- LOCKED — The broadcaster locked the Prediction, which means viewers can no longer make predictions.\n- RESOLVED — The winning outcome was determined and the Channel Points were distributed to the viewers who predicted the correct outcome."
+                            "description": "The prediction’s status. Valid values are:\n- ACTIVE — The Prediction is running and viewers can make predictions.\n- CANCELED — The broadcaster canceled the Prediction and refunded the Channel Points to the participants.\n- LOCKED — The broadcaster locked the Prediction, which means viewers can no longer make predictions.\n- RESOLVED — The winning outcome was determined and the Channel Points were distributed to the viewers who predicted the correct outcome."
                         },
                         "created_at": {
                             "type": "string",
@@ -11046,7 +11046,7 @@
                 "type": {
                     "type": "string",
                     "required": false,
-                    "description": "The type of stream to filter the list of streams by. Possible values are:- all\n- live\nThe default is all."
+                    "description": "The type of stream to filter the list of streams by. Possible values are:\n- all\n- live\nThe default is all."
                 },
                 "language": {
                     "type": "string",
@@ -11101,7 +11101,7 @@
                         },
                         "type": {
                             "type": "string",
-                            "description": "The type of stream. Possible values are:- live\nIf an error occurs, this field is set to an empty string."
+                            "description": "The type of stream. Possible values are:\n- live\nIf an error occurs, this field is set to an empty string."
                         },
                         "title": {
                             "type": "string",
@@ -11238,7 +11238,7 @@
                         },
                         "type": {
                             "type": "string",
-                            "description": "The type of stream. Possible values are:- live\nIf an error occurs, this field is set to an empty string."
+                            "description": "The type of stream. Possible values are:\n- live\nIf an error occurs, this field is set to an empty string."
                         },
                         "title": {
                             "type": "string",
@@ -11958,11 +11958,11 @@
                         },
                         "type": {
                             "type": "string",
-                            "description": "The type of user. Possible values are:- admin — Twitch administrator\n- global_mod\n- staff — Twitch staff\n- \"\" — Normal user"
+                            "description": "The type of user. Possible values are:\n- admin — Twitch administrator\n- global_mod\n- staff — Twitch staff\n- \"\" — Normal user"
                         },
                         "broadcaster_type": {
                             "type": "string",
-                            "description": "The type of broadcaster. Possible values are:- affiliate — An [affiliate broadcaster](https://help.twitch.tv/s/article/joining-the-affiliate-program target=)\n- partner — A [partner broadcaster](https://help.twitch.tv/s/article/partner-program-overview)\n- \"\" — A normal broadcaster"
+                            "description": "The type of broadcaster. Possible values are:\n- affiliate — An [affiliate broadcaster](https://help.twitch.tv/s/article/joining-the-affiliate-program target=)\n- partner — A [partner broadcaster](https://help.twitch.tv/s/article/partner-program-overview)\n- \"\" — A normal broadcaster"
                         },
                         "description": {
                             "type": "string",
@@ -12167,12 +12167,12 @@
                 "source_context": {
                     "type": "string",
                     "required": false,
-                    "description": "The location where the harassment took place that is causing the brodcaster to block the user. Possible values are:- chat\n- whisper\n."
+                    "description": "The location where the harassment took place that is causing the brodcaster to block the user. Possible values are:\n- chat\n- whisper\n."
                 },
                 "reason": {
                     "type": "string",
                     "required": false,
-                    "description": "The reason that the broadcaster is blocking the user. Possible values are:- harassment\n- spam\n- other"
+                    "description": "The reason that the broadcaster is blocking the user. Possible values are:\n- harassment\n- spam\n- other"
                 }
             },
             "reqBody": {},
@@ -12265,7 +12265,7 @@
                         },
                         "type": {
                             "type": "string[]",
-                            "description": "The extension types that you can activate for this extension. Possible values are:- component\n- mobile\n- overlay\n- panel"
+                            "description": "The extension types that you can activate for this extension. Possible values are:\n- component\n- mobile\n- overlay\n- panel"
                         }
                     }
                 }
@@ -12573,17 +12573,17 @@
                 "period": {
                     "type": "string",
                     "required": false,
-                    "description": "A filter used to filter the list of videos by when they were published. For example, videos published in the last week. Possible values are:- all\n- day\n- month\n- week\nThe default is \"all,\" which returns videos published in all periods.Specify this parameter only if you specify the game_id or user_id query parameter."
+                    "description": "A filter used to filter the list of videos by when they were published. For example, videos published in the last week. Possible values are:\n- all\n- day\n- month\n- week\nThe default is \"all,\" which returns videos published in all periods.Specify this parameter only if you specify the game_id or user_id query parameter."
                 },
                 "sort": {
                     "type": "string",
                     "required": false,
-                    "description": "The order to sort the returned videos in. Possible values are:- time — Sort the results in descending order by when they were created (i.e., latest video first).\n- trending — Sort the results in descending order by biggest gains in viewership (i.e., highest trending video first).\n- views — Sort the results in descending order by most views (i.e., highest number of views first).\nThe default is \"time.\"Specify this parameter only if you specify the game_id or user_id query parameter."
+                    "description": "The order to sort the returned videos in. Possible values are:\n- time — Sort the results in descending order by when they were created (i.e., latest video first).\n- trending — Sort the results in descending order by biggest gains in viewership (i.e., highest trending video first).\n- views — Sort the results in descending order by most views (i.e., highest number of views first).\nThe default is \"time.\"Specify this parameter only if you specify the game_id or user_id query parameter."
                 },
                 "type": {
                     "type": "string",
                     "required": false,
-                    "description": "A filter used to filter the list of videos by the video's type. Possible case-sensitive values are:- all\n- archive — On-demand videos (VODs) of past streams.\n- highlight — Highlight reels of past streams.\n- upload — External videos that the broadcaster uploaded using the Video Producer.\nThe default is \"all,\" which returns all video types.Specify this parameter only if you specify the game_id or user_id query parameter."
+                    "description": "A filter used to filter the list of videos by the video's type. Possible case-sensitive values are:\n- all\n- archive — On-demand videos (VODs) of past streams.\n- highlight — Highlight reels of past streams.\n- upload — External videos that the broadcaster uploaded using the Video Producer.\nThe default is \"all,\" which returns all video types.Specify this parameter only if you specify the game_id or user_id query parameter."
                 },
                 "first": {
                     "type": "string",
@@ -12665,7 +12665,7 @@
                         },
                         "type": {
                             "type": "string",
-                            "description": "The video's type. Possible values are:- archive — An on-demand video (VOD) of one of the broadcaster's past streams.\n- highlight — A highlight reel of one of the broadcaster's past streams. See [Creating Highlights](https://help.twitch.tv/s/article/creating-highlights-and-stream-markers).\n- upload — A video that the broadcaster uploaded to their video library. See Upload under [Video Producer](https://help.twitch.tv/s/article/video-on-demand?language=en_US#videoproducer)."
+                            "description": "The video's type. Possible values are:\n- archive — An on-demand video (VOD) of one of the broadcaster's past streams.\n- highlight — A highlight reel of one of the broadcaster's past streams. See [Creating Highlights](https://help.twitch.tv/s/article/creating-highlights-and-stream-markers).\n- upload — A video that the broadcaster uploaded to their video library. See Upload under [Video Producer](https://help.twitch.tv/s/article/video-on-demand?language=en_US#videoproducer)."
                         },
                         "duration": {
                             "type": "string",
