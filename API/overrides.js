@@ -1,4 +1,10 @@
 module.exports = {
+    "Update Chat Settings"(docs) {
+        docs.reqBody.forEach(element => {
+            element.required = false;
+        });
+    },
+
     "Get Extension Transactions"(docs) {
         const a = docs.body.find(v => v.name.endsWith('broadcast'));
         a.name = a.name.substring(1);
