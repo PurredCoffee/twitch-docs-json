@@ -7412,47 +7412,47 @@
             "reqBody": {
                 "aggression": {
                     "type": "integer",
-                    "required": true,
+                    "required": false,
                     "description": "The Automod level for hostility involving aggression."
                 },
                 "bullying": {
                     "type": "integer",
-                    "required": true,
+                    "required": false,
                     "description": "The Automod level for hostility involving name calling or insults."
                 },
                 "disability": {
                     "type": "integer",
-                    "required": true,
+                    "required": false,
                     "description": "The Automod level for discrimination against disability."
                 },
                 "misogyny": {
                     "type": "integer",
-                    "required": true,
+                    "required": false,
                     "description": "The Automod level for discrimination against women."
                 },
                 "overall_level": {
                     "type": "integer",
-                    "required": true,
+                    "required": false,
                     "description": "The default AutoMod level for the broadcaster."
                 },
                 "race_ethnicity_or_religion": {
                     "type": "integer",
-                    "required": true,
+                    "required": false,
                     "description": "The Automod level for racial discrimination."
                 },
                 "sex_based_terms": {
                     "type": "integer",
-                    "required": true,
+                    "required": false,
                     "description": "The Automod level for sexual content."
                 },
                 "sexuality_sex_or_gender": {
                     "type": "integer",
-                    "required": true,
+                    "required": false,
                     "description": "The AutoMod level for discrimination based on sexuality, sex, or gender."
                 },
                 "swearing": {
                     "type": "integer",
-                    "required": true,
+                    "required": false,
                     "description": "The Automod level for profanity."
                 }
             },
