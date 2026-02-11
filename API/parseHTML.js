@@ -448,7 +448,6 @@ function parseHTMLSnippet(html, depth = 0) {
         html.consume(retObj.name.length + 2);
         return retObj;
     }
-    console.log(html.pos + ' / ' + html.full.length + ' / ' + depth + " " + retObj.name);
     if(!hasChildren) return retObj;
     while(html.pos <= html.full.length) {
         retObj.children.push(unescape(html.consume('<')));
