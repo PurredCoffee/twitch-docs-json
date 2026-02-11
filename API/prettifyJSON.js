@@ -30,15 +30,20 @@ for(let key in docs) {
                 description: c.description
             }
             if(c.type.toLowerCase().startsWith('string')) {
-                let possible = c.description.toLowerCase().indexOf('possible');
+                let possible = c.description.toLowerCase().indexOf('can be');
+                if(possible == -1) possible = c.description.toLowerCase().indexOf('possible');
+                if(possible != -1) possible = c.description.toLowerCase().indexOf('values', possible);
+                if(possible == -1) possible = c.description.toLowerCase().indexOf('possible');
                 if(possible != -1)
-                while((possible = c.description.indexOf('-', possible + 1)) >= 0) {
+                while((possible = c.description.indexOf('- ', possible + 1)) >= 0) {
                     let end = [
                         c.description.indexOf("—", possible + 1),
+                        c.description.indexOf("-", possible + 1),
                         c.description.indexOf(",", possible + 1),
+                        c.description.indexOf(":", possible + 1),
                         c.description.indexOf("\n", possible + 1)
                     ].reduce((prev, v) => (v==-1?prev:Math.min(prev, v)), c.description.length);
-                    (retObj[c.name.trim()].possible ??= []).push(c.description.substring(possible + 2, end).trim());
+                    (retObj[c.name.trim()].possible ??= []).push(c.description.substring(possible + 2, end).trim().replaceAll(/`|"|'/g,''));
                 }
             }
             if(c.type.toLowerCase().startsWith('map')) {

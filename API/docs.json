@@ -648,14 +648,10 @@
                             "description": "The type of Cheermote. Possible values are:\n- global_first_party — A Twitch-defined Cheermote that is shown in the Bits card.\n- global_third_party — A Twitch-defined Cheermote that is not shown in the Bits card.\n- channel_custom — A broadcaster-defined Cheermote.\n- display_only — Do not use; for internal use only.\n- sponsored — A sponsor-defined Cheermote. When used, the sponsor adds additional Bits to the amount that the user cheered. For example, if the user cheered Terminator100, the broadcaster might receive 110 Bits, which includes the sponsor's 10 Bits contribution.",
                             "possible": [
                                 "global_first_party",
-                                "efined Cheermote that is shown in the Bits card.",
                                 "global_third_party",
-                                "efined Cheermote that is not shown in the Bits card.",
                                 "channel_custom",
-                                "efined Cheermote.",
                                 "display_only",
-                                "sponsored",
-                                "efined Cheermote. When used"
+                                "sponsored"
                             ]
                         },
                         "order": {
@@ -997,7 +993,15 @@
                         "id": {
                             "type": "string",
                             "required": true,
-                            "description": "ID of the [Content Classification Labels](https://help.twitch.tv/s/article/content-classification-labels) that must be added/removed from the channel. Can be one of the following values:\n- DebatedSocialIssuesAndPolitics\n- DrugsIntoxication\n- SexualThemes\n- ViolentGraphic\n- Gambling\n- ProfanityVulgarity"
+                            "description": "ID of the [Content Classification Labels](https://help.twitch.tv/s/article/content-classification-labels) that must be added/removed from the channel. Can be one of the following values:\n- DebatedSocialIssuesAndPolitics\n- DrugsIntoxication\n- SexualThemes\n- ViolentGraphic\n- Gambling\n- ProfanityVulgarity",
+                            "possible": [
+                                "DebatedSocialIssuesAndPolitics",
+                                "DrugsIntoxication",
+                                "SexualThemes",
+                                "ViolentGraphic",
+                                "Gambling",
+                                "ProfanityVulgarity"
+                            ]
                         },
                         "is_enabled": {
                             "type": "boolean",
@@ -1783,7 +1787,6 @@
                     "required": true,
                     "description": "The status of the redemptions to return. The possible case-sensitive values are:\n- CANCELED\n- FULFILLED\n- UNFULFILLED\n*NOTE*: This field is required only if you don’t specify the id query parameter.*NOTE*: Canceled and fulfilled redemptions are returned for only a few days after they’re canceled or fulfilled.",
                     "possible": [
-                        "ensitive values are:",
                         "CANCELED",
                         "FULFILLED",
                         "UNFULFILLED"
@@ -1799,7 +1802,6 @@
                     "required": false,
                     "description": "The order to sort redemptions by. The possible case-sensitive values are:\n- OLDEST\n- NEWEST\nThe default is OLDEST.",
                     "possible": [
-                        "ensitive values are:",
                         "OLDEST",
                         "NEWEST"
                     ]
@@ -3215,7 +3217,6 @@
                                 "globals",
                                 "owl2019",
                                 "twofactor",
-                                "actor authentication on an account.",
                                 "limitedtime"
                             ]
                         },
@@ -3456,7 +3457,6 @@
                     "required": false,
                     "description": "The color used to highlight the announcement. Possible case-sensitive values are:\n- blue\n- green\n- orange\n- purple\n- primary (default)\nIf `color` is set to primary or is not set, the channel’s accent color is used to highlight the announcement (see *Profile Accent Color* under [profile settings](https://www.twitch.tv/settings/profile), *Channel and Videos*, and *Brand*).",
                     "possible": [
-                        "ensitive values are:",
                         "blue",
                         "green",
                         "orange",
@@ -4362,11 +4362,10 @@
                                 "websocket_disconnected",
                                 "websocket_failed_ping_pong",
                                 "websocket_received_inbound_traffic",
-                                "ong message. Clients may only send pong messages (and only in response to a ping message).",
                                 "websocket_internal_error",
                                 "websocket_network_timeout",
                                 "websocket_network_error",
-                                "websocket_failed_to_reconnect - The client failed to reconnect to the Twitch WebSocket server within the required time after a Reconnect Message.",
+                                "websocket_failed_to_reconnect",
                                 "The client failed to reconnect to the Twitch WebSocket server within the required time after a Reconnect Message."
                             ]
                         },
@@ -4515,11 +4514,10 @@
                                 "websocket_disconnected",
                                 "websocket_failed_ping_pong",
                                 "websocket_received_inbound_traffic",
-                                "ong message. Clients may only send pong messages (and only in response to a ping message).",
                                 "websocket_internal_error",
                                 "websocket_network_timeout",
                                 "websocket_network_error",
-                                "websocket_failed_to_reconnect - The client failed to reconnect to the Twitch WebSocket server within the required time after a Reconnect Message.",
+                                "websocket_failed_to_reconnect",
                                 "The client failed to reconnect to the Twitch WebSocket server within the required time after a Reconnect Message."
                             ]
                         },
@@ -4568,7 +4566,7 @@
                             "description": "The error that occurred while updating the shard. Possible errors:\n- The length of the string in the secret field is not valid.\n- The URL in the transport's callback field is not valid. The URL must use the HTTPS protocol and the 443 port number.\n- The value specified in the method field is not valid.\n- The callback field is required if you specify the webhook transport method.\n- The session_id field is required if you specify the WebSocket transport method.\n- The websocket session is not connected.\n- The shard id is outside of the conduit’s range.",
                             "possible": [
                                 "The length of the string in the secret field is not valid.",
-                                "The URL in the transport's callback field is not valid. The URL must use the HTTPS protocol and the 443 port number.",
+                                "The URL in the transports callback field is not valid. The URL must use the HTTPS protocol and the 443 port number.",
                                 "The value specified in the method field is not valid.",
                                 "The callback field is required if you specify the webhook transport method.",
                                 "The session_id field is required if you specify the WebSocket transport method.",
@@ -4891,7 +4889,6 @@
                     "required": true,
                     "description": "The type of configuration segment to get. Possible case-sensitive values are: - broadcaster\n- developer\n- global\nYou may specify one or more segments. To specify multiple segments, include the `segment` parameter for each segment to get. For example, `segment=broadcaster&segment=developer`. Ignores duplicate segments.",
                     "possible": [
-                        "ensitive values are: - broadcaster",
                         "broadcaster",
                         "developer",
                         "global"
@@ -4971,7 +4968,6 @@
                     "required": true,
                     "description": "The configuration segment to update. Possible case-sensitive values are:\n- broadcaster\n- developer\n- global",
                     "possible": [
-                        "ensitive values are:",
                         "broadcaster",
                         "developer",
                         "global"
@@ -6312,7 +6308,11 @@
                 },
                 "group_layout": {
                     "type": "string",
-                    "description": "This setting determines how the guests within a session should be laid out within the browser source. Can be one of the following values: - `TILED_LAYOUT`: All live guests are tiled within the browser source with the same size.\n- `SCREENSHARE_LAYOUT`: All live guests are tiled within the browser source with the same size. If there is an active screen share, it is sized larger than the other guests."
+                    "description": "This setting determines how the guests within a session should be laid out within the browser source. Can be one of the following values: - `TILED_LAYOUT`: All live guests are tiled within the browser source with the same size.\n- `SCREENSHARE_LAYOUT`: All live guests are tiled within the browser source with the same size. If there is an active screen share, it is sized larger than the other guests.",
+                    "possible": [
+                        "TILED_LAYOUT",
+                        "SCREENSHARE_LAYOUT"
+                    ]
                 },
                 "browser_source_token": {
                     "type": "string",
@@ -6381,7 +6381,13 @@
                 "group_layout": {
                     "type": "string",
                     "required": false,
-                    "description": "This setting determines how the guests within a session should be laid out within the browser source. Can be one of the following values: - `TILED_LAYOUT`: All live guests are tiled within the browser source with the same size.\n- `SCREENSHARE_LAYOUT`: All live guests are tiled within the browser source with the same size. If there is an active screen share, it is sized larger than the other guests.\n- `HORIZONTAL_LAYOUT`: All live guests are arranged in a horizontal bar within the browser source\n- `VERTICAL_LAYOUT`: All live guests are arranged in a vertical bar within the browser source"
+                    "description": "This setting determines how the guests within a session should be laid out within the browser source. Can be one of the following values: - `TILED_LAYOUT`: All live guests are tiled within the browser source with the same size.\n- `SCREENSHARE_LAYOUT`: All live guests are tiled within the browser source with the same size. If there is an active screen share, it is sized larger than the other guests.\n- `HORIZONTAL_LAYOUT`: All live guests are arranged in a horizontal bar within the browser source\n- `VERTICAL_LAYOUT`: All live guests are arranged in a vertical bar within the browser source",
+                    "possible": [
+                        "TILED_LAYOUT",
+                        "SCREENSHARE_LAYOUT",
+                        "HORIZONTAL_LAYOUT",
+                        "VERTICAL_LAYOUT"
+                    ]
                 },
                 "regenerate_browser_sources": {
                     "type": "boolean",
@@ -7325,9 +7331,7 @@
                                             "possible": [
                                                 "treasure",
                                                 "golden_kappa",
-                                                "regular",
-                                                "rain-guide#special)",
-                                                "uide#special)"
+                                                "regular"
                                             ]
                                         },
                                         "total": {
@@ -9740,7 +9744,6 @@
                     "required": true,
                     "description": "The status to set the poll to. Possible case-sensitive values are:\n- TERMINATED — Ends the poll before the poll is scheduled to end. The poll remains publicly visible.\n- ARCHIVED — Ends the poll before the poll is scheduled to end, and then archives it so it's no longer publicly visible.",
                     "possible": [
-                        "ensitive values are:",
                         "TERMINATED",
                         "ARCHIVED"
                     ]
@@ -10228,7 +10231,6 @@
                     "required": true,
                     "description": "The status to set the prediction to. Possible case-sensitive values are:\n- RESOLVED — The winning outcome is determined and the Channel Points are distributed to the viewers who predicted the correct outcome.\n- CANCELED — The broadcaster is canceling the prediction and sending refunds to the participants.\n- LOCKED — The broadcaster is locking the prediction, which means viewers may no longer make predictions.\nThe broadcaster can update an active prediction to LOCKED, RESOLVED, or CANCELED; and update a locked prediction to RESOLVED or CANCELED.The broadcaster has up to 24 hours after the prediction window closes to resolve the prediction. If not, Twitch sets the status to CANCELED and returns the points.",
                     "possible": [
-                        "ensitive values are:",
                         "RESOLVED",
                         "CANCELED",
                         "LOCKED"
@@ -12178,7 +12180,7 @@
                                 "admin",
                                 "global_mod",
                                 "staff",
-                                "\"\""
+                                ""
                             ]
                         },
                         "broadcaster_type": {
@@ -12186,13 +12188,8 @@
                             "description": "The type of broadcaster. Possible values are: - affiliate — An affiliate broadcaster [affiliate broadcaster](https://help.twitch.tv/s/article/joining-the-affiliate-program target=)\n- partner — A partner broadcaster [partner broadcaster](https://help.twitch.tv/s/article/partner-program-overview)\n- \"\" — A normal broadcaster",
                             "possible": [
                                 "affiliate",
-                                "he-affiliate-program target=)",
-                                "ffiliate-program target=)",
-                                "rogram target=)",
                                 "partner",
-                                "rogram-overview)",
-                                "verview)",
-                                "\"\""
+                                ""
                             ]
                         },
                         "description": {
@@ -12285,7 +12282,7 @@
                                 "admin",
                                 "global_mod",
                                 "staff",
-                                "\"\""
+                                ""
                             ]
                         },
                         "broadcaster_type": {
@@ -12293,13 +12290,8 @@
                             "description": "The type of broadcaster. Possible values are:\n- affiliate — An [affiliate broadcaster](https://help.twitch.tv/s/article/joining-the-affiliate-program target=)\n- partner — A [partner broadcaster](https://help.twitch.tv/s/article/partner-program-overview)\n- \"\" — A normal broadcaster",
                             "possible": [
                                 "affiliate",
-                                "he-affiliate-program target=)",
-                                "ffiliate-program target=)",
-                                "rogram target=)",
                                 "partner",
-                                "rogram-overview)",
-                                "verview)",
-                                "\"\""
+                                ""
                             ]
                         },
                         "description": {
@@ -12949,10 +12941,8 @@
                     "required": false,
                     "description": "A filter used to filter the list of videos by the video's type. Possible case-sensitive values are:\n- all\n- archive — On-demand videos (VODs) of past streams.\n- highlight — Highlight reels of past streams.\n- upload — External videos that the broadcaster uploaded using the Video Producer.\nThe default is \"all,\" which returns all video types.Specify this parameter only if you specify the game_id or user_id query parameter.",
                     "possible": [
-                        "ensitive values are:",
                         "all",
                         "archive",
-                        "emand videos (VODs) of past streams.",
                         "highlight",
                         "upload"
                     ]
@@ -13040,15 +13030,8 @@
                             "description": "The video's type. Possible values are:\n- archive — An on-demand video (VOD) of one of the broadcaster's past streams.\n- highlight — A highlight reel of one of the broadcaster's past streams. See [Creating Highlights](https://help.twitch.tv/s/article/creating-highlights-and-stream-markers).\n- upload — A video that the broadcaster uploaded to their video library. See Upload under [Video Producer](https://help.twitch.tv/s/article/video-on-demand?language=en_US#videoproducer).",
                             "possible": [
                                 "archive",
-                                "emand video (VOD) of one of the broadcaster's past streams.",
                                 "highlight",
-                                "ighlights-and-stream-markers).",
-                                "nd-stream-markers).",
-                                "tream-markers).",
-                                "arkers).",
-                                "upload",
-                                "n-demand?language=en_US#videoproducer).",
-                                "emand?language=en_US#videoproducer)."
+                                "upload"
                             ]
                         },
                         "duration": {
