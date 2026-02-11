@@ -1,6 +1,7 @@
 process.chdir(__dirname);
 const docs = require('./docs_raw.json');
 const scopes = require('./scopes.json');
+const overrides = require('./overrides.js');
 
 const output = {};
 
@@ -28,9 +29,8 @@ for(let key in docs) {
                 required: c.required,
                 description: c.description
             }
-            if(c.type.toLo)
             if(c.type.toLowerCase().startsWith('map')) {
-                const types = /map\[(.*),(.*)]|map\[(.*)](.*)/.exec(c.type);
+                const types = /map\[(.*),(.*)\]|map\[(.*)\](.*)/.exec(c.type);
                 retObj[c.name.trim()].type = 'map<' + (types[1] ?? types[3]) + ',' + (types[2] ?? types[4]) + '>';
                 if(!['string', 'bool', 'unsigned integer', 'integer', 'boolean', 'float', 'int64'].some((v => (types[2] ?? types[4]).toLowerCase().startsWith(v)))) {
                     let nextname = param[0]?.name ?? "";
@@ -47,6 +47,11 @@ for(let key in docs) {
             }
         }
         return retObj;
+    }
+    if(overrides[key]) {
+        try {overrides[key](docs[key])} catch(e) {
+            console.warn(e);
+        }
     }
     const cat = docs[key].category;
     output[cat] ??= {};
@@ -69,9 +74,15 @@ for(let key in docs) {
     if(output[cat][key].authInfo) {
         output[cat][key].auth += "\nINFO: " + output[cat][key].authInfo;
     }
-    output[cat][key].params = paramToObj(output[cat][key].params ?? []);
-    output[cat][key].reqBody = paramToObj(output[cat][key].reqBody ?? []);
-    output[cat][key].body = paramToObj(output[cat][key].body ?? []);
+    const modParams = paramToObj(output[cat][key].params ?? []);
+    if(output[cat][key].params.length) console.warn(key, 'could not parse all parameters:', output[cat][key].params)
+    output[cat][key].params = modParams;
+    const modReqBody = paramToObj(output[cat][key].reqBody ?? []);
+    if(output[cat][key].reqBody.length) console.warn(key, 'could not parse all request body parameters', output[cat][key].reqBody)
+    output[cat][key].reqBody = modReqBody
+    const modBody = paramToObj(output[cat][key].body ?? []);
+    if(output[cat][key].body.length) console.warn(key, 'could not parse all parameters of body', output[cat][key].body)
+    output[cat][key].body = modBody;
 }
 
 require('fs').writeFileSync('docs.json', JSON.stringify(output, null, 4));

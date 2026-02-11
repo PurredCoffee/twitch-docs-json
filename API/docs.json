@@ -580,7 +580,36 @@
                                 "images": {
                                     "type": "dictionary",
                                     "description": "The animated and static image sets for the Cheermote. The dictionary of images is organized by theme, format, and size. The theme keys are dark and light. Each theme is a dictionary of formats: animated and static. Each format is a dictionary of sizes: 1, 1.5, 2, 3, and 4. The value of each size contains the URL to the image.",
-                                    "attr": {}
+                                    "attr": {
+                                        "dark": {
+                                            "type": "object",
+                                            "description": "The dark theme variants of the cheermote",
+                                            "attr": {
+                                                "animated": {
+                                                    "type": "map<string,string>",
+                                                    "description": "Each format of sizes: 1, 1.5, 2, 3, and 4. The value of each size contains the URL to the image."
+                                                },
+                                                "static": {
+                                                    "type": "map<string,string>",
+                                                    "description": "Each format of sizes: 1, 1.5, 2, 3, and 4. The value of each size contains the URL to the image."
+                                                }
+                                            }
+                                        },
+                                        "light": {
+                                            "type": "object",
+                                            "description": "The light theme variants of the cheermote",
+                                            "attr": {
+                                                "animated": {
+                                                    "type": "map<string,string>",
+                                                    "description": "Each format of sizes: 1, 1.5, 2, 3, and 4. The value of each size contains the URL to the image."
+                                                },
+                                                "static": {
+                                                    "type": "map<string,string>",
+                                                    "description": "Each format of sizes: 1, 1.5, 2, 3, and 4. The value of each size contains the URL to the image."
+                                                }
+                                            }
+                                        }
+                                    }
                                 },
                                 "can_cheer": {
                                     "type": "boolean",
@@ -742,8 +771,22 @@
                                 "expiration": {
                                     "type": "string",
                                     "description": "This field is always empty since you may purchase only unexpired products."
+                                },
+                                "broadcast": {
+                                    "type": "boolean",
+                                    "description": "A Boolean value that determines whether the data was broadcast to all instances of the extension. Is *true* if the data was broadcast to all instances."
                                 }
                             }
+                        }
+                    }
+                },
+                "pagination": {
+                    "type": "object",
+                    "description": "Contains the information used to page through the list of results. The object is empty if there are no more pages left to page through. [Read More](https://dev.twitch.tv/docs/api/guide#pagination)",
+                    "attr": {
+                        "cursor": {
+                            "type": "string",
+                            "description": "The cursor used to get the next page of results. Use the cursor to set the request’s after query parameter."
                         }
                     }
                 }
@@ -2041,6 +2084,30 @@
                                     "description": "A Boolean value that determines whether to apply a cooldown period. Is *true* if a cooldown period is enabled."
                                 }
                             }
+                        },
+                        "global_cooldown_seconds": {
+                            "type": "int64",
+                            "description": "The cooldown period, in seconds."
+                        },
+                        "is_paused": {
+                            "type": "boolean",
+                            "description": "A Boolean value that determines whether the reward is currently paused. Is *true* if the reward is paused. Viewers can’t redeem paused rewards."
+                        },
+                        "is_in_stock": {
+                            "type": "boolean",
+                            "description": "A Boolean value that determines whether the reward is currently in stock. Is *true* if the reward is in stock. Viewers can’t redeem out of stock rewards."
+                        },
+                        "should_redemptions_skip_request_queue": {
+                            "type": "boolean",
+                            "description": "A Boolean value that determines whether redemptions should be set to FULFILLED status immediately when a reward is redeemed. If *false*, status is set to UNFULFILLED and follows the normal request queue process."
+                        },
+                        "redemptions_redeemed_current_stream": {
+                            "type": "integer",
+                            "description": "The number of redemptions redeemed during the current live stream. The number counts against the `max_per_stream_setting` limit. This field is *null* if the broadcaster’s stream isn’t live or max_per_stream_setting isn’t enabled."
+                        },
+                        "cooldown_expires_at": {
+                            "type": "string",
+                            "description": "The timestamp of when the cooldown period expires. Is *null* if the reward isn’t in a cooldown state. See the `global_cooldown_setting` field."
                         }
                     }
                 }
@@ -5097,7 +5164,7 @@
                             "description": "A URL to the default icon that’s displayed in the Extensions directory."
                         },
                         "icon_urls": {
-                            "type": "map[string]string",
+                            "type": "map<string,string>",
                             "description": "A dictionary that contains URLs to different sizes of the default icon. The dictionary’s key identifies the icon’s size (for example, 24x24), and the dictionary’s value contains the URL to the icon."
                         },
                         "id": {
@@ -5333,7 +5400,7 @@
                             "description": "A URL to the default icon that’s displayed in the Extensions directory."
                         },
                         "icon_urls": {
-                            "type": "map[string]string",
+                            "type": "map<string,string>",
                             "description": "A dictionary that contains URLs to different sizes of the default icon. The dictionary’s key identifies the icon’s size (for example, 24x24), and the dictionary’s value contains the URL to the icon."
                         },
                         "id": {
@@ -6114,69 +6181,70 @@
                         "guests": {
                             "type": "guest",
                             "description": "List of guests currently interacting with the Guest Star session.",
-                            "attr": {}
-                        },
-                        "slot_id": {
-                            "type": "string",
-                            "description": "ID representing this guest’s slot assignment. - Host is always in slot \"0\"\n- Guests are assigned the following consecutive IDs (e.g, \"1\", \"2\", \"3\", etc)\n- Screen Share is represented as a special guest with the ID \"SCREENSHARE\"\n- The identifier here matches the ID referenced in browser source links used in broadcasting software."
-                        },
-                        "is_live": {
-                            "type": "boolean",
-                            "description": "Flag determining whether or not the guest is visible in the browser source in the host’s streaming software."
-                        },
-                        "user_id": {
-                            "type": "string",
-                            "description": "User ID of the guest assigned to this slot."
-                        },
-                        "user_display_name": {
-                            "type": "string",
-                            "description": "Display name of the guest assigned to this slot."
-                        },
-                        "user_login": {
-                            "type": "string",
-                            "description": "Login of the guest assigned to this slot."
-                        },
-                        "volume": {
-                            "type": "integer",
-                            "description": "Value from 0 to 100 representing the host’s volume setting for this guest."
-                        },
-                        "assigned_at": {
-                            "type": "string",
-                            "description": "Timestamp when this guest was assigned a slot in the session."
-                        },
-                        "audio_settings": {
-                            "type": "mediasettings",
-                            "description": "Information about the guest’s audio settings",
                             "attr": {
-                                "is_host_enabled": {
-                                    "type": "boolean",
-                                    "description": "Flag determining whether the host is allowing the guest’s audio to be seen or heard within the session."
+                                "slot_id": {
+                                    "type": "string",
+                                    "description": "ID representing this guest’s slot assignment. - Host is always in slot \"0\"\n- Guests are assigned the following consecutive IDs (e.g, \"1\", \"2\", \"3\", etc)\n- Screen Share is represented as a special guest with the ID \"SCREENSHARE\"\n- The identifier here matches the ID referenced in browser source links used in broadcasting software."
                                 },
-                                "is_guest_enabled": {
+                                "is_live": {
                                     "type": "boolean",
-                                    "description": "Flag determining whether the guest is allowing their audio to be transmitted to the session."
+                                    "description": "Flag determining whether or not the guest is visible in the browser source in the host’s streaming software."
                                 },
-                                "is_available": {
-                                    "type": "boolean",
-                                    "description": "Flag determining whether the guest has an appropriate audio device available to be transmitted to the session."
-                                }
-                            }
-                        },
-                        "video_settings": {
-                            "type": "mediasettings",
-                            "description": "Information about the guest’s video settings",
-                            "attr": {
-                                "is_host_enabled": {
-                                    "type": "boolean",
-                                    "description": "Flag determining whether the host is allowing the guest’s video to be seen or heard within the session."
+                                "user_id": {
+                                    "type": "string",
+                                    "description": "User ID of the guest assigned to this slot."
                                 },
-                                "is_guest_enabled": {
-                                    "type": "boolean",
-                                    "description": "Flag determining whether the guest is allowing their video to be transmitted to the session."
+                                "user_display_name": {
+                                    "type": "string",
+                                    "description": "Display name of the guest assigned to this slot."
                                 },
-                                "is_available": {
-                                    "type": "boolean",
-                                    "description": "Flag determining whether the guest has an appropriate video device available to be transmitted to the session."
+                                "user_login": {
+                                    "type": "string",
+                                    "description": "Login of the guest assigned to this slot."
+                                },
+                                "volume": {
+                                    "type": "integer",
+                                    "description": "Value from 0 to 100 representing the host’s volume setting for this guest."
+                                },
+                                "assigned_at": {
+                                    "type": "string",
+                                    "description": "Timestamp when this guest was assigned a slot in the session."
+                                },
+                                "audio_settings": {
+                                    "type": "mediasettings",
+                                    "description": "Information about the guest’s audio settings",
+                                    "attr": {
+                                        "is_host_enabled": {
+                                            "type": "boolean",
+                                            "description": "Flag determining whether the host is allowing the guest’s audio to be seen or heard within the session."
+                                        },
+                                        "is_guest_enabled": {
+                                            "type": "boolean",
+                                            "description": "Flag determining whether the guest is allowing their audio to be transmitted to the session."
+                                        },
+                                        "is_available": {
+                                            "type": "boolean",
+                                            "description": "Flag determining whether the guest has an appropriate audio device available to be transmitted to the session."
+                                        }
+                                    }
+                                },
+                                "video_settings": {
+                                    "type": "mediasettings",
+                                    "description": "Information about the guest’s video settings",
+                                    "attr": {
+                                        "is_host_enabled": {
+                                            "type": "boolean",
+                                            "description": "Flag determining whether the host is allowing the guest’s video to be seen or heard within the session."
+                                        },
+                                        "is_guest_enabled": {
+                                            "type": "boolean",
+                                            "description": "Flag determining whether the guest is allowing their video to be transmitted to the session."
+                                        },
+                                        "is_available": {
+                                            "type": "boolean",
+                                            "description": "Flag determining whether the guest has an appropriate video device available to be transmitted to the session."
+                                        }
+                                    }
                                 }
                             }
                         }
@@ -6238,69 +6306,70 @@
                         "guests": {
                             "type": "guest",
                             "description": "List of guests currently interacting with the Guest Star session. On creation, the session will contain the broadcaster as a solo guest.",
-                            "attr": {}
-                        },
-                        "slot_id": {
-                            "type": "string",
-                            "description": "ID representing this guest’s slot assignment. - Host is always in slot \"0\"\n- Guests are assigned the following consecutive IDs (e.g, \"1\", \"2\", \"3\", etc)\n- Screen Share is represented as a special guest with the ID \"SCREENSHARE\"\n- The identifier here matches the ID referenced in browser source links used in broadcasting software."
-                        },
-                        "is_live": {
-                            "type": "boolean",
-                            "description": "Flag determining whether or not the guest is visible in the browser source in the host’s streaming software."
-                        },
-                        "user_id": {
-                            "type": "string",
-                            "description": "User ID of the guest assigned to this slot."
-                        },
-                        "user_display_name": {
-                            "type": "string",
-                            "description": "Display name of the guest assigned to this slot."
-                        },
-                        "user_login": {
-                            "type": "string",
-                            "description": "Login of the guest assigned to this slot."
-                        },
-                        "volume": {
-                            "type": "integer",
-                            "description": "Value from 0 to 100 representing the host’s volume setting for this guest."
-                        },
-                        "assigned_at": {
-                            "type": "string",
-                            "description": "Timestamp when this guest was assigned a slot in the session."
-                        },
-                        "audio_settings": {
-                            "type": "mediasettings",
-                            "description": "Information about the guest’s audio settings",
                             "attr": {
-                                "is_host_enabled": {
-                                    "type": "boolean",
-                                    "description": "Flag determining whether the host is allowing the guest’s audio to be seen or heard within the session."
+                                "slot_id": {
+                                    "type": "string",
+                                    "description": "ID representing this guest’s slot assignment. - Host is always in slot \"0\"\n- Guests are assigned the following consecutive IDs (e.g, \"1\", \"2\", \"3\", etc)\n- Screen Share is represented as a special guest with the ID \"SCREENSHARE\"\n- The identifier here matches the ID referenced in browser source links used in broadcasting software."
                                 },
-                                "is_guest_enabled": {
+                                "is_live": {
                                     "type": "boolean",
-                                    "description": "Flag determining whether the guest is allowing their audio to be transmitted to the session."
+                                    "description": "Flag determining whether or not the guest is visible in the browser source in the host’s streaming software."
                                 },
-                                "is_available": {
-                                    "type": "boolean",
-                                    "description": "Flag determining whether the guest has an appropriate audio device available to be transmitted to the session."
-                                }
-                            }
-                        },
-                        "video_settings": {
-                            "type": "mediasettings",
-                            "description": "Information about the guest’s video settings",
-                            "attr": {
-                                "is_host_enabled": {
-                                    "type": "boolean",
-                                    "description": "Flag determining whether the host is allowing the guest’s video to be seen or heard within the session."
+                                "user_id": {
+                                    "type": "string",
+                                    "description": "User ID of the guest assigned to this slot."
                                 },
-                                "is_guest_enabled": {
-                                    "type": "boolean",
-                                    "description": "Flag determining whether the guest is allowing their video to be transmitted to the session."
+                                "user_display_name": {
+                                    "type": "string",
+                                    "description": "Display name of the guest assigned to this slot."
                                 },
-                                "is_available": {
-                                    "type": "boolean",
-                                    "description": "Flag determining whether the guest has an appropriate video device available to be transmitted to the session."
+                                "user_login": {
+                                    "type": "string",
+                                    "description": "Login of the guest assigned to this slot."
+                                },
+                                "volume": {
+                                    "type": "integer",
+                                    "description": "Value from 0 to 100 representing the host’s volume setting for this guest."
+                                },
+                                "assigned_at": {
+                                    "type": "string",
+                                    "description": "Timestamp when this guest was assigned a slot in the session."
+                                },
+                                "audio_settings": {
+                                    "type": "mediasettings",
+                                    "description": "Information about the guest’s audio settings",
+                                    "attr": {
+                                        "is_host_enabled": {
+                                            "type": "boolean",
+                                            "description": "Flag determining whether the host is allowing the guest’s audio to be seen or heard within the session."
+                                        },
+                                        "is_guest_enabled": {
+                                            "type": "boolean",
+                                            "description": "Flag determining whether the guest is allowing their audio to be transmitted to the session."
+                                        },
+                                        "is_available": {
+                                            "type": "boolean",
+                                            "description": "Flag determining whether the guest has an appropriate audio device available to be transmitted to the session."
+                                        }
+                                    }
+                                },
+                                "video_settings": {
+                                    "type": "mediasettings",
+                                    "description": "Information about the guest’s video settings",
+                                    "attr": {
+                                        "is_host_enabled": {
+                                            "type": "boolean",
+                                            "description": "Flag determining whether the host is allowing the guest’s video to be seen or heard within the session."
+                                        },
+                                        "is_guest_enabled": {
+                                            "type": "boolean",
+                                            "description": "Flag determining whether the guest is allowing their video to be transmitted to the session."
+                                        },
+                                        "is_available": {
+                                            "type": "boolean",
+                                            "description": "Flag determining whether the guest has an appropriate video device available to be transmitted to the session."
+                                        }
+                                    }
                                 }
                             }
                         }
@@ -6366,69 +6435,70 @@
                         "guests": {
                             "type": "guest",
                             "description": "List of guests currently interacting with the Guest Star session.",
-                            "attr": {}
-                        },
-                        "slot_id": {
-                            "type": "string",
-                            "description": "ID representing this guest’s slot assignment. - Host is always in slot \"0\"\n- Guests are assigned the following consecutive IDs (e.g, \"1\", \"2\", \"3\", etc)\n- Screen Share is represented as a special guest with the ID \"SCREENSHARE\"\n- The identifier here matches the ID referenced in browser source links used in broadcasting software."
-                        },
-                        "is_live": {
-                            "type": "boolean",
-                            "description": "Flag determining whether or not the guest is visible in the browser source in the host’s streaming software."
-                        },
-                        "user_id": {
-                            "type": "string",
-                            "description": "User ID of the guest assigned to this slot."
-                        },
-                        "user_display_name": {
-                            "type": "string",
-                            "description": "Display name of the guest assigned to this slot."
-                        },
-                        "user_login": {
-                            "type": "string",
-                            "description": "Login of the guest assigned to this slot."
-                        },
-                        "volume": {
-                            "type": "integer",
-                            "description": "Value from 0 to 100 representing the host’s volume setting for this guest."
-                        },
-                        "assigned_at": {
-                            "type": "string",
-                            "description": "Timestamp when this guest was assigned a slot in the session."
-                        },
-                        "audio_settings": {
-                            "type": "mediasettings",
-                            "description": "Information about the guest’s audio settings",
                             "attr": {
-                                "is_host_enabled": {
-                                    "type": "boolean",
-                                    "description": "Flag determining whether the host is allowing the guest’s audio to be seen or heard within the session."
+                                "slot_id": {
+                                    "type": "string",
+                                    "description": "ID representing this guest’s slot assignment. - Host is always in slot \"0\"\n- Guests are assigned the following consecutive IDs (e.g, \"1\", \"2\", \"3\", etc)\n- Screen Share is represented as a special guest with the ID \"SCREENSHARE\"\n- The identifier here matches the ID referenced in browser source links used in broadcasting software."
                                 },
-                                "is_guest_enabled": {
+                                "is_live": {
                                     "type": "boolean",
-                                    "description": "Flag determining whether the guest is allowing their audio to be transmitted to the session."
+                                    "description": "Flag determining whether or not the guest is visible in the browser source in the host’s streaming software."
                                 },
-                                "is_available": {
-                                    "type": "boolean",
-                                    "description": "Flag determining whether the guest has an appropriate audio device available to be transmitted to the session."
-                                }
-                            }
-                        },
-                        "video_settings": {
-                            "type": "mediasettings",
-                            "description": "Information about the guest’s video settings",
-                            "attr": {
-                                "is_host_enabled": {
-                                    "type": "boolean",
-                                    "description": "Flag determining whether the host is allowing the guest’s video to be seen or heard within the session."
+                                "user_id": {
+                                    "type": "string",
+                                    "description": "User ID of the guest assigned to this slot."
                                 },
-                                "is_guest_enabled": {
-                                    "type": "boolean",
-                                    "description": "Flag determining whether the guest is allowing their video to be transmitted to the session."
+                                "user_display_name": {
+                                    "type": "string",
+                                    "description": "Display name of the guest assigned to this slot."
                                 },
-                                "is_available": {
-                                    "type": "boolean",
-                                    "description": "Flag determining whether the guest has an appropriate video device available to be transmitted to the session."
+                                "user_login": {
+                                    "type": "string",
+                                    "description": "Login of the guest assigned to this slot."
+                                },
+                                "volume": {
+                                    "type": "integer",
+                                    "description": "Value from 0 to 100 representing the host’s volume setting for this guest."
+                                },
+                                "assigned_at": {
+                                    "type": "string",
+                                    "description": "Timestamp when this guest was assigned a slot in the session."
+                                },
+                                "audio_settings": {
+                                    "type": "mediasettings",
+                                    "description": "Information about the guest’s audio settings",
+                                    "attr": {
+                                        "is_host_enabled": {
+                                            "type": "boolean",
+                                            "description": "Flag determining whether the host is allowing the guest’s audio to be seen or heard within the session."
+                                        },
+                                        "is_guest_enabled": {
+                                            "type": "boolean",
+                                            "description": "Flag determining whether the guest is allowing their audio to be transmitted to the session."
+                                        },
+                                        "is_available": {
+                                            "type": "boolean",
+                                            "description": "Flag determining whether the guest has an appropriate audio device available to be transmitted to the session."
+                                        }
+                                    }
+                                },
+                                "video_settings": {
+                                    "type": "mediasettings",
+                                    "description": "Information about the guest’s video settings",
+                                    "attr": {
+                                        "is_host_enabled": {
+                                            "type": "boolean",
+                                            "description": "Flag determining whether the host is allowing the guest’s video to be seen or heard within the session."
+                                        },
+                                        "is_guest_enabled": {
+                                            "type": "boolean",
+                                            "description": "Flag determining whether the guest is allowing their video to be transmitted to the session."
+                                        },
+                                        "is_available": {
+                                            "type": "boolean",
+                                            "description": "Flag determining whether the guest has an appropriate video device available to be transmitted to the session."
+                                        }
+                                    }
                                 }
                             }
                         }
@@ -7770,6 +7840,68 @@
                         "broadcaster_id": {
                             "type": "string",
                             "description": "User ID of broadcaster whose channel is receiving the unban request."
+                        },
+                        "broadcaster_name": {
+                            "type": "string",
+                            "description": "The broadcaster's display name."
+                        },
+                        "broadcaster_login": {
+                            "type": "string",
+                            "description": "The broadcaster's login name."
+                        },
+                        "moderator_id": {
+                            "type": "string",
+                            "description": "User ID of moderator who approved/denied the request."
+                        },
+                        "moderator_login": {
+                            "type": "string",
+                            "description": "The moderator's login name."
+                        },
+                        "moderator_name": {
+                            "type": "string",
+                            "description": "The moderator's display name."
+                        },
+                        "user_id": {
+                            "type": "string",
+                            "description": "User ID of the requestor who is asking for an unban."
+                        },
+                        "user_login": {
+                            "type": "string",
+                            "description": "The user's login name."
+                        },
+                        "user_name": {
+                            "type": "string",
+                            "description": "The user's display name."
+                        },
+                        "text": {
+                            "type": "string",
+                            "description": "Text of the request from the requesting user."
+                        },
+                        "status": {
+                            "type": "string",
+                            "description": "Status of the request. One of:- pending\n- approved\n- denied\n- acknowledged\n- canceled"
+                        },
+                        "created_at": {
+                            "type": "string",
+                            "description": "Timestamp of when the unban request was created."
+                        },
+                        "resolved_at": {
+                            "type": "string",
+                            "description": "Timestamp of when moderator/broadcaster approved or denied the request."
+                        },
+                        "resolution_text": {
+                            "type": "string",
+                            "description": "Text input by the resolver (moderator) of the unban. request"
+                        }
+                    }
+                },
+                "pagination": {
+                    "type": "object",
+                    "description": "Contains information used to page through a list of results. The object is empty if there are no more pages left to page through.",
+                    "attr": {
+                        "cursor": {
+                            "type": "string",
+                            "description": "The cursor used to get the next page of results. Use the cursor to set the request’s after query parameter."
                         }
                     }
                 }
@@ -8965,9 +9097,8 @@
                             "description": "The type of suspicious status. Possible values are: NO_TREATMENT"
                         },
                         "types": {
-                            "type": "array",
-                            "description": "An array of strings representing the type(s) of suspicious user this is. Possible values are: MANUALLY_ADDED, DETECTED_BAN_EVADER, DETECTED_SUS_CHATTER, BANNED_IN_SHARED_CHANNEL",
-                            "attr": {}
+                            "type": "string[]",
+                            "description": "An array of strings representing the type(s) of suspicious user this is. Possible values are: MANUALLY_ADDED, DETECTED_BAN_EVADER, DETECTED_SUS_CHATTER, BANNED_IN_SHARED_CHANNEL"
                         }
                     }
                 }
@@ -11383,11 +11514,11 @@
                             "description": "A Boolean value that determines whether the tag is an automatic tag. An automatic tag is one that Twitch adds to the stream. Broadcasters may not add automatic tags to their channel. The value is *true* if the tag is an automatic tag; otherwise, *false*."
                         },
                         "localization_names": {
-                            "type": "map[string,string]",
+                            "type": "map<string,string>",
                             "description": "A dictionary that contains the localized names of the tag. The key is in the form, <locale>-<country/region>. For example, en-us. The value is the localized name."
                         },
                         "localization_descriptions": {
-                            "type": "map[string,string]",
+                            "type": "map<string,string>",
                             "description": "A dictionary that contains the localized descriptions of the tag. The key is in the form, <locale>-<country/region>. For example, en-us. The value is the localized description."
                         }
                     }
@@ -11456,11 +11587,11 @@
                             "description": "A Boolean value that determines whether the tag is an automatic tag. An automatic tag is one that Twitch adds to the stream. Broadcasters may not add automatic tags to their channel. The value is *true* if the tag is an automatic tag; otherwise, *false*."
                         },
                         "localization_names": {
-                            "type": "map[string,string]",
+                            "type": "map<string,string>",
                             "description": "A dictionary that contains the localized names of the tag. The key is in the form, <locale>-<coutry/region>. For example, en-us. The value is the localized name."
                         },
                         "localization_descriptions": {
-                            "type": "map[string,string]",
+                            "type": "map<string,string>",
                             "description": "A dictionary that contains the localized descriptions of the tag. The key is in the form, <locale>-<coutry/region>. For example, en-us. The value is the localized description."
                         }
                     }
@@ -12186,8 +12317,78 @@
                     "description": "The active extensions that the broadcaster has installed.",
                     "attr": {
                         "panel": {
-                            "type": "map[string]object",
-                            "description": "A dictionary that contains the data for a panel extension. The dictionary’s key is a sequential number beginning with 1. The following fields contain the panel’s data for each key."
+                            "type": "map<string,object>",
+                            "description": "A dictionary that contains the data for a panel extension. The dictionary’s key is a sequential number beginning with 1. The following fields contain the panel’s data for each key.",
+                            "attr": {
+                                "active": {
+                                    "type": "boolean",
+                                    "description": "A Boolean value that determines the extension’s activation state. If *false*, the user has not configured this panel extension."
+                                },
+                                "id": {
+                                    "type": "string",
+                                    "description": "An ID that identifies the extension."
+                                },
+                                "version": {
+                                    "type": "string",
+                                    "description": "The extension’s version."
+                                },
+                                "name": {
+                                    "type": "string",
+                                    "description": "The extension’s name."
+                                }
+                            }
+                        },
+                        "overlay": {
+                            "type": "map<string,object>",
+                            "description": "A dictionary that contains the data for a video-overlay extension. The dictionary’s key is a sequential number beginning with 1. The following fields contain the overlay’s data for each key.",
+                            "attr": {
+                                "active": {
+                                    "type": "boolean",
+                                    "description": "A Boolean value that determines the extension’s activation state. If *false*, the user has not configured this overlay extension."
+                                },
+                                "id": {
+                                    "type": "string",
+                                    "description": "An ID that identifies the extension."
+                                },
+                                "version": {
+                                    "type": "string",
+                                    "description": "The extension’s version."
+                                },
+                                "name": {
+                                    "type": "string",
+                                    "description": "The extension’s name."
+                                }
+                            }
+                        },
+                        "component": {
+                            "type": "map<string,object>",
+                            "description": "A dictionary that contains the data for a video-component extension. The dictionary’s key is a sequential number beginning with 1. The following fields contain the component’s data for each key.",
+                            "attr": {
+                                "active": {
+                                    "type": "boolean",
+                                    "description": "A Boolean value that determines the extension’s activation state. If *false*, the user has not configured this component extension."
+                                },
+                                "id": {
+                                    "type": "string",
+                                    "description": "An ID that identifies the extension."
+                                },
+                                "version": {
+                                    "type": "string",
+                                    "description": "The extension’s version."
+                                },
+                                "name": {
+                                    "type": "string",
+                                    "description": "The extension’s name."
+                                },
+                                "x": {
+                                    "type": "integer",
+                                    "description": "The x-coordinate where the extension is placed."
+                                },
+                                "y": {
+                                    "type": "integer",
+                                    "description": "The y-coordinate where the extension is placed."
+                                }
+                            }
                         }
                     }
                 }
@@ -12226,7 +12427,7 @@
             "params": {},
             "reqBody": {
                 "data": {
-                    "type": "map[string]string",
+                    "type": "map<string,string>",
                     "required": true,
                     "description": "The extensions to update. The `data` field is a dictionary of extension types. The dictionary’s possible keys are: panel, overlay, or component. The key’s value is a dictionary of extensions.For the extension’s dictionary, the key is a sequential number beginning with 1. For panel and overlay extensions, the key’s value is an object that contains the following fields: `active` (true/false), `id` (the extension’s ID), and `version` (the extension’s version).For component extensions, the key’s value includes the above fields plus the `x` and `y` fields, which identify the coordinate where the extension is placed."
                 }
@@ -12237,8 +12438,78 @@
                     "description": "The extensions that the broadcaster updated.",
                     "attr": {
                         "panel": {
-                            "type": "map[string]object",
-                            "description": "A dictionary that contains the data for a panel extension. The dictionary’s key is a sequential number beginning with 1. The following fields contain the panel’s data for each key."
+                            "type": "map<string,object>",
+                            "description": "A dictionary that contains the data for a panel extension. The dictionary’s key is a sequential number beginning with 1. The following fields contain the panel’s data for each key.",
+                            "attr": {
+                                "active": {
+                                    "type": "boolean",
+                                    "description": "A Boolean value that determines the extension’s activation state. If *false*, the user has not configured a panel extension."
+                                },
+                                "id": {
+                                    "type": "string",
+                                    "description": "An ID that identifies the extension."
+                                },
+                                "version": {
+                                    "type": "string",
+                                    "description": "The extension’s version."
+                                },
+                                "name": {
+                                    "type": "string",
+                                    "description": "The extension’s name."
+                                }
+                            }
+                        },
+                        "overlay": {
+                            "type": "map<string,object>",
+                            "description": "A dictionary that contains the data for a video-overlay extension. The dictionary’s key is a sequential number beginning with 1. The following fields contain the overlay’s data for each key.",
+                            "attr": {
+                                "active": {
+                                    "type": "boolean",
+                                    "description": "A Boolean value that determines the extension’s activation state. If *false*, the user has not configured an overlay extension."
+                                },
+                                "id": {
+                                    "type": "string",
+                                    "description": "An ID that identifies the extension."
+                                },
+                                "version": {
+                                    "type": "string",
+                                    "description": "The extension’s version."
+                                },
+                                "name": {
+                                    "type": "string",
+                                    "description": "The extension’s name."
+                                }
+                            }
+                        },
+                        "component": {
+                            "type": "map<string,object>",
+                            "description": "A dictionary that contains the data for a video-component extension. The dictionary’s key is a sequential number beginning with 1. The following fields contain the component’s data for each key.",
+                            "attr": {
+                                "active": {
+                                    "type": "boolean",
+                                    "description": "A Boolean value that determines the extension’s activation state. If *false*, the user has not configured a component extension."
+                                },
+                                "id": {
+                                    "type": "string",
+                                    "description": "An ID that identifies the extension."
+                                },
+                                "version": {
+                                    "type": "string",
+                                    "description": "The extension’s version."
+                                },
+                                "name": {
+                                    "type": "string",
+                                    "description": "The extension’s name."
+                                },
+                                "x": {
+                                    "type": "integer",
+                                    "description": "The x-coordinate where the extension is placed."
+                                },
+                                "y": {
+                                    "type": "integer",
+                                    "description": "The y-coordinate where the extension is placed."
+                                }
+                            }
                         }
                     }
                 }
