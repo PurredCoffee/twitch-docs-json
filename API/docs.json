@@ -1784,7 +1784,7 @@
                 },
                 "status": {
                     "type": "string",
-                    "required": true,
+                    "required": false,
                     "description": "The status of the redemptions to return. The possible case-sensitive values are:\n- CANCELED\n- FULFILLED\n- UNFULFILLED\n*NOTE*: This field is required only if you don’t specify the id query parameter.*NOTE*: Canceled and fulfilled redemptions are returned for only a few days after they’re canceled or fulfilled.",
                     "possible": [
                         "CANCELED",
@@ -2227,7 +2227,7 @@
             "long": "Updates a redemption’s status. You may update a redemption only if its status is UNFULFILLED. The app used to create the reward is the only app that may update the redemption.",
             "params": {
                 "id": {
-                    "type": "string",
+                    "type": "string[]",
                     "required": true,
                     "description": "A list of IDs that identify the redemptions to update. To specify more than one ID, include this parameter for each redemption you want to update. For example, `id=1234&id=5678`. You may specify a maximum of 50 IDs."
                 },

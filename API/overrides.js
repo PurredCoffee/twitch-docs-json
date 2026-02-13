@@ -110,5 +110,11 @@ module.exports = [
     "Get Custom Reward Redemption",(docs) => {
         const a = docs.params.find(v => v.name == 'id');
         a.type = 'string[]';
+        const b = docs.params.find(v => v.name == 'status')
+        b.required = false;
+    },
+    "Update Redemption Status",(docs) => {
+        const a = docs.params.find(v => v.name == 'id');
+        a.type = 'string[]';
     }
 ]
