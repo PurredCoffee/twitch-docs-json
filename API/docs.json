@@ -1558,7 +1558,7 @@
                     "description": "The ID of the broadcaster whose custom rewards you want to get. This ID must match the user ID found in the OAuth token."
                 },
                 "id": {
-                    "type": "string",
+                    "type": "string[]",
                     "required": false,
                     "description": "A list of IDs to filter the rewards by. To specify more than one ID, include this parameter for each reward you want to get. For example, `id=1234&id=5678`. You may specify a maximum of 50 IDs.Duplicate IDs are ignored. The response contains only the IDs that were found. If none of the IDs were found, the response is 404 Not Found."
                 },
@@ -1889,6 +1889,16 @@
                                     "description": "The reward’s cost, in Channel Points."
                                 }
                             }
+                        }
+                    }
+                },
+                "pagination": {
+                    "type": "object",
+                    "description": "Contains the information used to page through the list of results. The object is empty if there are no more pages left to page through. [Read More](https://dev.twitch.tv/docs/api/guide#pagination)",
+                    "attr": {
+                        "cursor": {
+                            "type": "string",
+                            "description": "The cursor used to get the next page of results. Use the cursor to set the request’s after query parameter."
                         }
                     }
                 }
@@ -10608,6 +10618,16 @@
                             }
                         }
                     }
+                },
+                "pagination": {
+                    "type": "object",
+                    "description": "Contains the information used to page through the list of results. The object is empty if there are no more pages left to page through. [Read More](https://dev.twitch.tv/docs/api/guide#pagination)",
+                    "attr": {
+                        "cursor": {
+                            "type": "string",
+                            "description": "The cursor used to get the next page of results. Use the cursor to set the request’s after query parameter."
+                        }
+                    }
                 }
             },
             "codes": {
@@ -11118,6 +11138,16 @@
                             "description": "An ID that uniquely identifies the game or category."
                         }
                     }
+                },
+                "pagination": {
+                    "type": "object",
+                    "description": "Contains the information used to page through the list of results. The object is empty if there are no more pages left to page through. [Read More](https://dev.twitch.tv/docs/api/guide#pagination)",
+                    "attr": {
+                        "cursor": {
+                            "type": "string",
+                            "description": "The cursor used to get the next page of results. Use the cursor to set the request’s after query parameter."
+                        }
+                    }
                 }
             },
             "codes": {
@@ -11226,6 +11256,16 @@
                         "started_at": {
                             "type": "string",
                             "description": "The UTC date and time (in RFC3339 format) of when the broadcaster started streaming. The string is empty if the broadcaster is not streaming live."
+                        }
+                    }
+                },
+                "pagination": {
+                    "type": "object",
+                    "description": "Contains the information used to page through the list of results. The object is empty if there are no more pages left to page through. [Read More](https://dev.twitch.tv/docs/api/guide#pagination)",
+                    "attr": {
+                        "cursor": {
+                            "type": "string",
+                            "description": "The cursor used to get the next page of results. Use the cursor to set the request’s after query parameter."
                         }
                     }
                 }
@@ -12452,6 +12492,16 @@
                         "display_name": {
                             "type": "string",
                             "description": "The blocked user’s display name."
+                        }
+                    }
+                },
+                "pagination": {
+                    "type": "object",
+                    "description": "Contains the information used to page through the list of results. The object is empty if there are no more pages left to page through. [Read More](https://dev.twitch.tv/docs/api/guide#pagination)",
+                    "attr": {
+                        "cursor": {
+                            "type": "string",
+                            "description": "The cursor used to get the next page of results. Use the cursor to set the request’s after query parameter."
                         }
                     }
                 }

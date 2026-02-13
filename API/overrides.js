@@ -10,6 +10,77 @@ module.exports = {
         });
     },
 
+    "Get Custom Reward Redemption"(docs) {
+        docs.body.push(
+            {
+                "name": "pagination",
+                "type": "object",
+                "description": "Contains the information used to page through the list of results. The object is empty if there are no more pages left to page through. [Read More](https://dev.twitch.tv/docs/api/guide#pagination)"
+            },
+            {
+                "name": "   cursor",
+                "type": "string",
+                "description": "The cursor used to get the next page of results. Use the cursor to set the request’s after query parameter."
+            }
+        );
+    },
+    "Get Channel Stream Schedule"(docs) {
+        docs.body.push(
+            {
+                "name": "pagination",
+                "type": "object",
+                "description": "Contains the information used to page through the list of results. The object is empty if there are no more pages left to page through. [Read More](https://dev.twitch.tv/docs/api/guide#pagination)"
+            },
+            {
+                "name": "   cursor",
+                "type": "string",
+                "description": "The cursor used to get the next page of results. Use the cursor to set the request’s after query parameter."
+            }
+        );
+    },
+    "Search Categories"(docs) {
+        docs.body.push(
+            {
+                "name": "pagination",
+                "type": "object",
+                "description": "Contains the information used to page through the list of results. The object is empty if there are no more pages left to page through. [Read More](https://dev.twitch.tv/docs/api/guide#pagination)"
+            },
+            {
+                "name": "   cursor",
+                "type": "string",
+                "description": "The cursor used to get the next page of results. Use the cursor to set the request’s after query parameter."
+            }
+        );
+    },
+    "Search Channels"(docs) {
+        docs.body.push(
+            {
+                "name": "pagination",
+                "type": "object",
+                "description": "Contains the information used to page through the list of results. The object is empty if there are no more pages left to page through. [Read More](https://dev.twitch.tv/docs/api/guide#pagination)"
+            },
+            {
+                "name": "   cursor",
+                "type": "string",
+                "description": "The cursor used to get the next page of results. Use the cursor to set the request’s after query parameter."
+            }
+        );
+    },
+    "Get User Block List"(docs) {
+        docs.body.push(
+            {
+                "name": "pagination",
+                "type": "object",
+                "description": "Contains the information used to page through the list of results. The object is empty if there are no more pages left to page through. [Read More](https://dev.twitch.tv/docs/api/guide#pagination)"
+            },
+            {
+                "name": "   cursor",
+                "type": "string",
+                "description": "The cursor used to get the next page of results. Use the cursor to set the request’s after query parameter."
+            }
+        );
+    },
+
     "Get Extension Transactions"(docs) {
         const a = docs.body.find(v => v.name.endsWith('broadcast'));
         a.name = a.name.substring(1);
@@ -71,5 +142,10 @@ module.exports = {
             type: 'map[string,string]',
             description: 'Each format of sizes: 1, 1.5, 2, 3, and 4. The value of each size contains the URL to the image.'
         })
+    },
+
+    "Get Custom Reward"(docs) {
+        const a = docs.params.find(v => v.name == 'id');
+        a.type = 'string[]';
     }
 }

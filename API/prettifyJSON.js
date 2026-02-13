@@ -92,14 +92,15 @@ for(let key in docs) {
         output[cat][key].auth += "\nINFO: " + output[cat][key].authInfo;
     }
     const modParams = paramToObj(output[cat][key].params ?? []);
-    if(output[cat][key].params.length) console.warn(key, 'could not parse all parameters:', output[cat][key].params)
+    if(output[cat][key].params.length) console.warn(key, 'could not parse all parameters:', output[cat][key].params);
     output[cat][key].params = modParams;
     const modReqBody = paramToObj(output[cat][key].reqBody ?? []);
-    if(output[cat][key].reqBody.length) console.warn(key, 'could not parse all request body parameters', output[cat][key].reqBody)
+    if(output[cat][key].reqBody.length) console.warn(key, 'could not parse all request body parameters', output[cat][key].reqBody);
     output[cat][key].reqBody = modReqBody
     const modBody = paramToObj(output[cat][key].body ?? []);
-    if(output[cat][key].body.length) console.warn(key, 'could not parse all parameters of body', output[cat][key].body)
+    if(output[cat][key].body.length) console.warn(key, 'could not parse all parameters of body', output[cat][key].body);
     output[cat][key].body = modBody;
+    if((output[cat][key].params['after'] != null) != (output[cat][key].body['pagination'] != null)) console.warn(key, 'weird pagination layout!');
 }
 
 require('fs').writeFileSync('docs.json', JSON.stringify(output, null, 4));
