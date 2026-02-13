@@ -1,3 +1,17 @@
+function addPagination(docs) {
+    docs.body.push(
+        {
+            "name": "pagination",
+            "type": "object",
+            "description": "Contains the information used to page through the list of results. The object is empty if there are no more pages left to page through. [Read More](https://dev.twitch.tv/docs/api/guide#pagination)"
+        },
+        {
+            "name": "   cursor",
+            "type": "string",
+            "description": "The cursor used to get the next page of results. Use the cursor to set the request’s after query parameter."
+        }
+    );
+}
 module.exports = {
     "Update Chat Settings"(docs) {
         docs.reqBody.forEach(element => {
@@ -11,74 +25,19 @@ module.exports = {
     },
 
     "Get Custom Reward Redemption"(docs) {
-        docs.body.push(
-            {
-                "name": "pagination",
-                "type": "object",
-                "description": "Contains the information used to page through the list of results. The object is empty if there are no more pages left to page through. [Read More](https://dev.twitch.tv/docs/api/guide#pagination)"
-            },
-            {
-                "name": "   cursor",
-                "type": "string",
-                "description": "The cursor used to get the next page of results. Use the cursor to set the request’s after query parameter."
-            }
-        );
+        addPagination(docs);
     },
     "Get Channel Stream Schedule"(docs) {
-        docs.body.push(
-            {
-                "name": "pagination",
-                "type": "object",
-                "description": "Contains the information used to page through the list of results. The object is empty if there are no more pages left to page through. [Read More](https://dev.twitch.tv/docs/api/guide#pagination)"
-            },
-            {
-                "name": "   cursor",
-                "type": "string",
-                "description": "The cursor used to get the next page of results. Use the cursor to set the request’s after query parameter."
-            }
-        );
+        addPagination(docs);
     },
     "Search Categories"(docs) {
-        docs.body.push(
-            {
-                "name": "pagination",
-                "type": "object",
-                "description": "Contains the information used to page through the list of results. The object is empty if there are no more pages left to page through. [Read More](https://dev.twitch.tv/docs/api/guide#pagination)"
-            },
-            {
-                "name": "   cursor",
-                "type": "string",
-                "description": "The cursor used to get the next page of results. Use the cursor to set the request’s after query parameter."
-            }
-        );
+        addPagination(docs);
     },
     "Search Channels"(docs) {
-        docs.body.push(
-            {
-                "name": "pagination",
-                "type": "object",
-                "description": "Contains the information used to page through the list of results. The object is empty if there are no more pages left to page through. [Read More](https://dev.twitch.tv/docs/api/guide#pagination)"
-            },
-            {
-                "name": "   cursor",
-                "type": "string",
-                "description": "The cursor used to get the next page of results. Use the cursor to set the request’s after query parameter."
-            }
-        );
+        addPagination(docs);
     },
     "Get User Block List"(docs) {
-        docs.body.push(
-            {
-                "name": "pagination",
-                "type": "object",
-                "description": "Contains the information used to page through the list of results. The object is empty if there are no more pages left to page through. [Read More](https://dev.twitch.tv/docs/api/guide#pagination)"
-            },
-            {
-                "name": "   cursor",
-                "type": "string",
-                "description": "The cursor used to get the next page of results. Use the cursor to set the request’s after query parameter."
-            }
-        );
+        addPagination(docs);
     },
 
     "Get Extension Transactions"(docs) {
