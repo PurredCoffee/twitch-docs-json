@@ -5,6 +5,15 @@ const overrides = require('./overrides.js');
 
 const output = {};
 
+while(overrides.length > 0) {
+    const key = overrides.shift();
+    const func = overrides.shift();
+    try {
+        func(docs[key])
+    } catch(e) {
+        console.warn(e);
+    }
+}
 for(let key in docs) {
     /**
      * 
@@ -64,11 +73,6 @@ for(let key in docs) {
             }
         }
         return retObj;
-    }
-    if(overrides[key]) {
-        try {overrides[key](docs[key])} catch(e) {
-            console.warn(e);
-        }
     }
     const cat = docs[key].category;
     output[cat] ??= {};

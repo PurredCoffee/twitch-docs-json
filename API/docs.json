@@ -1793,7 +1793,7 @@
                     ]
                 },
                 "id": {
-                    "type": "string",
+                    "type": "string[]",
                     "required": false,
                     "description": "A list of IDs to filter the redemptions by. To specify more than one ID, include this parameter for each redemption you want to get. For example, `id=1234&id=5678`. You may specify a maximum of 50 IDs.Duplicate IDs are ignored. The response contains only the IDs that were found. If none of the IDs were found, the response is 404 Not Found."
                 },

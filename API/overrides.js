@@ -12,69 +12,69 @@ function addPagination(docs) {
         }
     );
 }
-module.exports = {
-    "Update Chat Settings"(docs) {
+module.exports = [
+    "Update Chat Settings",(docs) => {
         docs.reqBody.forEach(element => {
             element.required = false;
         });
     },
-    "Update AutoMod Settings"(docs) {
+    "Update AutoMod Settings",(docs) => {
         docs.reqBody.forEach(element => {
             element.required = false;
         });
     },
 
-    "Get Custom Reward Redemption"(docs) {
+    "Get Custom Reward Redemption",(docs) => {
         addPagination(docs);
     },
-    "Get Channel Stream Schedule"(docs) {
+    "Get Channel Stream Schedule",(docs) => {
         addPagination(docs);
     },
-    "Search Categories"(docs) {
+    "Search Categories",(docs) => {
         addPagination(docs);
     },
-    "Search Channels"(docs) {
+    "Search Channels",(docs) => {
         addPagination(docs);
     },
-    "Get User Block List"(docs) {
+    "Get User Block List",(docs) => {
         addPagination(docs);
     },
 
-    "Get Extension Transactions"(docs) {
+    "Get Extension Transactions",(docs) => {
         const a = docs.body.find(v => v.name.endsWith('broadcast'));
         a.name = a.name.substring(1);
     },
-    "Update Custom Reward"(docs) {
+    "Update Custom Reward",(docs) => {
         const a = docs.body.find(v => v.name.endsWith('global_cooldown_seconds'));
         a.name = a.name.substring(2);
     },
-    "Get Guest Star Session"(docs) {
+    "Get Guest Star Session",(docs) => {
         const a = docs.body.find(v => v.name.endsWith('id'));
         a.name = a.name.substring(1);
         const b = docs.body.find(v => v.name.endsWith('guests'));
         b.name = b.name.substring(1);
     },
-    "Create Guest Star Session"(docs) {
+    "Create Guest Star Session",(docs) => {
         const a = docs.body.find(v => v.name.endsWith('id'));
         a.name = a.name.substring(1);
         const b = docs.body.find(v => v.name.endsWith('guests'));
         b.name = b.name.substring(1);
     },
-    "End Guest Star Session"(docs) {
+    "End Guest Star Session",(docs) => {
         const a = docs.body.find(v => v.name.endsWith('id'));
         a.name = a.name.substring(1);
         const b = docs.body.find(v => v.name.endsWith('guests'));
         b.name = b.name.substring(1);
     },
-    "Remove Suspicious Status From Chat User"(docs) {
+    "Remove Suspicious Status From Chat User",(docs) => {
         const a = docs.body.find(v => v.name.endsWith('types'));
         a.type = "string[]"
     },
-    "Get Unban Requests"(docs) {
+    "Get Unban Requests",(docs) => {
         const a = docs.body.find(v => v.name.endsWith('broadcaster_name'));
         a.name = a.name.substring(4);
     },
-    "Get Cheermotes"(docs) {
+    "Get Cheermotes",(docs) => {
         const i = docs.body.findIndex(v => v.name.endsWith('images'));
         docs.body.splice(i + 1, 0, {
             name: '         dark',
@@ -103,8 +103,12 @@ module.exports = {
         })
     },
 
-    "Get Custom Reward"(docs) {
+    "Get Custom Reward",(docs) => {
+        const a = docs.params.find(v => v.name == 'id');
+        a.type = 'string[]';
+    },
+    "Get Custom Reward Redemption",(docs) => {
         const a = docs.params.find(v => v.name == 'id');
         a.type = 'string[]';
     }
-}
+]
